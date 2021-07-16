@@ -1,0 +1,12 @@
+MIDlet-6: PeliculasList,,vista.PeliculasList
+MIDlet-5: ValidarForm,,vista.ValidarForm
+MIDlet-4: DisplayManager,,control.DisplayManager
+MIDlet-3: VideoMIDlet,,control.VideoMIDlet
+MIDlet-2: conexion,,conexion.conexion
+MIDlet-1: Conexion,,conexion.Conexion
+MIDlet-Jar-URL: practica4.jar
+MicroEdition-Configuration: CLDC-1.1
+MIDlet-Version: 1.0.0
+MIDlet-Name: practica4 Midlet Suite
+MIDlet-Vendor: Midlet Suite Vendor
+MicroEdition-Profile: MIDP-2.0

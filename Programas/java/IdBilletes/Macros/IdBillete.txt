@@ -1,0 +1,99 @@
+// Macro por Byron Giovanni Salazar España - Isabel Cristina Mejía Córdoba.
+
+// Toma la imagen BMP de un billete desconocido en la carpeta C:/TEMP/Captura 
+// y la compara con imágenes de billetes en la carpeta C:/TEMP/Muestra, 
+// identificándolo con el de mayor parecido.
+// Funciona con "ImageJ1.33u" y requiere que el plugin "Color Comparison" se
+// encuentre instalado.
+  
+  requires("1.33u");
+
+// Abre el archivo a comparar, "BilleteX.BMP", en C:/TEMP/Captura
+  open("C:\\TEMP\\Captura\\BilleteX.BMP");
+
+// Abre los archivos BMP de referencia en C:/TEMP/Muestra y ejecuta la comparación
+  dir="C:\\TEMP\\Muestra";
+  count = 1;
+  m=0.00;
+  n=0.00;
+  listFiles(dir); 
+  function listFiles(dir)
+    {
+    list = getFileList(dir);
+    for (i=0; i<list.length; i++)
+      {
+      if (endsWith(list[i], "/"))
+        listFiles(""+dir+list[i]);
+      else
+        if (endsWith(list[i], ".BMP"))
+          {
+            open(dir + "/" + list[i]);
+            rename("BilleteC.BMP");
+            run("Image Calculator...", "image1=BilleteC.BMP operation=Average image2=BilleteX.BMP create");
+            selectImage("BilleteC.BMP");
+            run("Close");
+            selectImage("Result of BilleteC.BMP");
+            run("8-bit");
+            selectImage("BilleteX.BMP");
+            run("8-bit");
+            run("ColorComparison ", "image #1=[Result of BilleteC.BMP] image #2=BilleteX.BMP title=Comparación analysis=Regression low=120 high=-120 set=[Image 2] histogram=15 lower=10");
+
+// Cálculo de error ///////////////////////////
+            selectWindow("Results");
+            x=getInfo();
+            e=lastIndexOf(x, "or");
+            p=lastIndexOf(x, " r");
+            a=substring(x,e+4,e+9);
+            b=parseFloat(a);
+            c=substring(x,p+4,p+9);
+            d=parseFloat(c);
+            n=((1-b/100)+d)/2;
+            selectImage("Comparación");
+            if (n>m)
+              {
+                m=n;
+                s=list[i];
+                v=indexOf(s, ".");
+                selectImage("Comparación");
+                saveAs("BMP", "C:\\TEMP\\Captura\\Comparación.bmp");
+                snapshot();
+              }
+            run("Close");
+            selectImage("Result of BilleteC.BMP");
+            run("Close");
+          }
+      }
+
+// Cierre de ventanas
+cleanUp();
+function cleanUp() {
+//    requires("1.30e");
+    if (isOpen("Results")) {
+         selectWindow("Results"); 
+         run("Close" );
+    {
+    
+    if (isOpen("Log")) {
+         selectWindow("Log");
+         run("Close" );
+    }
+    while (nImages()>0) {
+          selectImage(nImages());  
+          run("Close");
+    }
+}
+
+
+// Finalización del programa
+    w=substring(s,0,v-1);
+    open("C:\\TEMP\\Captura\\BilleteX.BMP");
+    open("C:\\TEMP\\Captura\\Comparación.bmp");
+    run("Convert Images to Stack");
+    rename(w);
+    doCommand('Start Animation');
+    print("El billete es de " + w);
+    run("Text...", "save=C:\\TEMP\\Captura\\Valor.txt");
+    wait(5000);
+    doCommand('Stop Animation');
+    doCommand('Quit');
+    }
