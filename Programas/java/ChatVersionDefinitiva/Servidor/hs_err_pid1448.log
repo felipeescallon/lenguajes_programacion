@@ -1,0 +1,110 @@
+
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : EXCEPTION_ACCESS_VIOLATION occurred at PC=0x77F436F7
+Function=RtlQueryInformationActivationContext+0x1D9
+Library=C:\WINDOWS\System32\ntdll.dll
+
+Current Java thread:
+	at sun.jdbc.odbc.JdbcOdbc.ReleaseStoredBytes(Native Method)
+	at sun.jdbc.odbc.JdbcOdbcResultSet.FreeCols(JdbcOdbcResultSet.java:1522)
+	- locked <02A73EE8> (a sun.jdbc.odbc.JdbcOdbcResultSet)
+	at sun.jdbc.odbc.JdbcOdbcResultSet.insertRow(JdbcOdbcResultSet.java:4020)
+	at ClaseInsertar.<init>(ClaseInsertar.java:59)
+	at BasedeDatos.InsertarDatos(BasedeDatos.java:81)
+	at EquipoServidor.Operaciones(EquipoServidor.java:40)
+	at ComunicacionServidor.TratarAcceso(ComunicacionServidor.java:94)
+	at Animovimiento.run(Animovimiento.java:24)
+	at java.lang.Thread.run(Thread.java:536)
+
+Dynamic libraries:
+0x00400000 - 0x00406000 	F:\j2sdk1.4.0\bin\java.exe
+0x77F40000 - 0x77FEF000 	C:\WINDOWS\System32\ntdll.dll
+0x77E40000 - 0x77F32000 	C:\WINDOWS\system32\kernel32.dll
+0x77DA0000 - 0x77E3C000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77C90000 - 0x77D05000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77BE0000 - 0x77C33000 	C:\WINDOWS\system32\MSVCRT.dll
+0x6D330000 - 0x6D442000 	F:\j2sdk1.4.0\jre\bin\client\jvm.dll
+0x77D10000 - 0x77D9D000 	C:\WINDOWS\system32\USER32.dll
+0x77C40000 - 0x77C80000 	C:\WINDOWS\system32\GDI32.dll
+0x76B00000 - 0x76B2D000 	C:\WINDOWS\System32\WINMM.dll
+0x5D160000 - 0x5D167000 	C:\WINDOWS\System32\serwvdrv.dll
+0x5B480000 - 0x5B487000 	C:\WINDOWS\System32\umdmxfrm.dll
+0x6D1D0000 - 0x6D1D7000 	F:\j2sdk1.4.0\jre\bin\hpi.dll
+0x6D300000 - 0x6D30D000 	F:\j2sdk1.4.0\jre\bin\verify.dll
+0x6D210000 - 0x6D228000 	F:\j2sdk1.4.0\jre\bin\java.dll
+0x6D320000 - 0x6D32D000 	F:\j2sdk1.4.0\jre\bin\zip.dll
+0x6D000000 - 0x6D0F6000 	F:\j2sdk1.4.0\jre\bin\awt.dll
+0x72F80000 - 0x72FA3000 	C:\WINDOWS\System32\WINSPOOL.DRV
+0x76340000 - 0x7635A000 	C:\WINDOWS\System32\IMM32.dll
+0x77180000 - 0x7729A000 	C:\WINDOWS\system32\ole32.dll
+0x5B150000 - 0x5B184000 	C:\WINDOWS\system32\uxtheme.dll
+0x6D180000 - 0x6D1D0000 	F:\j2sdk1.4.0\jre\bin\fontmanager.dll
+0x51000000 - 0x5104D000 	C:\WINDOWS\System32\DDRAW.dll
+0x73B40000 - 0x73B46000 	C:\WINDOWS\System32\DCIMAN32.dll
+0x69500000 - 0x695E4000 	C:\WINDOWS\System32\nbicdnt.dll
+0x746B0000 - 0x746FB000 	C:\WINDOWS\System32\MSCTF.dll
+0x6D2D0000 - 0x6D2DD000 	F:\j2sdk1.4.0\jre\bin\net.dll
+0x71A50000 - 0x71A59000 	C:\WINDOWS\System32\WSOCK32.dll
+0x71A30000 - 0x71A45000 	C:\WINDOWS\System32\WS2_32.dll
+0x71A20000 - 0x71A28000 	C:\WINDOWS\System32\WS2HELP.dll
+0x719D0000 - 0x71A0C000 	C:\WINDOWS\system32\mswsock.dll
+0x76EE0000 - 0x76F05000 	C:\WINDOWS\System32\DNSAPI.dll
+0x76D20000 - 0x76D35000 	C:\WINDOWS\System32\iphlpapi.dll
+0x76DA0000 - 0x76DC6000 	C:\WINDOWS\System32\netman.dll
+0x76D00000 - 0x76D16000 	C:\WINDOWS\System32\MPRAPI.dll
+0x76E00000 - 0x76E2F000 	C:\WINDOWS\System32\ACTIVEDS.dll
+0x76DD0000 - 0x76DF4000 	C:\WINDOWS\System32\adsldpc.dll
+0x71BC0000 - 0x71C0F000 	C:\WINDOWS\System32\NETAPI32.dll
+0x76F20000 - 0x76F4D000 	C:\WINDOWS\system32\WLDAP32.dll
+0x76AE0000 - 0x76AF5000 	C:\WINDOWS\System32\ATL.DLL
+0x770F0000 - 0x7717B000 	C:\WINDOWS\system32\OLEAUT32.dll
+0x76E40000 - 0x76E4D000 	C:\WINDOWS\System32\rtutils.dll
+0x71B90000 - 0x71BA1000 	C:\WINDOWS\System32\SAMLIB.dll
+0x76630000 - 0x76718000 	C:\WINDOWS\System32\SETUPAPI.dll
+0x76EA0000 - 0x76ED7000 	C:\WINDOWS\System32\RASAPI32.dll
+0x76E50000 - 0x76E61000 	C:\WINDOWS\System32\rasman.dll
+0x76E70000 - 0x76E9A000 	C:\WINDOWS\System32\TAPI32.dll
+0x772A0000 - 0x77303000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x773A0000 - 0x77B9E000 	C:\WINDOWS\system32\SHELL32.dll
+0x76F50000 - 0x76F60000 	C:\WINDOWS\System32\Secur32.dll
+0x76D60000 - 0x76D90000 	C:\WINDOWS\System32\WZCSvc.DLL
+0x76CF0000 - 0x76CF4000 	C:\WINDOWS\System32\WMI.dll
+0x76D40000 - 0x76D5A000 	C:\WINDOWS\System32\DHCPCSVC.DLL
+0x76270000 - 0x762FB000 	C:\WINDOWS\system32\CRYPT32.dll
+0x76250000 - 0x7625F000 	C:\WINDOWS\system32\MSASN1.dll
+0x76F10000 - 0x76F18000 	C:\WINDOWS\System32\WTSAPI32.dll
+0x76310000 - 0x7631F000 	C:\WINDOWS\System32\WINSTA.dll
+0x0B0B0000 - 0x0B194000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.0.0_x-ww_1382d70a\comctl32.dll
+0x77310000 - 0x7739B000 	C:\WINDOWS\system32\comctl32.dll
+0x71A10000 - 0x71A18000 	C:\WINDOWS\System32\wshtcpip.dll
+0x76F70000 - 0x76F77000 	C:\WINDOWS\System32\winrnr.dll
+0x76F80000 - 0x76F85000 	C:\WINDOWS\System32\rasadhlp.dll
+0x73260000 - 0x73265000 	C:\WINDOWS\System32\RICHED32.DLL
+0x74DC0000 - 0x74E2B000 	C:\WINDOWS\System32\RICHED20.dll
+0x6D250000 - 0x6D25A000 	F:\j2sdk1.4.0\jre\bin\JdbcOdbc.dll
+0x1F7B0000 - 0x1F7E1000 	C:\WINDOWS\System32\ODBC32.dll
+0x76360000 - 0x763A6000 	C:\WINDOWS\system32\comdlg32.dll
+0x1F850000 - 0x1F868000 	C:\WINDOWS\System32\odbcint.dll
+0x76F90000 - 0x77008000 	C:\WINDOWS\System32\CLBCATQ.DLL
+0x77010000 - 0x770E0000 	C:\WINDOWS\System32\COMRes.dll
+0x77BD0000 - 0x77BD7000 	C:\WINDOWS\system32\VERSION.dll
+0x1B7C0000 - 0x1B7FA000 	C:\WINDOWS\System32\msjtes40.dll
+0x17780000 - 0x1778B000 	C:\WINDOWS\System32\VBAJET32.DLL
+0x17BA0000 - 0x17C02000 	C:\WINDOWS\System32\expsrv.dll
+0x1F8F0000 - 0x1F932000 	C:\WINDOWS\System32\odbcjt32.dll
+0x1B000000 - 0x1B16F000 	C:\WINDOWS\System32\msjet40.dll
+0x1B5C0000 - 0x1B655000 	C:\WINDOWS\System32\mswstr10.dll
+0x1F8E0000 - 0x1F8F0000 	C:\WINDOWS\System32\odbcji32.dll
+0x1B2C0000 - 0x1B2CD000 	C:\WINDOWS\System32\msjter40.dll
+0x1B2D0000 - 0x1B2FD000 	C:\WINDOWS\System32\MSJINT40.DLL
+0x76C50000 - 0x76C72000 	C:\WINDOWS\system32\imagehlp.dll
+0x6DA20000 - 0x6DA9C000 	C:\WINDOWS\system32\DBGHELP.dll
+0x76BB0000 - 0x76BBB000 	C:\WINDOWS\System32\PSAPI.DLL
+
+Local Time = Thu Mar 31 18:54:13 2005
+Elapsed Time = 402
+#
+# The exception above was detected in native code outside the VM
+#
+# Java VM: Java HotSpot(TM) Client VM (1.4.0-b92 mixed mode)
+#
