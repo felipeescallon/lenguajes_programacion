@@ -1,0 +1,31 @@
+Últimos cambios:
+
+FreeDFD (1.1)
+  * Se aceptan comillas dobles - Sugerencia de Carlos Ballesteros.
+  * Cambiado mensaje del cierre de ciclos (Para y MQ) - Sugerencia de Carlos Ballesteros.
+FreeDFD (1.1-RC7)
+  * Texto de la barra de estado ahora está traducido.
+  * Barra de estado con fuentes más grandes.
+ -- Nelson Castillo <arhuaco@freaks-unidos.net>, Tue Apr 22 2008
+
+FreeDFD (1.1-RC6)
+  * Nuevas cadenas traducidas, se hizo posible la traducción de los diálogos
+    faltantes
+  * Traducción al Inglés (preliminar)
+ -- Nelson Castillo <arhuaco@freaks-unidos.net>, Mon Apr 21 2008
+
+FreeDFD (1.1-RC5)
+
+  * Traducción de la mayoría de los mensajes del programa al portugués.
+  * Traducción de archivos: LEAME.txt al portugués.
+ -- Charles Guimarães Cavalcante <mail@charles.art.br>, Thu Apr 17 2008
+
+  * Script para ayudar con la traducción : (procesa-menu.pl).
+  * Reemplazar cadenas en los fuentes por constantes (#defines).
+  * Nuevo ejemplo : calcular raíces cuadradas.
+ -- Nelson Castillo <arhuaco@freaks-unidos.net>, Thu Apr 17 2008
+
+FreeDFD (1.1-RC4)
+
+  * Liberación inicial con licencia GPL
+ -- Nelson Castillo <arhuaco@freaks-unidos.net>, Eduardo Daza <edazc@hotmail.com>, Fabián Cárdenas <f_cardenas@yahoo.com>
