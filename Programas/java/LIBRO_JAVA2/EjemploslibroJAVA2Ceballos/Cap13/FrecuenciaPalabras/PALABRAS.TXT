@@ -1,0 +1,3 @@
+Escribir una aplicación que permita calcular la frecuencia con la que aparecen las palabras en un fichero de texto. La forma de invocar al programa será:
+java Palabras fichero_de_texto
+donde fichero_de_texto es el nombre del fichero de texto del cual queremos obtener la stadística.
