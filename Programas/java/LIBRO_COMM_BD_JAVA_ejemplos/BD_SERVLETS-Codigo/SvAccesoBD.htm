@@ -1,0 +1,32 @@
+<html>
+  <body>
+   <table border=1>  
+    <tr>
+    <td>    
+    <form action="http://localhost:8080/examples/servlet/SvAccesoBD" method="get">
+      DNI: <input type="text" name="DNI"> <br>
+      Nombre: <input type="text" name="Nombre"> <br>
+      Apellido: <input type="text" name="Apellido"> <br>
+      Edad: <input type="text" name="Edad"> <br><br>
+      <input type="submit" value="Consultar" name="BotonConsultar">
+      <input type="submit" value="Insertar" name="BotonInsertar">
+      <input type="submit" value="Modificar" name="BotonModificar">
+      <input type="submit" value="Borrar" name="BotonBorrar">
+      <input type="submit" value="Listar" name="BotonListar"> <br>
+      <center>      
+      <input type="submit" value="   |<   " name="BotonPrimero">
+      <input type="submit" value="   --   " name="BotonMenosCinco">
+      <input type="submit" value="   -   " name="BotonAnterior">
+      <input type="submit" value="   +   " name="BotonSiguiente">
+      <input type="submit" value="   ++   " name="BotonMasCinco">
+      <input type="submit" value="   >|   " name="BotonUltimo"> 
+      </center>
+    </td>
+    <td>
+      <textarea name="AreaDeListado" rows="10" cols="35"></textarea>
+    </td>
+    </tr> 
+    </form>
+   </table>   
+  </body>
+</html>
