@@ -1,0 +1,1 @@
+los *.class son creados para todas las clases que contenga un programa!!!
