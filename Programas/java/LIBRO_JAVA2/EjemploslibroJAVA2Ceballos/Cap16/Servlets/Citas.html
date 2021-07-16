@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Concertar una cita</title>
+  </head>
+  <body>
+    <h1 align="center">CONCERTAR UNA CITA</h1>
+    <form action=http:\\localhost:8080/servlet/Citas  method=POST>
+      <BR>Alumno:<BR><input type=text name=alumno size=60>
+      <BR>Con el profesor:<BR><input type=text name=profesor size=60>
+      <BR>Día:
+      <table width="90%" border="0">
+         <SELECT name=día>
+           <OPTION>lunes<OPTION>martes<OPTION>miércoles
+           <OPTION>jueves<OPTION>viernes
+         </SELECT>
+      </table>
+      <BR>Hora:&nbsp;&nbsp;&nbsp;
+      10<input type=radio name=hora value=10 checked>
+      &nbsp;&nbsp;&nbsp;12<input type=radio name=hora value=12>
+      &nbsp;&nbsp;&nbsp;16<input type=radio name=hora value=16>
+      &nbsp;&nbsp;&nbsp;18<input type=radio name=hora value=18>
+      <BR><BR><input type=submit value="Enviar datos">
+      &nbsp;&nbsp;<input type=reset>
+    </form>
+  </body>
+</html>

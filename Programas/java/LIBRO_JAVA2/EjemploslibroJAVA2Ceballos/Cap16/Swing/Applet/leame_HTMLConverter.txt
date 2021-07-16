@@ -1,0 +1,8 @@
+Una vez instalado el convertidor (HTMLConverter), para realizar la conversión del fichero HTML lo más sencillo es:
+
+1. path= camino del interpreter java.exe
+2. cd    directorio de HTMLConverter.class
+3. Copiar en este directorio el fichero HTML a convertir
+4. java HTMLConverter nombre_fichero.html
+5. Copiar el fichero convertido en su destino
+
