@@ -1,0 +1,53 @@
+//////////////////////////////////////////////////////////////////////////////////////////
+//																						//
+//	Creado por:																			//
+//	Gustavo Andrés Uribe Gomez															//
+//	Luis Miguel Collazos V.																//
+//	Cesar G. Chaves A.																	//
+//	Flavio Andres Martinez Erazo														//
+//	Andrés Felipe Escallon P.															//
+//	Jose Wilmer Castillo Obando															//
+//	Fabian Leonidas Mosquera Palta														//
+//	Jorege David Moncayo Bravo															//
+//																						//
+//--------------------------------------------------------------------------------------//
+//																						//
+//	errores.cpp:																		//
+//	Manejo de errores que se pueden dar en la aplicacion			//
+//																						//
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#include "errores.h"
+
+void tratarExcepcion(ERRORES errores) 
+{
+	switch(errores)
+		{
+			case NOCONECT:
+						{
+							cout<<"No se pudo establecer la conexion"<<endl;
+							break;
+						}
+			case NOCLOSEESCUCHA:
+						{
+							cout<<"ERROR al cerrar el socket de escucha"<<endl;
+							break;
+						}
+			case NOCLOSEIO:
+						{
+							cout<<"ERROR al cerrar el socket de entrada y salida"<<endl;
+							break;
+						}
+			case SOCKETVACIO:
+						{
+							//cout<<"El socket esta vacio "<<endl;
+							break;
+						}
+			case NOHIJO:
+						{
+							cout<<"ERROR no se pudo crear el proceso hijo "<<endl;
+							break;
+						}
+		}
+}
+

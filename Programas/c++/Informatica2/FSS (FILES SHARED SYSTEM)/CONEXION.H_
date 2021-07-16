@@ -1,0 +1,97 @@
+//////////////////////////////////////////////////////////////////////////////////////////
+//																						//
+//	Creado por:																			//
+//	Gustavo Andrés Uribe Gomez															//
+//	Luis Miguel Collazos V.																//
+//	Cesar G. Chaves A.																	//
+//	Flavio Andres Martinez Erazo														//
+//	Andrés Felipe Escallón Portilla															//
+//	Jose Wilmer Castillo Obando															//
+//	Fabian Leonidas Mosquera Palta														//
+//	Jorege David Moncayo Bravo															//
+//																						//
+//--------------------------------------------------------------------------------------//
+//																						//
+//	conexion.h:																			//
+//	Contiene las clases Conexion, ConexionServidor, Cliente y Servidor					//
+//																						//
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#ifndef CABECERA_CONEXION
+#define	CABECERA_CONEXION
+
+#define PUERTO 7000	//Puerto por defecto
+#define rol	enum rol //define rol como la variable tipo enum rol
+
+#include <sys/types.h> //Contiene los tipos de archivos necesarios para el manejo de socket
+#include <sys/socket.h>//para el uso de sockets
+#include <arpa/inet.h>
+#include <string.h> //Contiene las funciones para el manejo de cadenas
+#include <netinet/in.h>//Permite el manejo de las direcciones de la familia AF_INET
+#include <unistd.h>//fork()
+#include "errores.h"
+#include <fstream.h> //Para archivos
+#include "archivos.h" //Para buscar cadenas en archivos
+#include <netdb.h>  //gethostent
+
+rol{CLIENTESERVIDOR,CLIENTE};//CLIENTESERVIDOR es el cliente que esta a la espera de una conexion
+
+//--------------------------------------------------------------------------------------//
+// Clase conexion																		//
+//--------------------------------------------------------------------------------------//
+
+class Conexion
+{
+protected:	
+	int socketIO,socketEscucha;//El socket nos permite establecer el intercambio de inforacion
+				//El socket escucha permite establecer un socket solo de escucha
+	struct sockaddr_in info;//info contiene la direccion IP, el puerto y la familia de conexion (AF_INET)
+	char BUF[1024];
+	int long_addr;
+	rol ROL;
+	int estado;//-1 la conexion esta dañada
+public:
+	Conexion(rol,char*);
+	~Conexion();
+	int conectar();
+	void enviar(char*); //Esta funcion envia un mensaje al servidor para que lo incluya en la lista
+	char* recibir();
+	int modo();
+	int verEstado();
+};
+
+
+//--------------------------------------------------------------------------------------//
+//	Clase Servidor																		//		
+//--------------------------------------------------------------------------------------//
+
+class Servidor
+{
+	char listaDeNodos[40];
+	char IP[13];
+	rol ROL;
+public:
+	Servidor();
+	~Servidor();
+	void insertarNodo(char*,Conexion*);
+	void generarIP();
+	void actualizarRed(Conexion*);
+	int modo();
+	char* direccion();
+	void iniciarROL(rol);
+};
+
+//--------------------------------------------------------------------------------------//
+//	Clase Cliente																		//
+//--------------------------------------------------------------------------------------//
+
+class Cliente
+{
+public:
+	Cliente();
+	~Cliente();
+};
+
+
+#endif
+

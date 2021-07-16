@@ -1,0 +1,293 @@
+//////////////////////////////////////////////////////////////////////////////////////////
+//																						//
+//	Creado por:																			//
+//	Gustavo Andrés Uribe Gomez															//
+//	Luis Miguel Collazos V.																//
+//	Cesar G. Chavez A.																	//
+//	Flavio Andres Martinez Erazo														//
+//	Andrés Felipe Escallon P.															//
+//	Jose Wilmer Castillo Obando															//
+//	Fabian Leonidas Mosquera Palta														//
+//	Jorege David Moncayo Bravo															//
+//																						//
+//--------------------------------------------------------------------------------------//
+//																						//
+//	conexion.cpp:																		//
+//	Implementacion de las clases Conexion, ConexionServidor, Servidor y Cliente			//
+//																						//
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#include "conexion.h" // Cabecera que contiene la especificacion de las clases  que aqui 
+			// se implementaran
+
+
+//--------------------------------------------------------------------------------------//
+//	Constructor de la clase conexion													//
+//	Parametros:																			//
+//	rol R -> Recibe si se esta creando el objeto desde el Cliente o desde el Cliente	//
+//			 en disposicion de escucha.													//
+//	char * IP -> Recibe la dieccion IP del socket.										//
+//--------------------------------------------------------------------------------------//
+
+Conexion::Conexion(rol R, char* IP)
+{
+	ROL=R;
+	estado=1;
+	info.sin_family= AF_INET;
+	info.sin_port=htons(PUERTO);// convierte el numero de puerto a una expresion en formato
+								// TCP/IP (short)
+	info.sin_addr.s_addr=inet_addr(IP); // convierte la direccion IP a una expresion en formato
+									// TCP/IP (long)
+	long_addr=sizeof(info);
+	if(ROL==CLIENTESERVIDOR)
+	{
+		socketEscucha=socket(AF_INET,SOCK_STREAM,0); //Para el CLIENTESERVIDOR
+		bind(socketEscucha,(structsockaddr*)&info,sizeof(info));//asocia una ip al socket         }
+	else
+	{
+		socketIO=socket(AF_INET,SOCK_STREAM,0);
+	}
+}
+
+//--------------------------------------------------------------------------------------//
+// Destructor de la clase conexion														//
+//--------------------------------------------------------------------------------------//
+
+Conexion::~Conexion()
+{
+	ERRORES err;
+	if(ROL==CLIENTESERVIDOR)
+	{
+		err=NOCLOSEESCUCHA;
+		if(!shutdown(socketEscucha,2)) tratarExcepcion(err);
+	}
+	if((estado!=-1)&&(ROL==CLIENTE)) while(recibir()!=0)
+	if(socketIO!=-1)
+	{
+		err=NOCLOSEIO;
+		if(!shutdown(socketIO,2)) tratarExcepcion(err);
+	}
+}
+
+//--------------------------------------------------------------------------------------//
+//	Funcion conectar()																	//
+//	Retornos:																			//
+//	-1 -> Si no se pudo estabelcer la conexion											//
+//	1 -> Si se produjo una conexion														//
+//	socketIO -> Identificador del socket para la entrada y salida						//
+//--------------------------------------------------------------------------------------//
+
+int Conexion::conectar()
+{
+	ERRORES err;
+	err=NOCONECT;
+	if(ROL==CLIENTE)
+	{
+		estado=connect(socketIO,(struct sockaddr *)&info,sizeof(info));
+		if(estado==-1) tratarExcepcion(err);
+		return(estado);
+	}
+	else
+	{
+		listen(socketEscucha,5);//cola de 5 msgs
+		socketIO=accept(socketEscucha,(struct sockaddr *)&info,(socklen_t *)&long_addr);
+		return(socketIO);
+	}
+}
+
+//--------------------------------------------------------------------------------------//
+//	Funcion enviar()																	//
+//	Parametros:																			//
+//	char* Datos -> Contiene los datos para enviar										//
+//--------------------------------------------------------------------------------------//
+
+void Conexion::enviar(char* Datos)
+{
+	send(socketIO,Datos,strlen(Datos)+1,0);//hay que pasar el largo +1:'\0'
+}
+
+//--------------------------------------------------------------------------------------//
+//	Funcion recibir()																	//
+//	Retornos:																			//
+//	BUF -> Devuelve el mensaje leido del socket											//
+//	0 -> EL ssocket esta vacio															//
+//------------------------------------------------------------------------------------------//
+
+char* Conexion::recibir()
+{
+	ERRORES err;
+	err=SOCKETVACIO;
+	if(recv(socketIO,BUF,1024,0)>0)
+		return BUF;
+	tratarExcepcion(err);
+	return 0;
+}
+
+//----------------------------------------------------------------------------------------------//
+//	Funcion verEstado()																			//
+//	Retornos:																				//
+//	-1 -> Conexion dañada																			//
+//	Diferente a -1 -> Conexion activa																		//
+//----------------------------------------------------------------------------------------------//
+
+int Conexion::verEstado()
+{
+	return(estado);
+}
+
+
+//----------------------------------------------------------------------------------------------//
+//	Funcion modo()																			//
+//	Retornos:																				//
+//	1 -> CLIENTE																			//
+//	0 -> CLIETESERVIDOR																		//
+//----------------------------------------------------------------------------------------------//
+
+int Conexion::modo()
+{
+	if(ROL==CLIENTESERVIDOR)
+		return(0);
+	return(1);//else
+}
+
+//----------------------------------------------------------------------------------------------//
+//	Constructor de la clase servidor														//
+//	C -> Conexion Establecida con el servidor 												//
+//----------------------------------------------------------------------------------------------//
+
+Servidor::Servidor()
+{
+	struct hostent* host;
+	struct in_addr IPServidor;
+	host=gethostent();
+	IPServidor.s_addr= *(long *)host->h_addr;
+	endhostent();
+	strcpy(listaDeNodos,"nodosred.fss");
+}
+
+//------------------------------------------------------------------------------------------//
+// Destructor de la clase servidor															// 
+//------------------------------------------------------------------------------------------//
+
+Servidor::~Servidor()
+{
+	ofstream archivo(listaDeNodos);
+	archivo.write(" \n",3);
+	archivo.close();
+}
+
+//------------------------------------------------------------------------------------------//
+// Funcion insertarNodo()																	//
+// Parametros:																				//
+// IP -> Direccion IP del nuevo nodo														//
+// C -> Puntero a la conexion que se mantiene con el servidor								//
+//------------------------------------------------------------------------------------------//
+
+void Servidor::insertarNodo(char* IP,Conexion *C)
+{
+  C->conectar();
+  if(C->verEstado()!= -1)
+  	if(ROL==CLIENTE)
+  	{ 	
+		C->enviar("SOYNUEVO");
+		C->enviar(IP);
+  	}
+  	else
+  	{
+ 		char *mensaje= new char[100];
+		ofstream nodosred("nodosred.fss",ios::app);
+ 		mensaje=C->recibir();	
+		if(mensaje!=0)
+			if(!strcmp(mensaje,"SOYNUEVO"))      	
+			{
+				/*mensaje=C->recibir();
+				cout<<mensaje;
+				nodosred.write(mensaje,strlen(mensaje));
+				nodosred.write(" \n",3);*/
+				nodosred.close();
+			}
+	 }
+}
+
+
+//----------------------------------------------------------------------------------------------//
+// Funcion generarIP()																			//		 	
+// 																						//
+// Guarda en el atributo IP de la clase Servidor, la IP del servidor que se encuentre en el		//
+// archivo opciones.fss																			//
+//----------------------------------------------------------------------------------------------//
+
+void Servidor::generarIP()
+{
+	char c;
+	int cont;
+	cont=buscar("opciones.fss","SERVIDOR:");
+	ifstream fichero("opciones.fss");
+	while(cont!=0)
+	{
+	 fichero.get(c);
+	 cont--;
+	}
+	fichero.get(c);
+	fichero.get(IP,13);
+	fichero.close();
+}
+
+//----------------------------------------------------------------------------------------------//
+//	Funcion actualizarRed()																	//
+//	Actualiza la lista de nodos																//
+//----------------------------------------------------------------------------------------------//
+
+void Servidor::actualizarRed(Conexion* C)
+{
+
+	struct hostent* host;
+	struct in_addr IPCliente;
+	host=gethostent();
+	IPCliente.s_addr= *(long *)host->h_addr;
+	endhostent();
+	insertarNodo(inet_ntoa(IPCliente),C);
+	//Leer lista de Nodos Conectados && MIGUEL y JORGE &&&
+}
+
+
+
+//----------------------------------------------------------------------------------------------//
+//	Funcion modo()																			//
+//	Retornos:																				//
+//	1 -> CLIENTE																			//
+//	0 -> CLIETESERVIDOR																		//
+//----------------------------------------------------------------------------------------------//
+
+int Servidor::modo()
+{
+	if(ROL==CLIENTESERVIDOR)
+		return(0);
+	return(1);
+}
+
+//----------------------------------------------------------------------------------------------//
+//	Funcion direccion()																		//
+//	Retornos:																				//
+//	IP -> La Ip del computador escogido como servidor										//
+//----------------------------------------------------------------------------------------------//
+
+char*  Servidor::direccion()
+{
+	return(IP);
+}
+
+//----------------------------------------------------------------------------------------------//
+//	Funcion iniciarROL()									//
+//	Parametros:										//
+//	R -> Rol que va a tomar el la clase servidor en esta maquina				//
+//----------------------------------------------------------------------------------------------//
+
+void Servidor::iniciarROL(rol R)
+{
+	ROL=R;
+}
+
+
+
+ 		
