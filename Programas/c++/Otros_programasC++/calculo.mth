@@ -1,0 +1,12 @@
+;Int(User,x)
+INT(x*x,x,0,2)
+
+;Dif(User,x)
+DIF(2*x+1,x)
+
+;Simp(#2)
+2
+
+;Simp(#1)
+8/3
+

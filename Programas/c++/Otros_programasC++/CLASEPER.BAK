@@ -1,0 +1,78 @@
+/*creado por Felipe Escallon P_julio/2002*/
+
+#include<iostream.h>//para orientacion a objetos
+
+#include<conio.h>
+
+//implementacion de la clase
+class Persona{
+
+  public:
+
+  char nombre[20];
+  char identificacion[15];
+  int edad;
+
+  //funciones
+  public:
+  Persona(); //creadora
+  ~Persona(); //destructora
+
+  public:
+  void recibir_datos();
+
+  };
+
+ /*implementacion funciones*/
+ Persona::Persona()
+ {
+  cout<<"object created..."<<endl;
+  edad=0;
+ }
+
+
+ Persona::~Persona()
+ {
+ cout<<"object destroyed!!!"<<endl;
+ }
+
+
+ void Persona::recibir_datos()
+ {
+
+    cout<<"entre nombre:"<<endl;
+    cin>>nombre;
+    cout<<"entre identificacion:"<<endl;
+    cin>>identificacion;
+    cout<<"entre edad:"<<endl;
+    cin>>edad;
+
+ }
+
+
+
+
+//principal
+  int main()
+  {
+   Persona p;//p es la instanciacion de la clase Persona (es el objeto)
+
+   char nombre[20];
+   char identificacion[15];
+   int edad;
+   clrscr();
+
+   p.recibir_datos();//le enviamos el mensaje al objeto
+
+   /*Imprimo los datos*/
+   cout<<"el nombre es:"<<p.nombre<<endl;
+   cout<<"su identificacion es:"<<p.identificacion<<endl;
+   cout<<"la edad es:"<<p.edad;
+
+
+  getch();
+
+  return 0;
+  }
+
+

@@ -1,0 +1,34 @@
+# Project: CALCULADORA
+# Makefile created by Dev-C++ 4.9.6.0
+
+CC   = g++.exe
+WINDRES = windres.exe
+RES  = Proy_private.res
+OBJ  = main.o funciones.o calculadora.o $(RES)
+LIBS =  -L"C:/DEV-CPP/lib" 
+INCS =  -I"C:/DEV-CPP/include"  -I"C:/DEV-CPP/include/g++-3"  -I"C:/DEV-CPP/include" 
+BIN  = Proy.exe
+CFLAGS = $(INCS)  -s
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Proy.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(OBJ) -o "Proy.exe" $(LIBS) $(CFLAGS)
+
+main.o: main.cpp
+	$(CC) -c main.cpp -o main.o $(CFLAGS)
+
+funciones.o: funciones.cpp
+	$(CC) -c funciones.cpp -o funciones.o $(CFLAGS)
+
+calculadora.o: calculadora.cpp
+	$(CC) -c calculadora.cpp -o calculadora.o $(CFLAGS)
+
+Proy_private.res: 
+	$(WINDRES) -i PROY_P~1.RC -I rc -o Proy_private.res -O coff 
