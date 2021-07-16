@@ -1,0 +1,49 @@
+
+
+
+
+                TEOREMA DE LA LINEALIDAD Y SUPERPOSICION
+
+
+
+El Teorema de la Linealidad establece que, " La respuesta en cualquier
+punto de una red lineal (o sea, el efecto de una fuente) es
+directamente proporcional al estímulo que lo produce (a su valor). "
+
+El Teorema de la Superposici¢n es una extensión de la Linealidad y
+establece que.:" En una red lineal, la respuesta en una rama del
+circuito es directamente proporcional a la suma algebraica de los
+efectos de cada una de las fuentes que actúan en el circuito,
+considerando cada uno de los efectos separadamente."
+
+Cuando se analiza una red mediante este Teorema se deben de considerar
+los efectos de cada fuente independientemente, es decir, que las
+fuentes restantes se anulan, haciendo las fuentes de voltaje
+equivalentes a un corto circuito y las fuentes de corriente
+equivalentes a circuito abierto; y finalmente se encuentra la suma
+algebraica de los efectos independientes para determinar la inc¢gnita
+de la red.
+Ejemplo:
+@
+Mediante el principio de superposici¢n calcular en el siguiente
+circuito el voltaje e:
+Para determinar el voltaje e se deben considerar los efectos de cada
+fuente de manera independiente. Inicialmente se considera la fuente de
+10 V, para lo cual la fuente de corriente se hace igual a cero
+(circuito abierto).
+
+Entonces, mediante la regla del divisor de tensi¢n se determina el
+voltaje e1= 10(1)/(1+1)=5V
+Luego se consideran los efectos de la fuente de 10 A, haciendo la
+fuente de voltaje igual a cero (corto circuito).
+El voltaje e2 corresponde a la ca¡da de potencial en la resistencia
+de 1W.
+
+Se puede determinar la corriente que circula por esta rama y aplicar la
+ley de ohm,  o también se puede hallar el voltaje en la resistencia
+resultante de 1W êê 1W, as¡:
+e2=10*(1/2)=5V
+
+Entonces, como el resultado total es la suma algebraica de los efectos
+independientes de cada fuente,
+e = e1 + e2 = 10 V

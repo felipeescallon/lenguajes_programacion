@@ -1,0 +1,113 @@
+FENOMENO DE LA ELECTRICIDAD
+                                                                     
+La teor¡a at¢mica permite establecer la existencia de clases de carga
+el‚ctrica, designadas arbitrariamente como "Carga Positiva" (+) o
+"Carga Negativa" (-). Los protones tienen carga positiva y los
+electrones tienen carga negativa. Se encuentra que los protones y
+electrones ejercen fuerzas mutuas; fuerzas que se explican adjudicando
+a los protones y electrones una propiedad llamada "Electricidad" o
+carga el‚ctrica, exactamente igual a las fuerzas gravitatorias, las
+cuales a su vez se explican adjudicando a la materia la propiedad de
+tener masa gravitatoria.
+                                                                     
+Entre part¡culas el‚ctricamente cargadas se pueden presentar fuerzas
+que pueden ser atractivas o repulsivas. As¡, los protones ejercen
+fuerzas de repulsi¢n sobre los protones, los electrones ejercen
+fuerzas de repulsi¢n sobre los electrones, mientras que los electrones
+y los protones se atraen mutuamente, conduciendo al siguiente
+enunciado: "Cargas de la misma clase se repelen; cargas de clase
+opuesta se atraen".
+                                                                     
+Un  tomo normal contiene igual n£mero de protones y electrones, es
+decir que no presenta carga de exceso. Cuando un electr¢n sale de su
+¢rbita en el  tomo, comienza a provocar fen¢menos en el material por
+donde deambula o corre. Este fen¢meno se llama electricidad, nombre
+que se deriva de su agente productor.
+                                                                     
+Hay muchos medios por los cuales puede alterarse el equilibrio entre
+las cargas positivas y negativas. Uno de ellos es el fen¢meno de la
+electrizaci¢n por frotamiento o contacto, para lo cual se requiere un
+contacto m¡nimo entre las superficies.
+                                                                     
+Se puede concluir que los electrones del £ltimo nivel de energ¡a o
+electrones de valencia tienen libertad plena para moverse de un  tomo
+a otro. Esta caracter¡stica de los electrones de valencia es la
+responsable del proceso de conducci¢n de la electricidad. Desde el
+punto de vista el‚ctrico, los s¢lidos se clasifican de la siguiente
+forma:
+                                                                     
+* Aisladores o No Conductores: no permiten el paso de cargas a trav‚s
+  de ellos. Como por ejemplo el algod¢n, el caucho, etc.
+
+* Semiconductores: Tienen exactamente cuatro (4) electrones en su
+  £ltimo nivel de energ¡a, y a este grupo pertenecen los elementos del
+  Grupo IV. Ejemplos: Silicio y Germanio.
+                                                                     
+* Conductores: permiten el paso de cargas a trav‚s de ellos. Ejemplos:
+  Oro, Plata, etc.
+
+
+LEY DE COULOMB
+
+                                                                     
+Charles Agust¡n Coulomb (1736-1806) realiz¢ la primera investigaci¢n
+cuantitativa de la ley que rige las fuerzas que se ejercen entre los
+cuerpos cargados. El an lisis lo realiz¢ mediante el uso de una
+balanza de torsi¢n, demostrando que la fuerza de atracci¢n o repulsi¢n
+entre dos cuerpos es inversamente proporcional al cuadrado de la
+distancia.
+                                                                     
+Posteriormente se demostr¢ que, a una separaci¢n dada, la fuerza entre
+dos cuerpos cargados es proporcional al producto de sus cargas
+individuales, q1 y q2 de lo cual obtenemos:
+
+                        F EQUIVALENTE CON  k*((q1*q2)/d)
+ 
+Donde:
+F  (Newtons) es la fuerza entre las dos part¡culas  
+q1 (Coulombs) Es la carga neta de la part¡cula A,  
+q2 (Coulombs) Es la carga neta de la part¡cula B,  
+d  (metros) es la distancia entre las part¡culas,                    
+k  es una constante de proporcionalidad la cual es igual a  9.0 * 109
+   Nm2/C2.
+
+La direcci¢n de la fuerza es sobre la l¡nea que va de una part¡cula a
+la otra.
+                                                                     
+
+Lo anteriormente dicho se denomina Ley de Coulomb y se puede enunciar
+as¡:
+
+"La fuerza de atracci¢n o repulsi¢n ejercida sobre un cuerpo cargado
+por otro, es directamente proporcional al producto de sus cargas e
+inversamente proporcional al cuadrado de la distancia que los separa."
+                                                                     
+Esta ley se cumple cualquiera que sea el signo de las cargas
+involucradas q1 y q2. Si las cargas son del mismo signo, la fuerza es
+de repulsi¢n; y si son de signo opuesto, la fuerza es de atracci¢n.
+Como en el n£cleo existen muchas cargas positivas (protones), existe
+gran fuerza de atracci¢n para los electrones en ¢rbitas. Analizando la
+ecuaci¢n se nota que al aumentar la distancia entre el n£cleo y los
+electrones orbitales, la fuerza de atracci¢n disminuye, hasta que se 
+hace m¡nima en el subnivel exterior (donde hay mayor distancia).
+Debido a las fuerzas m s d‚biles de atracci¢n, se necesitar  menor
+energ¡a para retirar un electr¢n de un subnivel exterior que de otro
+interior.
+                                                           
+Entonces, los electrones se retiran con mayor facilidad de los  tomos
+que tienen niveles exteriores, est n incompletos y poseen pocos
+electrones.
+                                                                     
+Ejemplo. 
+
+Un objeto X tiene una carga positiva de 5.0 * 10^-6 C. El objeto Y,
+con una carga positiva de 2.5 * 10^-6 C. La separación entre objetos
+es de 0.03 m. A. Calcular la fuerza sobre X. (Soluci¢n/ 1.3 * 10^2 N)
+
+Ejemplo 2
+
+Un objeto A, con carga  +8.25 * 10-6 C , se encuentra cerca de otras
+dos part¡culas cargadas. El objeto B, -3.5 * 10-6 C, se encuentra a
+0.030m a la derecha de A. El objeto C, +2.50 * 10-6 C, se encuentra a
+0.050 m por debajo de A. Cual es la fuerza neta y el  ngulo sobre A?
+(Soluci¢n/ 3*102 N 14Grados).

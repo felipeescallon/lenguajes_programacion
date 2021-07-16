@@ -1,0 +1,178 @@
+METODO DE CORRIENTES DE MALLA
+
+El m‚todo consiste en aplicar la Ley de Voltajes de Kirchhoff,
+la cual establece que la suma de los voltajes en un camino
+cerrado (malla) es cero: ( V = 0 )
+
+Los pasos a seguir para este m‚todo son los siguientes:
+
+1.  Asignar una corriente de malla a cada trayectoria cerrada
+    independiente en el sentido de las manecillas del reloj.
+2.  El n£mero de ecuaciones es igual al n£mero de trayectorias
+    cerradas independientes.
+    La primera columna de cada ecuaci¢n es equivalente a la
+    suma de los valores de las resistencias por las que pasa
+    la corriente de malla de inter‚s, multiplicada por la
+    corriente de malla.
+3.  Se deben considerar los t‚rminos mutuos, ‚stos se restan
+    siempre de la primera columna.Es posible tener m s de un
+    t‚rmino mutuo si la corriente de malla que interesa tiene
+    un elemento en com£n con m s de otra corriente de malla.
+4.  La columna a la derecha del signo igual es la suma
+    algebraica de las fuentes de voltaje por las que pasa la
+    corriente de malla que interesa.Se asigna un signo positivo
+    (+) si la corriente de malla pasa por la fuente de (-) a (+)
+    y se asigna un signo negativo (-) si la corriente de
+    malla pasa por la fuente de (+) a (-). (aplicaci¢n LVK)
+5.  Se resuelven la ecuaciones simult neas. Un signo (-) en el
+    resultado de una corriente indica que la corriente real fluye
+    en direcci¢n opuesta a la supuesta.
+
+    Una vez conocidas las corrientes de malla se pueden calcular
+    las corrientes en las diferentes ramas y tambi‚n es posible
+    calcular cualquier voltaje o potencia de inter‚s.
+6.  Se verifica el cumplimiento de la Ley de Voltajes de Kirchhoff
+    en las diferentes trayectorias.
+    La LCK se cumple autom ticamente.
+
+En resumen se puede plantear la siguiente regla para encontrar la
+ecuaci¢n de malla aplicando en m‚todo de la corriente de malla:
+
+Sumar las resistencias de la malla y multiplicar su valor por la
+corriente de la malla y restar de este valor los productos de las
+resistencias comunes con otras mallas por las corrientes de las
+mallas adyacentes e igualar el resultado a la suma algebraica de
+las fuentes de voltaje que se presenten en la malla.
+
+
+
+
+Caso de Malla Falsa
+
+Cuando en una rama se encuentra una fuente de corriente esta
+genera la llamada malla falsa.
+En este caso se deben establecer ecuaciones de restricci¢n
+con respecto a la corriente que circula en una malla o la fuente
+de corriente que es compartida por dos mallas que genera la malla
+falsa. Para determinar el numero de mallas verdaderas, las fuentes
+de corriente y voltaje se hacen cero (fuente de voltaje = 0 corto
+circuito; fuente de corriente = 0 circuito abierto).
+
+
+
+
+
+Inicialmente se plantea la ecuaci¢n de restricci¢n y
+posteriormente se plantean las ecuaciones de malla, para lo cual
+se elimina mentalmente la fuente de corriente y se expresan los
+voltajes de la malla falsa en t‚rminos de las corrientes definidas
+originalmente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ejemplo :
+
+1. Analizar por el m‚todo de corrientes de malla el siguiente
+   circuito:
+
+
+
+
+ 
+
+
+
+Paso 1:	Consiste en asignar una corriente de malla a cada
+trayectoria cerrada, en el sentido de la manecillas del reloj. En
+el circuito se tienen tres corrientes que son id1, i1, i2.
+
+Pasos 2 a 4:	Se deben plantear tres ecuaciones:
+
+Note que la malla donde circula la corriente id1 es una malla
+falsa por lo que se plantea la siguiente ecuaci¢n de restricci¢n:
+
+
+
+Malla Falsa:
+id1 = 2 (1) Ecuaci¢n de restricci¢n
+
+Las ecuaciones para las otras mallas son:
+
+Malla 1:
+9 i1 - 5 id1 - 2 i2 = 0	 (2)
+
+Malla 2:
+8 i2  - 2 i1  = - 10	 (3)
+
+Reemplazando el valor de id1  en la ecuaci¢n (2) obtenida para la
+malla 1, se tiene que:
+
+9 i1 - 5 (2) - 2 i2 = 0
+9 i1 - 10 - 2 i2 = 0
+9 i1 - 2 i2 = 10		(2a)
+
+Paso 5:	El sistema de ecuaciones obtenido es:
+
+ 9 i1 - 2 i2 = 10		 (2a)
+- 2 i1  + 8 i2 = - 10             (3)
+
+Despejando las inc¢gnitas se obtiene:
+
+i1=15/17 A
+i2=-35/34 A
+
+
+
+
+Paso 6: Se aplica ley de voltajes de Kirchhoff en las mallas para
+verificar:
+
+Malla 2:
+9 i1 - 2 i2 = 10
+9 (0.822) - 2 (-1.029) = 10
+
+Malla 3:
+- 2 i1 + 8 i2 = - 10
+- 2 (0.822) + 8 (-1.029) = - 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

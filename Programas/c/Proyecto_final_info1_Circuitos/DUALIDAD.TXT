@@ -1,0 +1,127 @@
+PRINCIPIO DE DUALIDAD
+
+En esta secci¢n se explora la similitud entre las ecuaciones de
+corriente de malla y las ecuaciones de voltaje de nodo de un circuito.
+Esta similitud se basa en un importante principio denominado Dualidad.
+
+Se dice que dos circuitos son duales, cuando las ecuaciones de malla
+para uno son num‚ricamente iguales a las ecuaciones de voltajes de
+nodo del otro.
+
+La dualidad tiene la naturaleza de una transformaci¢n del circuito
+original al circuito dual. Esta transformaci¢n se realiza en los
+siguientes pasos:
+
+1.  Se escriben las ecuaciones de malla para el circuito original.
+2.  Se cambian las variables de corriente de malla por variables de
+voltaje de nodo.
+3.  Las ecuaciones de nodo se interpretan como ecuaciones del
+circuito dual.
+Este tercer paso es en realidad una s¡ntesis de circuito y es
+necesario mostrar que siempre es posible hallar el dual de un
+circuito. Los dos primeros pasos son directos.
+
+Primero que todo se consideran las resistencias mutuas entre dos
+mallas en el circuito original. En las ecuaciones transformadas
+estos t‚rminos representan conductancias mutuas entre los
+correspondientes pares de voltajes de nodo y con valores en mhos
+num‚ricamente igual a los de ohmios de las resistencias.
+
+Cada resistencia que aparece solamente en t‚rminos de resistencia
+propia en las ecuaciones de malla se transforma en una conductancia
+que aparece s¢lo en t‚rminos de conductancia propia en las ecuaciones
+duales. Un elemento que cumpla con lo anterior se puede considerar
+como una conductancia a tierra en el circuito dual.
+
+Las fuentes de voltaje en las ecuaciones de corrientes de malla se
+transforman en fuentes de corriente en las ecuaciones de voltaje de
+nodo con valores num‚ricamente iguales.
+
+Las fuentes de corriente en las ecuaciones de corrientes de malla que
+producen mallas falsas se transforman en ecuaciones de nodo falso
+representando fuentes de voltaje num‚ricamente iguales a las fuentes
+de corriente del circuito original.
+
+
+
+
+
+
+
+Observe el siguiente cuadro comparativo:
+
+
+TRANSFORMACIONES CIRCUITO ORIGINAL-DUAL
+CIRCUITO ORIGINAL
+ CIRCUITO DUAL
+
+Corriente Ix
+ Voltaje Vx (de nodo)
+
+Voltaje Vx
+ Corriente Ix ( de malla)
+
+
+Fuente de corriente I
+ Fuente de Voltaje E
+
+Fuente de voltaje E
+ Fuente de Corriente I
+
+Resistencia R
+ Conductancia G
+
+Ramas serie
+ Ramas paralelo
+
+Ramas paralelo
+ Ramas serie
+
+Circuito abierto
+ Corto circuito
+
+Corto circuito
+ Circuito abierto
+
+
+
+
+
+
+Ejemplo:
+
+1. Obtener el dual del siguiente circuito:
+
+
+
+
+
+
+
+
+
+
+
+Paso 1: Inicialmente se obtienen las ecuaciones de corriente de malla
+del circuito original:
+
+ i1 + (i1 - i2) = 4
+ (i2 -i1) + i2  = -2
+
+Paso 2: Se cambian las variables de corriente por voltaje,
+determinando as¡ las ecuaciones de voltaje de nodo del circuito
+dual:
+ E1 + (E1 - E2)= 4
+ (E2 - E1) + E2 = -2
+Paso 3: Las ecuaciones de nodo se interpretan como ecuaciones del
+circuito dual.
+
+
+
+÷
+
+
+
+De E2 sale una corriente de 2 A (por tener un signo negativo). A ‚l
+llega una corriente igual a 4 A.
+

@@ -1,0 +1,196 @@
+INTRODUCCION
+
+
+En los £ltimos 150 a¤os, los campos de la Ingenier¡a han representado
+un importante papel en la forma de vida de las personas. La creaci¢n
+de gran cantidad de sistemas ha generado cambios significativos en la
+forma de vida de las personas.
+
+Hoy en d¡a se puede hablar de muchos sistemas que definen o
+representan una sociedad tecnol¢gica moderna, como por ejemplo los
+sistemas telef¢nicos, los enlaces de comunicaci¢n v¡a sat‚lite, los
+equipos m‚dicos utilizados para diagn¢stico y cirug¡a, los robots y
+las herramientas el‚ctricas.
+
+La Ingenier¡a es un  rea atractiva de estudio debido a la necesidad
+de mejorar y refinar continuamente dichos sistemas, as¡ como el deseo
+de descubrir y desarrollar nuevos sistemas.
+
+Para poder entender en que lugar se aplican los circuitos el‚ctricos
+es necesario conocer un poco sobre la Ingenier¡a El‚ctrica.
+
+La Ingenier¡a El‚ctrica se ocupa del estudio de los sistemas que son
+capaces de producir, transmitir y medir se¤ales de tipo el‚ctrico.
+Se distingue por que centra sus esfuerzos en la creaci¢n de sistemas
+tangibles a partir de modelos que describen fen¢menos naturales
+interpretados por los f¡sicos y soportados por elementos matem ticos,
+que satisfacen una determinada necesidad partiendo de los que la
+naturaleza nos brinda.
+
+Los sistemas el‚ctricos pueden clasificarse en los siguientes grupos:
+
+1. Sistemas de Comunicaci¢n, los cuales generan, transmiten, reciben
+   y distribuyen informaci¢n. Como ejemplo se tienen los equipos de
+   televisi¢n,los radiotelescopios, los sistemas de sat‚lites, los
+   sistemas de radar, los sistemas telef¢nicos, los sistemas de
+   radio, etc.
+
+2. Sistemas de Computaci¢n, los cuales utilizan las se¤ales
+   el‚ctricas para procesar informaci¢n. Ejemplos: Desde la
+   calculadora m s sencilla hasta el computador m s sofisticado.
+
+3. Sistemas de Control, que regulan procesos industriales o
+   determinan el funcionamiento de diversos sistemas bas ndose en las
+   magnitudes de se¤ales el‚ctricas que representan fen¢menos como
+   temperatura, presi¢n, nivel y caudal de un r¡o, motores, etc.
+   Algunos ejemplos son el control de las luces de un ascensor, la
+   temperatura y el tiempo en los hornos microondas,    el control de
+   la apertura y cierre de las esclusas en el canal de Panam , el
+   aterrizaje autom tico de los aviones, etc. Los Sistemas de
+   Procesamiento  de Se¤ales, hacen parte de los sistemas de control y
+   describen una amplia gama de sistemas utilizados para prop¢sitos
+   especiales. Un ejemplo de estos sistemas es el sistema de barrido
+   tomogr fico asistido por computador CAT utilizado para diagn¢stico
+   de enfermedades.
+
+4. Sistemas de Potencia, que generan y distribuyen energ¡a el‚ctrica.
+
+Existe gran interacci¢n entre las diferentes disciplinas nombradas
+anteriormente que intervienen en el dise¤o y operaci¢n de estas clases
+de sistemas. La Ingenier¡a Electr¢nica involucra el estudio de
+sistemas que manejan niveles de potencia bajos.
+
+Los circuitos el‚ctricos son un aspecto com£n para todas las ramas de
+la Ingenier¡a (se aplican en ingenier¡a el‚ctrica, electr¢nica y
+mec nica entre otras). El conocimiento de la teor¡a de circuitos es de
+gran importancia debido a que brinda una herramienta de gran utilidad
+en cursos posteriores y en el campo de trabajo, se aplica en los
+procesos de comprensi¢n, dise¤o, implementaci¢n y operaci¢n de
+sistemas el‚ctricos, electr¢nicos y mec nicos.
+
+
+HISTORIA DE LA ELECTRICIDAD
+
+
+Las propiedades el‚ctricas de ciertos materiales ya eran conocidas por
+civilizaciones antiguas. En el a¤o 600 AC, Tales de Mileto hab¡a
+comprobado que si se frotaba el  mbar, ‚ste era capaz de atraer
+objetos m s livianos. Se cre¡a que la electricidad resid¡a en el
+objeto frotado.  De all¡ que el t‚rmino "electricidad" provenga del
+vocablo griego "elektron", que significa  mbar.
+
+En la ‚poca del renacimiento comenzaron los primeros estudios
+metodol¢gicos, en los cuales la electricidad estuvo ¡ntimamente
+relacionada con el magnetismo. El ingl‚s William Gilbert comprob¢ que
+algunas sustancias se comportaban como el  mbar, en cuanto a que si
+eran frotadas pod¡an atraer objetos livianos, mientras que otras no
+ejerc¡an ninguna atracci¢n. A las primeras, entre las que ubica el
+vidrio, el azufre y la resina, las llam¢ "el‚ctricas", mientras que a
+las otras, como el cobre o la plata, "anel‚ctricas".
+
+Benjam¡n Franklin fue quien postul¢ que la electricidad era un fluido
+y califica a las sustancias en el‚ctricamente positivas y negativas
+de acuerdo con el exceso o defecto de ese fluido. Franklin confirm¢
+tambi‚n que el rayo era efecto de la conducci¢n el‚ctrica, a trav‚s
+de un c‚lebre experimento, en el cual la chispa bajaba desde una
+cometa remontada a gran altura hasta una llave que ‚l ten¡a en la
+mano.
+
+Hacia mediados del siglo XVIII se establecio la diferencia entre
+materiales aislantes y conductores. Los aislantes eran aquellos a
+los que Gilbert hab¡a considerado "el‚ctricos", en tanto que los
+conductores eran los "anel‚ctricos". Esto permiti¢ que se construyera
+el primer almacenador rudimentario: estaba formado por dos placas
+conductoras que ten¡an una l mina aislante entre ellas. Fue conocido
+como botella de Leyden, por la ciudad en que se lo invent¢.
+
+A principios del siglo XIX, el conde Alessandro Volta construy¢ una
+pila galv nica. Coloc¢ capas de cinc, papel y cobre, y descubri¢ que
+si se un¡a la base de cinc con la £ltima capa de cobre, el resultado
+era una corriente el‚ctrica que flu¡a por el hilo de uni¢n. Este
+sencillo aparato fue el prototipo de las pilas el‚ctricas, de los
+acumuladores y de toda corriente el‚ctrica producida hasta la
+aparici¢n del d¡namo.
+
+Mientras tanto, Georg Simon Ohm sent¢ las bases del estudio de la
+circulaci¢n de las cargas el‚ctricas en el interior de materias
+conductoras.
+
+En 1819, Hans Oersted descubri¢ que una aguja magn‚tica colgada de un
+hilo se apartaba de su posici¢n inicial cuando pasaba pr¢xima a ella
+una corriente el‚ctrica y postul¢ que las corrientes el‚ctricas
+produc¡an un efecto magn‚tico. De esta simple observaci¢n sali¢ la
+tecnolog¡a del tel‚grafo el‚ctrico. Sobre esta base, Andr‚ Amp‚re
+dedujo que las corrientes el‚ctricas deb¡an comportarse del mismo modo
+que los imanes.
+
+Esto llev¢ a Michael Faraday a suponer que una corriente que circulara
+cerca de un circuito inducir¡a otra corriente en ‚l. El resultado de
+su experimento fue que esto s¢lo suced¡a al comenzar y cesar de fluir
+la corriente en el primer circuito. Sustituy¢ la corriente por un im n
+y encontr¢ que su movimiento en la proximidad del circuito induc¡a en
+‚ste una corriente. De este modo pudo comprobar que el trabajo
+mec nico empleado en mover un im n pod¡a transformarse en corriente
+el‚ctrica.
+
+Los experimentos de Faraday fueron expresados matem ticamente por
+James Maxwell, quien en 1873 present¢ sus ecuaciones, que unificaban
+la descripci¢n de los comportamientos el‚ctricos y magn‚ticos, y su
+desplazamiento, a trav‚s del espacio en forma de ondas.
+
+En 1878 Thomas Alva Edison comenz¢ los experimentos que terminar¡an,
+un a¤o m s tarde, con la invenci¢n de la l mpara el‚ctrica, que
+universalizar  el uso de la electricidad.
+
+Desde que en 1880 entr¢ en funcionamiento en Londres la primera
+central el‚ctrica destinada a iluminar la ciudad, las aplicaciones
+de esta forma de energ¡a se han extendido progresivamente. La
+electricidad se ha convertido en una fuente de energ¡a indispensable,
+presentando las ventajas de su limpieza, su f cil transporte y
+conversi¢n en otros tipos de energ¡a.
+
+Todo elemento en el cual exista una diferencia de potencial y por el
+cual circule una corriente, es un generador de campos el‚ctricos y
+magn‚ticos. Estos campos son perpendiculares entre s¡ y
+perpendiculares a la direcci¢n en que viaja la onda electromagn‚tica.
+Desde otro punto de vista cient¡fico, los campos electromagn‚ticos
+explican ciertas fuerzas naturales. Hasta hace muy poco, la gente s¢lo
+pod¡a entender fuerzas producidas por contacto f¡sico
+directo. Una cuchara en la tierra podr¡a moverse si alguien la mov¡a
+directamente con su mano o por que esta era golpeada con cualquier
+otro objeto. Si la cuchara se mov¡a sin un contacto f¡sico directo, se
+dec¡a que era magia o influencia de alg£n esp¡ritu.
+
+La gente no ten¡a idea de por qu‚ una cuchara lanzada desde una mesa
+hacia el piso deb¡a caer y no quedarse inm¢vil en el aire. Hoy, se
+sabe que la fuerza de gravedad de la tierra coloca la cuchara en la
+tierra. La gravedad es una de las fuerzas naturales que no requieren
+contacto f¡sico entre dos objetos (la tierra y la cuchara). Los
+f¡sicos usan el concepto de campo gravitatorio para explicar c¢mo
+aparece la fuerza de gravedad. Un objeto macizo, como lo es el
+planeta tierra, establece un campo gravitatorio alrededor de ella.
+Cuando otro objeto con masa ingresa al campo gravitatorio, una fuerza
+gravitacional aparece tendiendo a unir los dos objetos. La intensidad
+de las fuerzas dependen de la masa de los dos objetos y de la
+proximidad entre ellos.
+
+Hoy, tambi‚n se sabe que se puede mover un elemento como una cuchara,
+utilizando un fuerte im n cerca de ella. Una fuerza magn‚tica atrae
+la cuchara al im n. La fuerza se presenta sin un contacto f¡sico
+entre el im n y la cuchara. Mejor dicho, se presenta una inmersi¢n de
+la cuchara en el campo magn‚tico emanado del im n.
+
+Hay tambi‚n una fuerza el‚ctrica que se presenta sin un contacto
+f¡sico. Este hecho se puede probar por s¡ mismo, frotando una peineta
+en‚rgicamente y luego acercando esta a peque¤os trozos de papel.
+Algunos de los pedacitos de papel volar n hacia la peineta debido a
+la fuerza el‚ctrica que causa el movimiento de ellos. Como con el
+im n y la cuchara, la fuerza se presenta sin el contacto
+f¡sico directo entre la peineta y el papel. La fuerza presenta
+inmersi¢n del papel en un campo el‚ctrico. Los campos el‚ctricos
+resultan de cargas el‚ctricas est ticas las cuales se encuentran en
+la peineta cuando esta ha  sido frotada contra un material como el
+algod¢n. Electricidad est tica es una  colecci¢n de cargas el‚ctricas
+que no est n en movimiento. Cargas el‚ctricas  en movimiento abarca la
+llamada corriente el‚ctrica.
+

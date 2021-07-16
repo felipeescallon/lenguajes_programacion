@@ -1,0 +1,28 @@
+
+CIRCUITO SERIE - PARALELO
+                                                                        
+Es el circuito en el cual se encuentra tanto ramas en serie como ramas
+en paralelo.
+
+Ejemplo:
+
+Sea el circuito que se muestra en la figura; calcular la resistencia
+equivalente de entrada Rin.
+“
+                      
+
+Rin = Resistencia de Entrada o INPUT 
+
+Solucion :
+
+Ra = R3 + R6 = 6 ohm
+Rb = Ra / 2 + R5 / 2 = 3 ohm
+Rc = R2 + Rb = 4 ohm
+
+
+
+
+Rd = (12 * 4) / (12 + 4) = 3 ohm
+
+
+

@@ -1,0 +1,91 @@
+
+CIRCUITOS EN PARALELO
+
+Definicion
+                                                                      
+Dos elementos o ramas estan en paralelo cuando tienen dos puntos en
+comun, lo que implica que estan sometidos a la misma diferencia de
+potencial.
+
+Observe el circuito de la figura 2 donde la fuente E, R1 y R2 estan en
+paralelo, debido a que tienen los puntos a y b en comun. Por LVK se
+puede notar que la tension aplicada (E) es igual a la caida de tension
+en las resistencias.
+‰
+
+
+Figura 2  ELEMENTOS EN PARALELO
+
+Para el circuito de la figura 2 se tiene lo siguiente:
+
+I = I1 + I2 + I3
+1 / R_total = 1 / R1 + 1/ R2 + 1 / R3
+
+Resistencia Equivalente de un Circuito Paralelo:
+
+Para determinar la resistencia total de un circuito en paralelo se
+tiene en cuenta el concepto de conductancia.
+
+En particular para el caso de dos resistencias en paralelo:
+
+                1/ R_total = 1 / R1 + 1 / R2 = R1 + R2/ R1R2
+
+
+
+Ley de Corrientes de Kirchhoff:
+
+
+Esta ley dice que: La suma algebraica de las corrientes que entran y
+salen de un nodo es igual a cero (principio de conservacion de la
+carga).
+
+Un nodo es la union de dos o mas ramas (derivaciones). Es decir que la
+suma de las corrientes que entran a un nodo debe ser igual a la suma
+de las corrientes que salen de el.
+	
+
+Las corrientes que "entran" a un nodo son positivas y las corrientes
+"salientes" son negativas.
+
+
+En forma general:
+
+Sumat_I_entrada = Sumat_I_salida               LCK           (2,24)
+
+Ejemplo:
+Determine las corrientes I3 e I5 del circuito que se indica a
+continuacion, mediante aplicacion de la Ley de Corrientes de
+Kirchhoff.
+
+   
+
+       I1 + I2 = I3
+       2 + 3 = 5A
+       I3 = 5A
+       
+       I3 = I4 + I3
+       I5 = I3 - I4
+       I5 = 4A
+
+                             
+Regla del Divisor de Corriente
+
+La corriente de entrada I es igual a V/Req, donde Requ es la
+resistencia total de las derivaciones en paralelo. Se sabe por la Ley
+de Ohm que V = InRn, donde In se refiere a la corriente a traves de
+una rama paralela con resistencia Rn. Entonces reemplazando esta
+relacion en la ecuacion anterior, se tiene la forma general del
+divisor de corriente:
+
+                In = I Rtotal / Rn                             (2,25)
+
+
+
+Conclusiones:
+
+1. Volver a dibujar los circuitos puede ser de gran utilidad.
+2. La corriente que entra a cualquier numero de resistencias en
+   paralelo se divide en esas resistencias en proporción a sus valores
+   en ohms.
+3. La intensidad es mayor por la menor de las resistencias en paralelo
+

@@ -1,0 +1,36 @@
+
+PUNTOS DE REFERENCIA O NIVEL DE REFERENCIA
+
+Tierra Fisica
+                                                                      
+Los voltajes y potencias se refieren a un punto denominado tierra o
+punto de referencia (0V).
+
+Convenciones
+
+
+
+En los circuitos de corriente directa, cuando se tienen fuentes de
+alimentacion DC, el flujo convencional pasa siempre de un potencial
+bajo a otro alto al atravesar la fuente, y cuando se tienen
+resistencias, siempre el flujo convencional pasa de un potencial alto
+a otro bajo.
+
+En conclusion:
+
+1. La corriente circula de positivo (+) hacia negativo (-)
+
+2. En cuanto a la Diferencia de potencial se tiene que:
+
+De A hacia B hay una caida de potencia
+De B hacia A hay una subida de potencial o voltaje
+En las Resistencias R1, R2 y R3  hay perdida de potencia.
+
+
+¹
+
+
+
+
+              CAIDAS DE POTENCIAL
+

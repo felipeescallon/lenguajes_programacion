@@ -1,0 +1,69 @@
+
+
+
+
+                          TEOREMA DE THEVENIN
+
+
+
+El Teorema de Thevenin establece que: "Toda red lineal de dos pares
+de terminales se puede reducir a un circuito equivalente que
+consiste en una fuente de voltaje y una resistencia en serie
+equivalentes"
+
+El circuito equivalente Thevenin se indica a continuaci¢n:
+ž
+RTH es la resistencia equivalente o resistencia de Thevenin que
+equivale al valor de la resistencia equivalente cuando se apagan o
+se hacen cero las fuentes(voltaje y corriente).
+
+ETH es el voltaje de Thevenin y equivale al voltaje que cae en los
+terminales a y b cuando no se conecta nada entre ellos.
+
+Las etapas a seguir para determinar la fuente y resistencia
+equivalente Thevenin son:
+1. Retirar la porci¢n de la red a trav‚s de la cual se debe
+   encontrar el circuito equivalente.
+2. Marcar los terminales de la red restante.
+3. Calcular la RTH, para lo cual las fuentes se vuelven cero, es decir,
+   las fuentes de voltaje se hacen equivalentes a corto circuito y las
+   fuentes de corriente se colocan como circuito abierto y luego se
+   determina la resistencia resultante entre los terminales marcados.
+4. Calcular el ETH, se tiene en cuenta el efecto de las fuentes sobre
+   el circuito y se determina la tensi¢n de circuito abierto entre
+   los terminales.
+5. Dibujar el circuito equivalente de Thevenin reemplazando la porci¢n
+   del circuito que se retiró previamente entre los terminales del
+   circuito equivalente.
+
+El circuito equivalente de Thevenin permite hallar la tensi¢n o la
+corriente en cualquier rama de una red lineal con una, dos o cualquier
+n£mero de fuentes.
+
+Ejemplo:
+
+Encontrar el equivalente Thevenin para  a-b del siguiente circuito:
+‹
+Las etapas 1 y 2 corresponden a quitar la rama donde se quiere
+determinar el equivalente Thevenin y a marcar los terminales.
+La etapa 3 consiste en determinar el valor de la resistencia equivalente
+de Thevenin RTH, para lo cual se anulan las fuentes.
+RTH = (12 êê 6) + 3 = 7W
+En la etapa 4 se determina el voltaje de Thevenin ETH, aplicando el
+principio de superposici¢n. Inicialmente se consideran los efectos
+de la fuente de 6 A, para lo cual se vuelve cero la fuente de 36V.
+ETH = VTH = 16W= ((6*12)/18)*6= 24V
+Note que la resistencia de 3W no influye en la determinaci¢n del voltaje,
+debido a que la corriente que circula por ella es de 0 Amperios.
+Considerando los efectos de la fuente de 36 voltios, se tiene que anular
+la fuente de corriente:
+El voltaje ETH2 es igual al voltaje que cae en la resistencia de 6W.
+Por regla del divisor de voltajes:
+Finalmente se suman algebraicamente los efectos de cada una de las fuentes:
+ETH = ETH1 + ETH2 = 24V + 12V = 36V
+å
+
+
+                  Circuito equivalente de Thevenin.
+
+

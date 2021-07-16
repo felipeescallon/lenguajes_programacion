@@ -1,0 +1,19 @@
+
+
+
+                       TEOREMA DE MILLMAN
+
+
+El teorema de Millman establece que: " El voltaje en un punto
+cualquiera de un circuito, con respecto a un punto de referencia
+es igual a la suma de los productos de todos los voltajes y las
+conductancias respectivas conectadas a dicho punto, dividida por
+la suma de todas las conductancias conectadas a ‚l."
+Veq= (V1G1 + V2G2 + VnGn)/(G1+G2+Gn)
+
+Ejemplo:  Hallar la corriente en R = 2W y el voltaje aplicando
+el teorema de Millman:
+¾
+Veq= ((5*1)+(10*(1/5))/(1+(1/5))
+Veq= 7/(6/5)
+Veq= 35/6V

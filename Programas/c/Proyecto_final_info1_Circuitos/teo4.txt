@@ -1,0 +1,32 @@
+
+
+                 TEOREMA DE LA SUSTITUCION
+
+
+El Teorema de la Sustituci¢n establece que: "Cuando se conoce
+el voltaje en una rama de un circuito, dicha rama se puede
+reemplazar por una fuente de voltaje ideal y si se conoce la
+corriente por una rama, dicha rama se puede reemplazar por una
+fuente de corriente ideal."
+
+Las etapas a seguir para analizar un circuito mediante el teorema
+de la sustituci¢n son:
+
+1. Se divide el circuito original en dos circuitos.
+2. Se halla la resistencia de entrada del circuito 1 y se obtiene
+   la inc¢gnita definida.
+3. Conocida la inc¢gnita se reemplaza por una equivalencia conforme
+   al teorema de la sustituci¢n.
+
+Ejemplo:
+
+En el siguiente circuito realice las posibles sustituciones entre
+los puntos a y b:
+â
+En la resistencia de 3W hay una diferencia de potencial de 6V y por
+ella circula una corriente de 2 A. Por consiguiente la rama entre
+los puntos a y b se puede reemplazar por una fuente ideal de voltaje
+de valor 6 V o por una fuente ideal de corriente de valor 2 A.
+Observe que el voltaje y la corriente de los terminales a y b son
+los mismos del circuito original y la respuesta del circuito no se
+afecta al sustituir cualquiera de las ramas equivalentes.

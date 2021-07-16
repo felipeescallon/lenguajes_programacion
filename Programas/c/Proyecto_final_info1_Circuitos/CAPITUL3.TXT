@@ -1,0 +1,657 @@
+CAPITULO III
+METODOS DE SOLUCION DE CIRCUITOS
+
+
+
+En este cap¡tulo se recuerdan algunos de los m‚todos matem ticos que 
+permiten resolver un sistema de ecuaciones.
+
+Para este tema ser  necesario resolver las variables de dos o tres
+ecuaciones simult neas, motivo por el que se ha incluido un breve
+@
+repaso sobre el uso de determinantes.
+
+3.1. DETERMINANTES
+
+Hay un conjunto de etapas b sicas que conducen a la formaci¢n
+ de un determinante. El c lculo para la soluci¢n de un sistema 
+de ecuaciones por determinantes produce ahorro de tiempo, 
+esfuerzo y disminuci¢n de errores frecuentes.
+
+Considere las siguientes ecuaciones:
+
+a1 x + b1 y = c1
+a2 x + b2 y = c2
+
+x e y son las inc¢gnitas,
+a1, a2, b1, b2, c1, c2 son constantes.
+
+Para hallar los valores de x e y que satisfagan las dos ecuaciones 
+simult neas mediante el m‚todo de los determinantes se utiliza
+ el siguiente formato:
+
+
+
+
+
+El denominador es el determinante D de los coeficientes de 
+x e y. El numerador se determina por medio de la variable 
+que se va a evaluar, reemplazando la columna de la inc¢gnita 
+con los elementos a la derecha del signo igual, as¡:
+
+
+
+
+
+El empleo de determinantes se puede aplicar a cualquier n£mero 
+de ecuaciones lineales simult neas. Para resolver determinantes de
+ tercer orden considere:
+
+a1 x + b1 y + c1 z = d1
+a2 x + b2 y + c2 z = d2
+a3 x + b3 y + c3 z = d3
+
+Para cada inc¢gnita se tiene que:
+
+
+
+
+
+
+
+Un m‚todo abreviado para evaluar el determinante consiste simplemente en repetir las dos primeras columnas del determinante a la derecha de ‚ste y luego sumar los productos a lo largo de las diagonales, as¡:
+
+
+
+        
+
+
+
+La soluci¢n total es la suma de las diagonales 1, 2 y 3, menos la suma de la diagonales 4, 5 y 6.
+
+Advertencia: este m‚todo de expansi¢n es bueno para determinantes de tercer orden.
+
+3.2. METODO DE CORRIENTES DE MALLA
+
+El m‚todo consiste en aplicar la Ley de Voltajes de Kirchhoff, la cual establece que la suma de los voltajes en un camino cerrado (malla) es cero: ( V = 0
+
+Los pasos a seguir para este m‚todo son los siguientes:
+
+1.  Asignar una corriente de malla a cada trayectoria cerrada independiente en el sentido de las manecillas del reloj.
+2.  El n£mero de ecuaciones es igual al n£mero de trayectorias cerradas independientes. La primera columna de cada ecuaci¢n es equivalente a la suma de los valores de las resistencias por las que pasa la corriente de malla de inter‚s, multiplicada por la corriente de malla.
+3.  Se deben considerar los t‚rminos mutuos, ‚stos se restan siempre de la primera columna. Es posible tener m s de un t‚rmino mutuo si la corriente de malla que interesa tiene un elemento en com£n con m s de otra corriente de malla.
+4.  La columna a la derecha del signo igual es la suma algebraica de las fuentes de voltaje por las que pasa la corriente de malla que interesa. Se asigna un signo positivo (+) si la corriente de malla pasa por la fuente de (-) a (+) y se asigna un signo negativo (-) si la corriente de malla pasa por la fuente de (+) a (-). (aplicaci¢n LVK)
+5.  Se resuelven la ecuaciones simult neas. Un signo (-) en el resultado de una corriente indica que la corriente real fluye en direcci¢n opuesta a la supuesta. Una vez conocidas las corrientes de malla se pueden calcular las corrientes en las diferentes ramas y tambi‚n es posible calcular cualquier voltaje o potencia de inter‚s.
+6.  Se verifica el cumplimiento de la Ley de Voltajes de Kirchhoff en las diferentes trayectorias. La LCK se cumple autom ticamente.
+
+En resumen se puede plantear la siguiente regla para encontrar la ecuaci¢n de malla aplicando en m‚todo de la corriente de malla:
+
+"Sumar las resistencias de la malla y multiplicar su valor por la corriente de la malla y restar de este valor los productos de las resistencias comunes con otras mallas por las corrientes de las mallas adyacentes e igualar el resultado a la suma algebraica de las fuentes de voltaje que se presenten en la malla."
+
+
+
+Figura 3.1 CORRIENTES EN MALLAS Y RAMAS
+
+Ejemplo:
+
+1. Hallar las corrientes de malla para el siguiente circuito:
+
+
+
+
+
+
+
+
+
+Paso 1:	consiste en asignar una corriente de malla a cada trayectoria cerrada en el sentido de la manecillas del reloj. En el circuito se tienen tres corrientes que son i1, i2, i3.
+
+Pasos 2 a 4:	Se deben plantear tres ecuaciones debido a que hay tres mallas:
+
+Malla 1: (1 + 1 + 1) i1 - 1 i2 - 1 i3 = 1
+
+Observe que la expresi¢n (1 + 1 + 1) i1 corresponde al voltaje que cae en la malla 1 producto de su propia corriente. Los t‚rminos - 1 i2, - 1 i3, corresponden a los voltajes que caen en la malla 1 debido a las resistencias comunes con las mallas 2 y 3 respectivamente. Las corrientes en esas mallas generan voltajes de polaridad opuesta a los que genera en su propia malla la corriente i1,  por eso se toman como negativos.
+
+Para las mallas 2 y 3 se tienen las siguientes ecuaciones:
+
+        Malla 2:	(1 + 1 + 1) i2 - 1 i1 - 1 i3 = 0
+        Malla 3:	(1 + 1 + 1) i3  - 1 i1 - 1 i2  = -1
+
+Paso 5:	Se organizan y se resuelven las ecuaciones simult neas:
+             3 i1 - 1 i2 - 1 i3   =   1		(1)
+           - 1 i1 + 3 i2 - 1 i3  =   0		(2)
+           - 1 i1 - 1 i2 + 3 i3  = - 1		(3)
+
+
+
+
+Aplicando determinantes se obtiene:
+
+
+
+
+Paso 6: Se aplica ley de voltajes de Kirchhoff en las mallas para verificar el cumplimiento, reemplazando los valores obtenidos para las corrientes en las ecuaciones (1), (2) y (3):
+
+Malla 1:	              3 (0.25) - 1 (0) - 1 (-0.25) = 1
+					     1 = 1		  Concuerda
+Malla 2:	           - 1 (0.25) + 3 (0) - 1 (-0.25) = 0
+					    0 = 0	            Concuerda
+Malla 3:	          - 1 (0.25) - 1 (0) + 3 (-0.25) = - 1
+                                                            -1 = -1                  Concuerda
+
+
+3.2.1. 
+Caso de Malla Falsa
+
+Cuando en una rama se encuentra una fuente de corriente esta genera la llamada malla falsa.  En este caso se deben establecer ecuaciones de restricci¢n con respecto a la corriente que circula en una malla o la fuente de corriente que es compartida por dos mallas que genera la malla falsa. Para determinar el numero de mallas verdaderas, las fuentes de corriente y voltaje se hacen cero (fuente de voltaje = 0 corto circuito; fuente de corriente = 0 circuito abierto).
+
+Inicialmente se plantea la ecuaci¢n de restricci¢n y posteriormente se plantean las ecuaciones de malla, para lo cual se elimina mentalmente la fuente de corriente y se expresan los voltajes de la malla falsa en t‚rminos de las corrientes definidas originalmente.
+
+Ejemplo :
+
+1. Analizar por el m‚todo de corrientes de malla el siguiente circuito:
+
+
+
+
+
+
+
+
+Paso 1:	Consiste en asignar una corriente de malla a cada trayectoria cerrada, en el sentido de la manecillas del reloj. En el circuito se tienen tres corrientes que son id1, i1, i2.
+
+Pasos 2 a 4:	Se deben plantear tres ecuaciones:
+
+Note que la malla donde circula la corriente id1 es una malla falsa por lo que se plantea la siguiente ecuaci¢n de restricci¢n:
+
+Malla Falsa:	id1 = 2		(1)	Ecuaci¢n de restricci¢n
+
+Las ecuaciones para las otras mallas son:
+
+Malla 1:	9 i1 - 5 id1 - 2 i2 = 0		(2)
+Malla 2:	8 i2  - 2 i1  = - 10		(3)
+
+Reemplazando el valor de id1  en la ecuaci¢n (2) obtenida para la malla 1, se tiene que:
+                   9 i1 - 5 (2) - 2 i2 = 0
+                   9 i1 - 10 - 2 i2 = 0
+                   9 i1 - 2 i2 = 10		(2ï)
+
+Paso 5:	El sistema de ecuaciones obtenido es:
+
+  9 i1 - 2 i2 = 10		              	(2ï)
+- 2 i1  + 8 i2 = - 10		                    (3)
+
+Despejando las inc¢gnitas se obtiene 
+
+
+
+
+Paso 6: Se aplica ley de voltajes de Kirchhoff en las mallas para verificar:
+
+Malla 2:	9 i1 - 2 i2 = 10
+9 (0.822) - 2 (-1.029) = 10
+				  9.46 " 10	Concuerda
+Malla 3:	- 2 i1 + 8 i2 = - 10
+- 2 (0.822) + 8 (-1.029) = - 10
+				  - 9.88 " -10	Concuerda
+
+3.3. METODO DE VOLTAJES DE NODO
+
+Este m‚todo se basa en la Ley de Corrientes de Kirchhoff que dice que la suma de las corrientes que entran a un nodo es igual a la suma de las corrientes que salen del nodo: (Ientrada = ( Isalida. Cumple autom ticamente con LVK.
+
+El procedimiento a seguir es el siguiente:
+
+1.  Escoger un nodo de referencia (V=0; datum line) y asignar un r¢tulo de voltaje con sub¡ndice a los (N-1) nodos restantes de la red (recuerde que un nodo es la uni¢n de dos o mas ramas).
+2.  El n£mero de ecuaciones necesarias para una soluci¢n completa es igual al n£mero de tensiones con sub¡ndice (N-1). La columna 1 de cada ecuaci¢n es igual a la suma de las conductancias ligadas al nodo de inter‚s multiplicando el resultado por el voltaje nodal en evaluaci¢n.
+3.  Considerar los t‚rminos mutuos, que se restan siempre de la primera columna. Es factible tener m s de un t‚rmino mutuo si el voltaje nodal de la corriente de inter‚s tiene un elemento com£n con m s de otra tensi¢n nodal. Cada t‚rmino mutuo es el producto de la conductancia mutua, multiplicado por el voltaje nodal enlazado a esa conductancia.
+4.  La columna de la derecha del signo de igualdad es la suma algebraica de las fuentes de corriente ligadas al nodo de inter‚s. Se toma positivo (+) si la fuente proporciona corriente al nodo y negativo (-) si la fuente toma corriente del nodo.
+5.  Se resuelven la ecuaciones simult neas resultantes para los voltajes de nodo deseados y se determinan las corrientes o potencias de inter‚s.
+6.  Una vez conocidos los voltajes de nodo se verifica el cumplimiento de la ley de corrientes de Kirchhoff.
+En resumen, la regla a seguir es la siguiente:
+
+"Se multiplica el voltaje del nodo por la suma de las conductancias que posee el nodo y a esto se le resta el producto de las conductancias comunes por el voltaje de los nodos respectivos con los cuales tiene conexi¢n el nodo en consideraci¢n. Este resultado se iguala a la suma de las fuentes de corriente que entran o salen del nodo"
+
+Ejemplo:
+
+Aplicar el m‚todo de los voltajes de nodo al siguiente circuito:
+
+
+
+
+
+
+
+Paso 1:	Consiste en ubicar los nodos y rotularlos (observe el circuito).
+
+Pasos 2 a 4:	Se plantean las ecuaciones de corriente para cada nodo, excepto el nodo tierra.
+
+Nodo Ea:                                      
+
+Nodo Eb:                                      
+
+Paso 5:	Se reorganizan las ecuaciones y se solucionan:
+
+                3 Ea - 2 Eb = -12		(1)
+               -3 Ea + 4 Eb = 27		(2)
+
+de donde se obtiene que:
+
+
+
+
+Ahora se pueden determinar las corrientes para cada resistencia (observar circuito):
+
+
+
+
+Paso 6:	 Se aplica la ley de corrientes de Kirchhoff para verificar:
+
+
+Nodo Ea:                  
+
+Nodo Eb:                  
+
+3.3.1. Caso de Nodo Falso y Supernodo
+
+Un nodo falso se presenta cuando una fuente de voltaje est  ubicada entre un nodo cualquiera (excepto tierra) y el nodo tierra. Un supernodo se presenta cuando una fuente de voltaje no est  conectada a tierra directamente.
+
+En este caso tambi‚n se plantean ecuaciones de restricci¢n.
+
+Ejemplo:
+
+1. Para el siguiente circuito escribir las ecuaciones de voltajes de nodo:
+
+
+Paso 1:	En el circuito aparecen los nodos Ea, Eb, Ec y Ed. En este caso Ed es un nodo falso y existe un supernodo formado por los nodos Ec y Eb.
+
+Paso 2 a 4: Se analiza inicialmente el caso del nodo falso: Entre Ed y tierra hay una fuente de voltaje de 2 voltios; Ed es un nodo falso y su ecuaci¢n de restricci¢n es la siguiente:
+
+Nodo Falso:	Ed = 2 voltios	      (1)        Ecuaci¢n de Restricci¢n
+
+Ahora se analiza el caso del supernodo formado por Eb y Ec. La ecuaci¢n de restricci¢n es la siguiente:
+
+Supernodo:	Ec - Eb = 4		     (2)         Ecuaci¢n de Restricci¢n
+
+Entonces se considera a estos dos nodos como uno solo y entonces la ecuaci¢n de corriente para el supernodo es la siguiente:
+
+2(Ec-Ea)+2(Eb-Ed)+2(Eb-Ea)=0
+Ec-Ea+Eb-Ed+Eb-Ea=0
+-2Ea+2Eb+Ec-Ed=0
+dado que Ed=2
+-2Ea+2Eb+Ec=2                                  (3)
+
+Finalmente la ecuaci¢n de corrientes para el nodo Ea es la siguiente:
+
+2(Ea-Ec)+2(Ea-Eb)+2Ea = 2
+Ea-Ec+Ea-Eb+Ea=1
+3Ea-Eb-Ec=1                                       (4)
+
+Paso 5:	Resolviendo el sistema formado por las ecuaciones (1), (2), (3) y (4) se obtienen los siguientes valores:
+
+
+
+
+
+
+3.4. TRANSFORMACIONES RESISTIVAS (Y-( Y (-Y)
+
+Con frecuencia se tiene configuraciones de circuitos en que las resistencias no parecen estar en serie o en paralelo. En estas condiciones, puede ser necesario convertir el circuito en una determinada forma que facilite su reducci¢n, si no se aplica el an lisis de mallas o el nodal. Dos configuraciones de circuitos que suelen simplificar esas dificultades son la Delta (() o "circuito (" y la ye (Y) o "circuito T" que se muestran en la figura 3.2, a continuaci¢n:
+
+
+			      (			                 	Y
+				   (a)				         (b)
+Figura 3.2 CONFIGURACIONES RESISTIVAS  ( - Y
+
+
+Se desarrollar n las ecuaciones para efectuar las conversiones de ( a Y y viceversa.
+
+Para que los dos circuitos sean equivalentes, la resistencia total entre dos terminales cualesquiera debe ser la misma, para lo cual se van a considerar las terminales a - c en las configuraciones ( - Y de la figura 3.3:
+
+Figura 3.3 TRANSFORMACIONES    	Y-(
+
+3.4.1. Conversi¢n (-Y
+
+Suponga que se quiere pasar de configuraci¢n ( (RA, RB, RC) a Y (R1, R2, R3). Entonces se busca una relaci¢n para R1, R2 y R3 en t‚rminos de RA, RB y RC.
+
+Debe cumplirse que: Ra-c = Raï-cï = Ra"-c". Entonces:
+
+
+
+
+Para a-b y b-c se tiene que:
+
+Restando la ecuaci¢n (3.1.a) de la (3.1.b), se obtiene lo siguiente:
+
+
+Restando la ecuaci¢n (3.1.d) de la (3.1.c) se obtiene que:
+Entonces,
+
+Siguiendo en mismo procedimiento se obtiene R1 y R2:
+
+
+En conclusi¢n,
+
+"Cada resistencia de la Y es igual al producto de los resistencias en las dos derivaciones m s cercanas de la ( dividido entre la suma de las resistencias de la (".
+
+3.4.2. Conversi¢n Y-(
+
+Para obtener las relaciones necesarias para pasar de Y a (, se divide la ecuaci¢n (3.2 a) entre la (3.2 b),
+de donde,
+
+Luego se divide la ecuaci¢n (3.2 a) entre la (3.2 c):
+
+de donde,
+
+
+Sustituyendo para RA y RB en la ecuaci¢n (3.2 c), se tiene que:
+
+Entonces,
+
+Siguiendo el mismo procedimiento, se obtienen las expresiones para RA y RB:
+
+En conclusi¢n:
+"Cada resistencia de la ( es igual a la suma de las combinaciones posibles de productos de las resistencias de la Y, dividida entre la resistencia de la Y m s alejada que se debe determinar"
+
+Si RA = RB = RC entonces,
+
+
+
+
+
+
+En conclusi¢n,
+
+"Para una Y con tres resistencias iguales, el valor de cada resistencia de la ( es tres veces el valor de cualquiera de la Y".
+
+"Si s¢lo dos elementos de una Y o ( son iguales, la ( o la Y correspondiente de cada una tendr  tambi‚n dos elementos iguales".
+
+La Y y la ( aparecen con frecuencia como cirtuitos "T" y "pi" respectivamente.
+
+Ejemplo:
+
+1. Convertir el circuito Y a (
+
+
+
+
+3.5. TOPOLOGIA DE CIRCUITOS
+
+La topolog¡a es el  rea de las matem tica que estudia las propiedades invariantes de las figuras geom‚tricas.
+
+El desarrollo de la topolog¡a en cuanto a los circuitos el‚ctricos se debe a Kirchhoff. Espec¡ficamente el inter‚s es encontrar una ayuda para extraer las variables desconocidas que se usan en la soluci¢n de un problema y establecer una gu¡a para escribir las ecuaciones independientes necesarias para hallar las inc¢gnitas.
+
+Definiciones:
+Nodo Topol¢gico: Uni¢n de dos o m s ramas.
+Rama Topol¢gica: est  constituida por cada una de las resistencias que quedan despu‚s de suprimir las fuentes. Para hacer cero una fuente de voltaje, se cortocircuita la fuente, y todas las resistencias que est n en paralelo con la fuente salen del circuito. Para hacer cero una fuente de corriente, I = 0, se abre la fuente y las resistencias en serie con ‚sta no se consideran.
+Malla Topl¢gica: Un camino cerrado formado por varias ramas topol¢gicas.
+
+Ley Topol¢gica: b = n + L -1
+
+donde	b = branch (rama)
+n = node (nodo)
+L= loop (malla)
+
+3.5.1.
+Diagrama Topol¢gico de un Circuito
+
+El procedimiento a seguir es el siguiente:
+
+1.  Se anulan las fuentes, teniendo en cuenta que una fuente de voltaje nula equivale a un corto circuito y que una fuente de corriente nula equivale a un circuito abierto.
+2.  Se omiten las resistencias en paralelo con fuentes de voltaje.
+3.  Se omiten las resistencias en serie con fuentes de corriente.
+4.  Se ubican los nodos (uno de referencia = nodo de tierra)
+5.  Se unen con l¡neas los diferentes nodos, a trav‚s de sus ramas.
+6.  El n£mero de mallas del diagrama topol¢gico determina el n£mero de ecuaciones independientes para resolver el circuito.
+
+Ejemplos:
+
+1. Hallar el diagrama topol¢gico del circuito mostrado en la figura:
+
+
+Siguiendo el procedimiento planteado, inicialmente se anulan la fuentes y se ubican los nodos:
+
+Finalmente se realiza el diagrama topol¢gico con base en el circuito anterior, uniendo los puntos o nodos con l¡neas cuando entre ellos exista conexi¢n. Entonces se tiene el siguiente diagrama topol¢gico:
+
+
+
+
+
+
+
+En el diagrama topol¢gico se debe cumplir la Ley Topol¢gica:  b = n + L - 1
+Donde b = 4, L=2, n = 3
+Entonces, 4 = 3 + 2 - 1 = 4
+	       4 = 4
+
+El hecho de que se presenten dos mallas implica que se necesitan dos ecuaciones independientes para resolver el circuito.
+Hallar el diagrama topol¢gico del siguiente circuito:
+
+El paso inicial es hacer cero la fuente de voltaje y la fuente de corriente. Observe que R1 y R2 est n en paralelo con la fuente E, motivo por el cual no se toman en cuenta. El resistor R5 est  en serie con la fuente I, por lo que tambi‚n se omite.
+
+Redibujando el circuito se tiene lo siguiente:
+
+
+
+Note que al anular las fuentes en este circuito, el nodo que tiene la fuente E (nodo 1) se convierte en nodo falso y se une a tierra. El diagrama topol¢gico es el siguiente:
+
+
+
+
+
+
+
+La ley topol¢gica se cumple:   b = n + L - 1
+Donde b = 3, n = 2, L = 2
+entonces, 3 = 2 + 2 - 1 = 3
+
+3.6. PRINCIPIO DE DUALIDAD
+
+En esta secci¢n se explora la similitud entre las ecuaciones de corriente de malla y las ecuaciones de voltaje de nodo de un circuito. Esta similitud se basa en un importante principio denominado Dualidad.
+
+Se dice que dos circuitos son duales, cuando las ecuaciones de malla para uno son num‚ricamente iguales a las ecuaciones de voltajes de nodo del otro.
+
+La dualidad tiene la naturaleza de una transformaci¢n del circuito original al circuito dual. Esta transformaci¢n se realiza en los siguientes pasos:
+
+1.  Se escriben las ecuaciones de malla para el circuito original.
+2.  Se cambian las variables de corriente de malla por variables de voltaje de nodo.
+3.  Las ecuaciones de nodo se interpretan como ecuaciones del circuito dual.
+Este tercer paso es en realidad una s¡ntesis de circuito y es necesario mostrar que siempre es posible hallar el dual de un circuito. Los dos primeros pasos son directos.
+
+Primero que todo se consideran las resistencias mutuas entre dos mallas en el circuito original. En las ecuaciones transformadas estos t‚rminos representan conductancias mutuas entre los correspondientes pares de voltajes de nodo y con valores en mhos num‚ricamente igual a los de ohmios de las resistencias.
+
+Cada resistencia que aparece solamente en t‚rminos de resistencia propia en las ecuaciones de malla se transforma en una conductancia que aparece s¢lo en t‚rminos de conductancia propia en las ecuaciones duales. Un elemento que cumpla con lo anterior se puede considerar como una conductancia a tierra en el circuito dual.
+
+Las fuentes de voltaje en las ecuaciones de corrientes de malla se transforman en fuentes de corriente en las ecuaciones de voltaje de nodo con valores num‚ricamente iguales.
+
+Las fuentes de corriente en las ecuaciones de corrientes de malla que producen mallas falsas se transforman en ecuaciones de nodo falso representando fuentes de voltaje num‚ricamente iguales a las fuentes de corriente del circuito original.
+
+Observe el siguiente cuadro comparativo:
+
+
+TABLA 3.1 TRANSFORMACIONES CIRCUITO ORIGINAL-DUAL
+CIRCUITO ORIGINAL
+
+CIRCUITO DUAL
+Corriente Ix
+
+Voltaje Vx (de nodo)
+Voltaje Vx
+
+Corriente Ix ( de malla)
+Fuente de corriente I
+
+Fuente de Voltaje E
+Fuente de voltaje E
+
+Fuente de Corriente I
+Resistencia R
+se transforma en...
+Conductancia G
+Ramas serie
+
+Ramas paralelo
+Ramas paralelo
+
+Ramas serie
+Circuito abierto
+
+Corto circuito
+Corto circuito
+
+Circuito abierto
+
+Ejemplo:
+
+1. Obtener el dual del siguiente circuito:
+
+Paso 1: Inicialmente se obtienen las ecuaciones de corriente de malla del circuito original:
+
+				    i1 + (i1 - i2) = 4
+				   (i2 -i1) + i2  = -2
+
+Paso 2: Se cambian las variables de corriente por voltaje, determinando as¡ las ecuaciones de voltaje de nodo del circuito dual:
+
+				   E1 + (E1 - E2)= 4
+				 (E2 - E1) + E2 = -2
+
+Paso 3: Las ecuaciones de nodo se interpretan como ecuaciones del circuito dual.
+
+De E2 sale una corriente de 2 A (por tener un signo negativo). A ‚l llega una corriente igual a 4 A.
+
+2. Encontrar el circuito dual de la siguiente figura:
+
+
+Paso 1: Se obtienen las ecuaciones de corriente de malla del circuito original:
+
+				  2(i1 - i3)+2(i1 - i2 )= 2
+					   2(i2 - i1)+2i2 = -10-4
+					      2i3+2(i3 - i1 )= 4
+
+Paso 2: Se cambian las variables de corriente por voltaje, determinando as¡ las ecuaciones de voltaje de nodo del circuito dual:
+
+			       2(E1 - E3)+2(E1 - E2 )= 2
+					2(E2 - E1)+2E2 = -10-4
+					2E3 +2(E3 - E1 )= 4
+
+Paso 3: Las ecuaciones de nodo se interpretan como ecuaciones del circuito dual.
+
+
+3.7. REDES EN ESCALERA
+
+Algunas configuraciones de circuitos se prestan para que se les trate de manera especial, tal es el caso de aquellos circuitos que por su configuraci¢n y estructura geom‚trica, se podr¡a decir que se trata de una "úescalera". No es la configuraci¢n una escalera exacta, pero se podr¡a asimilar como tal.
+La figura 3.4 muestra una red en escalera.
+
+
+
+
+
+
+
+Figura 3.4 RED EN ESCALERA
+
+Existen tres m‚todos para resolver redes de este tipo:
+
+3.7.1. Primer M‚todo
+
+Consiste en calcular la resistencia total y la corriente resultante dada por la fuente y luego retroceder por la escalera hasta obtener la corriente o el voltaje que se desee.
+
+Ejemplo
+
+1. Para el circuito de la figura  3.4 determinar V5 e I7. Inicialmente se va reduciendo el circuito hasta hallar la Req.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Req = 3( + 4( + 1( = 10 (
+
+y por consiguiente,
+
+Note que observando las figuras se obtiene que:
+
+y
+
+entonces,
+
+
+
+3.7.2. Segundo M‚todo
+
+Consiste en asignar un s¡mbolo alfab‚tico a la corriente de la £ltima derivaci¢n y retroceder por la red hasta la fuente, manteniendo esa corriente asignada u otra corriente de interes. Luego se puede determinara de manera directa la corriente deseada. Este m‚todo se puede describir mejor mediante el an lisis de la misma red examinada antes y que se vuelve a representar en la figura.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ejemplo:
+
+I7 es la notaci¢n asignada para la corriente que pasa por la £ltima derivaci¢n:
+
+o bien,
+
+de tal forma que
+
+
+
+
+
+3.7.3. Tercer M‚todo
+
+Se trata de determinar el valor de la resistencia equivalente del circuito. El m‚todo consiste en asumir un voltaje en la £ltima resistencia Eo, tal que la corriente que circular¡a por esa resistencia nos d‚ un valor entero.
+
+Para el caso del circuito de la figura, se asume que Eo = 1 voltio, entonces la corriente que pasa por esa £ltima resistencia ser¡a de 1 amperio. A partir de all¡ se dibujan los sentidos de las corrientes por las dem s ramas, partiendo del valor conocido para Io. El circuito quedar¡a as¡:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

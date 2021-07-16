@@ -1,0 +1,105 @@
+ESTRUCTURA ATOMICA
+
+
+Generalidades
+                                                                     
+El comportamiento de los circuitos eléctricos depende del
+comportamiento de las cargas el‚ctricas. Es de gran importancia tener
+claros los conceptos relacionados con el  tomo y su estructura porque
+facilitan entender todo lo relacionado con la electricidad, como
+corriente, voltaje y resistencia el‚ctrica.
+                                                                     
+La palabra  tomo significa indivisible, a pesar de esto, se sabe que
+los  tomos est n conformados por agrupaciones m s o menos complejas de
+part¡culas subat¢micas como el electr¢n, el prot¢n y el neutr¢n. En el
+n£cleo se encuentran los protones y neutrones quienes forman siempre
+un espacio muy apretado, cuyo di metro es del orden de 10^-12 cm.
+Fuera del n£cleo y a unas distancias relativamente grandes est n los
+electrones.
+
+La masa del  tomo est  constituida por la masa del electr¢n, la masa 
+del prot¢n y la masa del neutr¢n en las siguientes proporciones:
+
+Masa del Electr¢n:              9.11 x 10^-31 Kg
+Masa del Prot¢n:                1.67 x 10^-27 Kg
+Masa del Neutr¢n:               1.67 x 10^-27 Kg                     
+Las masas del prot¢n y el neutr¢n son aproximadamente iguales y a su
+vez, unas 1840 veces mayor que la del electr¢n, por lo tanto, la masa
+de un  tomo est  concentrada en el n£cleo.
+
+Los  tomos de diversos elementos difieren entre s¡ por el tama¤o del
+n£cleo at¢mico y por el n£mero de electrones que giran alrededor del
+n£cleo.
+
+
+MODELOS ATOMICOS
+
+
+* Modelo de J.J. Thompson
+                                                                     
+  Las bases en que se apoy¢ Thompson para elaborar su modelo fueron:
+
+   - La materia se presenta normalmente neutra; lo que supone que
+     junto a los electrones, los  tomos han de contener elementos o
+     part¡culas cargadas positivamente.
+
+   - Los electrones pueden ser extra¡dos de los  tomos de cualquier
+     sustancia, pero no ocurre igual con la carga positiva.
+
+
+* Modelo de Rutherford
+                                                                     
+ 
+  Rutherford introduce el modelo nuclear del  tomo con las siguientes
+  caracter¡sticas:
+
+   - Existe un n£cleo cargado positivamente en el que se encuentra
+     concentrada
+     toda la masa.
+
+   - Los electrones giran alrededor del n£cleo en n£mero igual a la
+     carga nuclear.
+                                                                     
+   - La carga positiva del n£cleo coincide con el n£mero at¢mico.
+
+   - Los  tomos en su mayor parte son espacio vac¡o.
+
+* Modelo Cu ntico de Bohr
+
+ 
+  Bohr se basa en los siguientes postulados:
+                                                                     
+   - Los electrones en el  tomo est n localizados en ¢rbitas o niveles
+     de energ¡a alrededor del n£cleo. Bohr estableci¢ la comparaci¢n
+     entre el  tomo y el sistema solar: el sol en el centro
+     corresponde al n£cleo mientras que los planetas, a distancias
+     relativamente grandes del sol, corresponden a los electrones.
+                                                                     
+  -  Los  tomos contienen un n£mero igual de protones y electrones; es
+     decir que la materia es el‚ctricamente neutra o que est 
+     descargada.
+                                                                     
+  -  La energ¡a de los electrones tiene valores definidos que
+     corresponden a los niveles de energ¡a; el valor energ‚tico de
+     estos niveles disminuye a medida que se alejan del n£cleo: El
+     primer nivel, que es el m s cercano al n£cleo, puede contener
+     solo dos electrones; si un  tomo debe tener tres electrones,
+     entonces el tercero deber  pasar al siguiente nivel. El segundo
+     nivel puede contener un m ximo de 8 electrones, el tercer nivel 
+     de 18 y el cuarto de 32 como se determina por medio de la f¢rmula
+     2n^2 donde n es el n£mero del nivel. A cada nivel o capa se le
+     asigna un n£mero llamado N£mero Cu ntico Principal y se
+     representa con la letra n, que toma los valores de 1, 2, 3,etc.,
+     partiendo del nivel m s cercano al n£cleo hacia afuera. Tambi‚n
+     se usan las letras k, l, m, n. Cada nivel se subdivide en
+     subniveles: el primero puede contener 2 electrones, el segundo 6
+     electrones, el tercero 10 electrones y el cuarto, 14 electrones.
+     Los subniveles se denominan mediante las letras s, p, d, y f en
+     orden hacia afuera, a partir del n£cleo.
+
+                                                                     
+En conclusi¢n, los electrones del £ltimo nivel de energ¡a son los m s
+d‚bilmente unidos al n£cleo y constituyen los orbitales de valencia.
+Los electrones pueden moverse de una ¢rbita a otra, para lo cual un
+electr¢n debe ganar o perder una cantidad exacta de energ¡a: un
+QUANTUM de energ¡a.

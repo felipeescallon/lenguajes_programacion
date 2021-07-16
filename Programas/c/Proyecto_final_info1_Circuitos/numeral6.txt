@@ -1,0 +1,44 @@
+
+FUENTES FIJAS (Fuentes de Corriente Directa DC)
+                                                                     
+La corriente directa (DC) abarca el conjunto de sistemas el‚ctricos en
+los que hay un flujo constante, invariable y unidireccional de carga
+en el tiempo.
+                                                                     
+El t‚rmino fuente se aplica a un dispositivo que es capaz de convertir
+energ¡a no el‚ctrica en el‚ctrica y viceversa, como por ejemplo
+bater¡as, fuentes y pilas.
+
+Las fuentes que proporcionan un voltaje o corriente fijo son las
+fuentes de tensi¢n de cd y las de corriente de cd.
+
+
+* Fuentes de Tensi¢n DC (Fuentes de Voltaje DC)
+                                                                     
+En las fuentes de tensi¢n DC, el terminal positivo se encuentra a un
+mayor potencial que el negativo y se le asigna un signo positivo,
+mientras que al terminal negativo se le atribuye un signo menos.
+@
+
+             REPRESENTACION DE LAS FUENTES DE VOLTAJE
+Una bater¡a consiste en una combinaci¢n en serie o paralelo de dos o
+mas celdas similares siendo las celdas las fuentes fundamentales de
+energ¡a el‚ctrica desarrolladas a expensas de la energ¡a solar o la
+qu¡mica. Todas las celdas son de tipo primario o secundario. Las
+celdas de tipo secundario son recargables.
+                                                                     
+En este grupo se tienen las pilas, que pueden ser generadores o
+rectificadores. Las fuentes de tensi¢n de cd proporcionan de manera
+ideal una tensi¢n terminal fija, a£n cuando var¡e la demanda de
+corriente. (dependiendo de la capacidad de corriente de la fuente de
+tensi¢n)                                                             
+
+
+* Fuentes de Corriente DC
+
+                                                                     
+En forma ideal, la fuente de corriente de DC proporciona una corriente
+fija a una carga, aunque se presenten variaciones en la tensi¢n final,
+determinadas por la carga.
+‘
+             REPRESENTACION DE LAS FUENTES DE CORRIENTE

@@ -1,0 +1,51 @@
+
+
+
+
+
+      TEOREMA DE MAXIMA TRANSFERENCIA DE POTENCIA
+
+
+
+El teorema de M xima Transferencia de Potencia establece:
+" Una fuente real (de voltaje o corriente), transfiere la m xima
+potencia a una resistencia de carga, cuando el valor de la
+resistencia de carga sea igual al valor de la resistencia de
+la fuente."
+ƒ
+Se sabe que una fuente de voltaje real se representa por una
+fuente ideal en serie con una resistencia interna (resistencia
+del generador).
+
+Si se consideran los posibles valores para la resistencia de
+carga RL, se tiene lo siguiente:
+
+Si RL >> (infinitamente grande), entonces I = 0 y PL = 0 por que
+no se entrega potencia a la carga.
+Si RL = 0 (corto circuito), PL = 0 ya que VL = 0 y PL = VL x I
+Si se considera cualquier valor finito de RL, la potencia
+entregada a la carga tiene un valor finito:
+P= R*I^2
+
+Aplicando el concepto de m ximo de una funci¢n, el cual se
+encuentra al derivar la funci¢n e igualarla a cero, si se deriva
+la funci¢n de la potencia de la carga cuando se varía el valor
+de la resistencia de carga, se puede obtener el valor de RL para
+ que la potencia entregada a la carga sea m xima.
+Se concluye que la potencia entregada por una fuente real a una
+carga a trav‚s de una l¡nea de transmisión es m xima cuando
+RL = Rg.
+La potencia máxima será: P=(E ^2)/4RL
+Ejemplo: Determinar el valor de la RL de tal manera que se
+transfiera sobre ella m xima potencia de la fuente.
+’
+Seg£n el teorema de Thevenin, el circuito equivalente entre los
+puntos a y b es:
+Rth=2
+Eth=2
+Para m xima transferencia de potencia, la resistencia de la fuente
+debe ser igual a la resistencia de carga, RL = RTH = 2W
+
+EFICIENCIA
+La eficiencia en un circuito se define como la siguiente relaci¢n:
+N=Psalida/Pentrada   

@@ -1,0 +1,104 @@
+TOPOLOGIA DE CIRCUITOS
+
+La topolog¡a es el  rea de las matem tica que estudia las propiedades
+invariantes de las figuras geom‚tricas.
+
+El desarrollo de la topolog¡a en cuanto a los circuitos el‚ctricos se
+debe a Kirchhoff. Espec¡ficamente el inter‚s es encontrar una ayuda
+para extraer las variables desconocidas que se usan en la soluci¢n de
+un problema y establecer una gu¡a para escribir las ecuaciones
+independientes necesarias para hallar las inc¢gnitas.
+
+Definiciones:
+Nodo Topol¢gico: Uni¢n de dos o m s ramas.
+Rama Topol¢gica: est  constituida por cada una de las resistencias que
+quedan despu‚s de suprimir las fuentes. Para hacer cero una fuente de
+voltaje, se cortocircuita la fuente, y todas las resistencias que est n
+en paralelo con la fuente salen del circuito. Para hacer cero una
+fuente de corriente, I = 0, se abre la fuente y las resistencias en
+serie con ‚sta no se consideran.
+Malla Topl¢gica: Un camino cerrado formado por varias ramas
+topol¢gicas.
+
+Ley Topol¢gica: b = n + L -1 donde
+b = branch (rama)
+n = node (nodo)
+L= loop (malla)
+
+
+
+Diagrama Topol¢gico de un Circuito
+
+El procedimiento a seguir es el siguiente:
+
+1.  Se anulan las fuentes, teniendo en cuenta que una fuente de
+voltaje nula equivale a un corto circuito y que una fuente de
+corriente nula equivale a un circuito abierto.
+2.  Se omiten las resistencias en paralelo con fuentes de voltaje.
+3.  Se omiten las resistencias en serie con fuentes de corriente.
+4.  Se ubican los nodos (uno de referencia = nodo de tierra)
+5.  Se unen con l¡neas los diferentes nodos, a trav‚s de sus ramas.
+6.  El n£mero de mallas del diagrama topol¢gico determina el n£mero de
+ecuaciones independientes para resolver el circuito.
+
+
+
+
+Ejemplos:
+
+1. Hallar el diagrama topol¢gico del circuito mostrado en la figura:
+
+
+
+
+
+
+
+
+
+
+
+Ä
+
+
+
+
+
+
+
+
+Siguiendo el procedimiento planteado, inicialmente se anulan la fuentes
+y se ubican los nodos:
+
+
+
+
+
+
+ê
+
+
+
+
+
+Finalmente se realiza el diagrama topol¢gico con base en el circuito
+anterior, uniendo los puntos o nodos con l¡neas cuando entre ellos
+exista conexi¢n.
+
+
+
+á
+
+
+
+En el diagrama topol¢gico se debe cumplir la Ley Topol¢gica:
+b = n + L - 1
+Donde b = 4, L=2, n = 3
+Entonces, 4 = 3 + 2 - 1 = 4
+	       4 = 4
+
+
+El hecho de que se presenten dos mallas implica que se necesitan dos
+ecuaciones independientes para resolver el circuito.
+
+

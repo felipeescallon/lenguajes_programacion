@@ -1,0 +1,144 @@
+
+
+
+
+
+                            CIRCUITOS EN SERIE
+
+
+
+
+Definicion
+                                                                          
+Un circuito consiste en un cierto numero de elementos unidos en puntos
+terminales, proporcionando por lo menos una trayectoria cerrada para
+que la carga pueda fluir.
+
+
+En un  circuito, debido a la diferencia de potencial entre los dos
+terminales de la bateria, esta tiene la capacidad de hacer que fluya
+carga por el circuito simple. Mientras la bateria esta conectada al
+circuito y mantenga su caracteristica entre terminales, la corriente
+que pasa por el circuito no cambiara en magnitud ni direccion
+(corriente DC). Si el alambre es un conductor ideal, es decir que no
+se opone al paso de corriente, la diferencia de potencial a traves de
+la resistencia sera igual en magnitud que la fem de la bateria:
+V(voltios) = E (voltios).
+La corriente de este circuito esta limitada unicamente por la
+resistencia R, cumpliendose la relacion establecida por la Ley de Ohm.
+
+
+Dos elementos estan en serie si tienen un solo punto en comun que no
+esta conectado a un tercer elemento y la corriente que fluye por ellos
+es la misma.
+
+
+
+En un circuito serie la corriente que fluye a traves de todos los
+elementos es la misma.
+
+
+
+
+Resistencia Equivalente de un Circuito Serie:
+
+
+Para encontrar la Resistencia total de un Circuito Serie, se anaden
+simplemente los valores de las diversas resistencias. En terminos
+generales, la resistencia total de un circuito serie esta dada por la
+siguiente ecuacion:
+
+
+     RTotal = R1 + R2 + R3......+ Rn                           (2,13)
+
+
+La caida de voltaje a traves de cada resistencia depende del valor de
+la resistencia y de la corriente que por ella circule.
+
+
+Ejemplo:
+
+
+Determinese la resistencia total de un circuito serie  R1=2ohm,
+R2=2ohm, R3=2 ohm, R4=1ohm, R5=1ohm, R6=1 ohm.
+
+Solucion:
+
+
+Rtotal = R1 + R2 + R3 + R 4 + R5 + R6
+Requivalente = 2 ohm + 2 ohm + 2 ohm+ 1ohm+ 1ohm + 1ohm 
+Req = 9 ohm
+
+
+
+
+Ley de Voltajes de Kirchhoff
+
+Esta Ley establece que: La suma algebraica de las subidas y caidas de
+tension, en torno de un circuito o trayectoria cerrada, es nula.
+
+              Sumatoria V = 0           L. V. K.               (2.15)
+
+Un circuito cerrado es cualquier conexion continua de bifurcaciones
+que permite trazar una trayectoria que sale de un punto en una
+direccion y vuelve a el desde otra direccion diferente, sin abandonar
+el circuito.
+
+©
+
+
+
+
+           FIGURA 1.  LEY DE VOLTAJES DE KIRCHHOFF
+
+En el circuito de la figura 1, al seguir el flujo de la corriente que
+va desde el punto A hasta el menos (-) de la fuente E, se puede
+trazar una trayectoria continua que sale del punto A a traves de cada
+una de las resistencias y regresar a E sin abandonar el circuito. Por
+tanto el trayecto de la corriente es un circuito o trayectoria
+cerrada.
+
+Para poder aplicar la Ley de Voltajes de Kirchhoff, la suma de las
+subidas y caidas de potencial se debe hacer en una misma direccion a
+lo largo del circuito cerrado. Se asigna un signo positivo (+) a un
+aumento o subida de potencial y un signo negativo (-) a una caida.
+Siguiendo el flujo de la corriente en el circuito de la figura 1 desde
+el punto A, se encontrara inicialmente una caida de potencial
+V1 (+ a -) a traves de la primera resistencia y asi sucesivamente
+otras caidas de potencial a traves de cada una de las resistencias
+que componen el circuito o camino cerrado. Al seguir a traves de la
+fuente de tension, se tiene un aumento de potencial E (- a +).
+
+Entonces para el circuito de la figura 1 se tiene que:
+
+Sumatoria V = 0
+
+-E + V1 + V2 + V3 + V4 + V5 + V6 =0
+
+
+Lo que implica que el voltaje E suministrado en el circuito por la
+fuente es igual a la suma de las  caidas de potencial en los elementos
+que componen el circuito.
+
+
+Regla del Divisor de Voltaje
+
+La determinacion de la tension o el voltaje que cae en una resistencia
+o cualquier combinacion de resistencias en un circuito, se puede
+reducir a un solo elemento utilizando esta regla.
+
+a) Resistencia total (o equivalente):   Req= R1+R2+R3+R4+R5+R6	
+b) Corriente:	I = V / Req
+c) Tension a traves de Rn :     Vn = I x Rn   (donde Rn puede ser
+   cualquiera de los elementos resistivos)
+
+En general:
+
+              Vn = Ern / R_total                              (2,16)
+
+En palabras, la regla del divisor de voltaje nos dice: el voltaje en
+una determinada resistencia que compone el circuito serie es igual a
+la multiplicaci¢n del valor de resistencia por la corriente que
+circula en dicha resistencia.
+
+

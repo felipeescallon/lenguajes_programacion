@@ -1,0 +1,140 @@
+CORRIENTE Y VOLTAJE
+                                                                     
+En la teor¡a de circuitos, la separaci¢n de cargas crea una fuerza
+el‚ctrica (llamada voltaje) y el movimiento de cargas crea un fluido
+el‚ctrico (llamado corriente).
+
+a. CORRIENTE
+                                                                     
+Se considera un trozo corto de alambre de cobre con un plano
+perpendicular imaginario generando as¡ un corte transversal.Cuando el
+alambre se encuentra a temperatura ambiente y sin presencia de alguna
+fuerza externa, se presenta un movimiento aleatorio de electrones
+libres (son electrones que obtienen suficiente energ¡a del medio para
+abandonar el  tomo), originado por energ¡a t‚rmica que obtienen los
+electrones del medio ambiente.
+                                                                     
+En el evento de que un  tomo pierda un electr¢n libre, este adquiere
+carga neta positiva y se denomina ion positivo, entonces el electr¢n
+libre se desplaza entre esos iones positivos y deja la zona del  tomo
+original mientras los iones positivos oscilan solo en una posici¢n
+fija, siendo el electr¢n libre el portador de la carga en el metal.  
+Dentro de este conjunto, los electrones libres ganan o pierden energ¡a
+en virtud de las cambios de direcci¢n y velocidad como por ejemplo
+colisiones con iones positivos y otros                               
+electrones, fuerzas de atracci¢n hacia iones positivos y fuerzas de
+repulsi¢n entre electrones. Este movimiento es tal que durante cierto
+per¡odo, el n£mero de electrones que se desplazan hacia la derecha del
+corte es igual al de la izquierda: siempre y cuando no se apliquen
+fuerzas externas, el flujo neto de carga en cualquier direcci¢n es
+cero.
+                                                                     
+Ahora, se conecta un alambre entre los terminales de una pila.  La
+pila, por su energ¡a qu¡mica, sit£a una carga neta positiva en un
+terminal y una carga neta negativa en el otro. En cuanto se conecta el
+alambre a los terminales,los electrones libres del alambre se        
+desplazan hacia el terminal positivo, mientras que los iones positivos
+restantes siguen oscilando en sus posiciones fijas medias. El terminal
+negativo es una fuente de electrones que se extraen cuando los
+electrones del cobre m s cercanos al terminal negativo se van hacia el
+terminal positivo, entonces puesto que los electrones los proporciona
+el terminal negativo al mismo ritmo que los acepta el positivo,
+cualquier secci¢n del alambre permanece el‚ctricamente neutra (Ley de
+Conservaci¢n de la Carga).
+                                                                     
+De lo anterior se deduce que la corriente el‚ctrica es la cantidad de
+carga que circula a trav‚s de un conductor en una unidad de tiempo. El
+s¡mbolo para representar la corriente es I y la unidad de medida es el
+Amperio.
+
+Se dice que si los terminales son de tal ¡ndole que pueden hacer que
+6.242 x 1018 electrones se desplacen a una velocidad uniforme hacia la
+derecha a trav‚s de una secci¢n de corte circular  en un segundo,
+entonces el flujo de carga o corriente es de un Amperio.             
+
+La corriente en Amperios se determina mediante la siguiente ecuaci¢n:
+
+                 I(amperios) = Q(coulombs)/t(segundos)    
+
+N¢tese que se han fijado dos direcciones del flujo de carga: un flujo
+convencional y flujo de electrones.
+
+b. VOLTAJE
+
+
+Para entender este concepto, se aplicar  inicialmente el concepto de
+Energ¡a Potencial. La energ¡a, en el sentido m s amplio, es
+simplemente una medida de la capacidad para realizar un trabajo. La  
+energ¡a potencial es la que se asocia con un cuerpo en virtud de su
+posici¢n con respecto a un determinado nivel (altura).
+                                                                     
+La energ¡a potencial de la masa se determina mediante la siguiente
+ecuaci¢n:
+
+                  Energ¡a_Potencial = mgh = wh(Julios)
+                                                                     
+donde m es la masa, g es la aceleraci¢n gravitacional, h es la altura
+de la  masa en la posici¢n, w es el peso.
+
+Es decir, la energ¡a potencial en la posici¢n a con respecto al plano
+de referencia se da por la ecuaci¢n anterior, o la capacidad de la
+masa para realizar un trabajo en la posici¢n, con respecto al plano de
+referencia se determina seg£n la ecuaci¢n anterior.
+
+En un circuito el‚ctrico, la meta consiste en establecer un flujo de
+carga. En un conductor, la carga en virtud de su posici¢n, puede tener
+la capacidad de realizar el trabajo que se requiere para vencer las  
+fuerzas que se oponen al movimiento del flujo a trav‚s del conductor,
+es decir, un aumento de energ¡a potencial de la carga har  aumentar la
+cantidad de flujo.
+                                                                     
+Entonces, el voltaje o la diferencia de potencial se define como la
+energ¡a o la cantidad de trabajo necesario para mover una carga
+el‚ctrica de un punto a otro. El s¡mbolo utilizado es V y la unidad de
+medida es el voltio.
+                                                                     
+Es decir que si el trabajo necesario para mover de un punto a otro una
+carga de 1 Coulomb es de 1 julio, existe una diferencia de potencial
+de 1 voltio entre los puntos. El s¡mbolo para la tensi¢n o voltaje es
+V.
+                  V(1-2)=V1-V2= W(JULIOS)/Q(COULOMBS)                
+
+Donde W es el n£mero de julios de energ¡a necesarias para desplazar Q
+coulombs de la posici¢n 1 a la 2.
+
+En general,
+Una segunda explicaci¢n, seguramente m s clara del concepto de voltaje
+es:
+                                                                     
+
+Teniendo en cuenta el concepto de fuerzas el‚ctricas, se sabe que para
+unir dos cargas positivas es necesario realizar un trabajo para vencer
+las fuerzas de repulsi¢n determinadas por la Ley de Coulomb. 
+                                                                     
+Se debe encontrar la cantidad de trabajo necesario para llevar la
+carga n a las posiciones X y Y considerando la carga mayor C. Para
+evaluar la cantidad de trabajo, es necesario tener un nivel de
+referencia a partir del cual se pueda sumar la energ¡a. Si r es lo
+suficientemente grande, las fuerzas de repulsion son muy peque¤as y
+as¡ las cargas no se afectar n la una a la otra.
+                                                                     
+En el punto en que r = infinito se tiene una energ¡a potencial nula.
+Para llevar la carga n de la posici¢n r = infinito al punto r=X se   
+requiere de una cantidad espec¡fica de trabajo en la carga, ganando
+energ¡a de tipo potencial. Si en x se libera la carga, ‚sta regresar 
+a r = infinito por la fuerza de repulsi¢n, perdiendo toda su energ¡a 
+potencial. Si se lleva la carga de la posici¢n x a la y, es necesario
+un mayor trabajo para vencer la fuerza de repulsi¢n. En y la carga
+tiene un mayor potencial que en x y por consiguiente existe una
+diferencia de potencial entre x e y que corresponde a la cantidad de
+energ¡a necesaria para desplazar la carga n de la posici¢n x a la y,
+dada  
+por:
+
+                      V(voltios) = W(julios)/Q(coulombs)
+
+
+Se define una fuerza electromotriz (fem) como la fuerza necesaria para
+generar el desplazamiento continuo de las cargas (o de los electrones
+libres de un conductor) de un punto a otro.
+                                                                     

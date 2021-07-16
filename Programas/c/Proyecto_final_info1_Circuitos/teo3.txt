@@ -1,0 +1,60 @@
+
+
+
+
+                       TEOREMA DE NORTON
+
+
+
+El teorema de Norton establece que: "Toda red lineal de dos pares
+de terminales se puede reemplazar por un circuito equivalente que
+consta de una fuente de corriente equivalente y una resistencia
+equivalente en paralelo".
+
+El circuito equivalente de Norton se indica a continuacion:
+÷
+In, corresponde a la corriente de Norton y equivale al valor de
+la corriente que circula entre los terminales a y b cuando estos
+se cortocircuitan.
+Rn es la resistencia de Norton y equivale al valor de la
+resistencia vista entre las terminales a y b cuando las fuentes
+se hacen cero.
+Las etapas a seguir para determinar los valores equivalentes de
+resistencia y corriente de Norton son:
+1. Retirar la porci¢n de la red, a trav‚s de la cual se debe 
+   encontrar el circuito equivalente.
+2. Marcar los terminales de la red restante.
+3. Calcular la Rn para lo cual se hacen las fuentes cero, es decir,
+   las fuentes de voltaje se hacen equivalentes a corto circuito
+   y las fuentes de corriente se colocan como circuito abierto y
+   luego se determina la resistencia resultante entre los terminales
+   marcados.
+4. Calcular la In aplicando superposici¢n determinando la corriente
+   de corto circuito entre los terminales marcados.
+5. Trazar el circuito equivalente de Norton reemplazando la porci¢n
+   del circuito que se retir¢ previamente entre los terminales del
+   circuito.
+
+El circuito equivalente de Norton se puede determinar a partir del
+circuito equivalente de Thevenin y viceversa, haciendo transformaci¢n
+de fuentes reales.
+
+Ejemplo:
+
+Aplicando el teorema de Norton determinar la corriente en la resistencia
+de 10W
+Ž
+Las etapas 1 y 2 corresponden a retirar la porci¢n del circuito donde
+se pide determinar la potencia.
+La etapa 3 consiste en hallar la Rn, para lo cual se anulan la fuentes.
+Rn =  4 êê 5 = 20/9 W
+Para hallar la corriente de Norton (etapa 4) se consideran los efectos
+de las fuentes independientemente y se determina la corriente de
+cortocircuito entre los terminales a y b. Considerando la fuente de 12V
+(Teorema de superposici¢n),
+In1=12/4= 3A, porque el corto anula los efectos de la resistencia de 5W. 
+Considerando la fuente de 30V
+In2=30/5=6A, debido a que el corto anula la resistencia de 4W.
+Entonces, In = In1 + In2= 9A
+El circuito equivalente Norton se muestra a continuaci¢n:
+é

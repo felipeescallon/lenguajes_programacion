@@ -1,0 +1,114 @@
+DETERMINANTES
+
+Hay un conjunto de etapas b sicas que conducen a la formaci¢n de un
+determinante. El c lculo para la soluci¢n de un sistema de ecuaciones
+por determinantes produce ahorro de tiempo, esfuerzo y disminuci¢n de
+errores frecuentes.
+
+Considere las siguientes ecuaciones:
+
+a1 x + b1 y = c1
+a2 x + b2 y = c2
+
+x e y son las inc¢gnitas,
+a1, a2, b1, b2, c1, c2 son constantes.
+
+Para hallar los valores de x e y que satisfagan las dos ecuaciones
+simult neas mediante el m‚todo de los determinantes se utiliza el
+siguiente formato:
+
+     ³ c1  b1 ³
+     ³ c2  b2 ³
+  x= ³ÄÄÄÄÄÄÄÄ³
+     ³ a1  b1 ³
+     ³ a2  b2 ³
+
+     ³ a1  c1 ³
+     ³ a2  c2 ³
+  y= ³ÄÄÄÄÄÄÄÄ³
+     ³ a1  b1 ³
+     ³ a2  b2 ³
+
+El denominador es el determinante D de los coeficientes de x e y.
+El numerador se determina por medio de la variable que se va a evaluar,
+reemplazando la columna de la inc¢gnita con los elementos a la derecha
+del signo igual, as¡:
+
+
+
+
+
+     ³ c1  b1 ³
+     ³ c2  b2 ³    c1b2-c2b1
+  x= ³ÄÄÄÄÄÄÄÄ³ = ÄÄÄÄÄÄÄÄÄÄÄ
+     ³ a1  b1 ³    a1b2-a2b1
+     ³ a2  b2 ³
+
+
+     ³ a1  c1 ³
+     ³ a2  c2 ³     a1c2-a2c1
+  y= ³ÄÄÄÄÄÄÄÄ³  = ÄÄÄÄÄÄÄÄÄÄÄ
+     ³ a1  b1 ³     a1b2-a2b1
+     ³ a2  b2 ³
+
+
+
+
+El empleo de determinantes se puede aplicar a cualquier n£mero de
+ecuaciones lineales simult neas. Para resolver determinantes de tercer
+orden considere:
+
+a1 x + b1 y + c1 z = d1
+a2 x + b2 y + c2 z = d2
+a3 x + b3 y + c3 z = d3
+
+
+Para cada inc¢gnita se tiene que:
+
+
+     ³ d1  b1  c1 ³
+     ³ d2  b2  c2 ³
+     ³ d3  b3  c3 ³
+  x= ³ÄÄÄÄÄÄÄÄÄÄÄÄ³
+     ³ a1  b1  c1 ³
+     ³ a2  b2  c2 ³
+     ³ a3  b3  c3 ³
+
+
+     ³ a1  d1  c1 ³
+     ³ a2  d2  c2 ³
+     ³ a3  d3  c3 ³
+  y= ³ÄÄÄÄÄÄÄÄÄÄÄÄ³
+     ³ a1  b1  c1 ³
+     ³ a2  b2  c2 ³
+     ³ a3  b3  c3 ³
+
+
+
+
+
+     ³ a1  b1  d1 ³
+     ³ a2  b2  d2 ³
+     ³ a3  b3  d3 ³
+  z= ³ÄÄÄÄÄÄÄÄÄÄÄÄ³
+     ³ a1  b1  c1 ³
+     ³ a2  b2  c2 ³
+     ³ a3  b3  c3 ³
+
+Un m‚todo abreviado para evaluar el determinante consiste simplemente
+en repetir las dos primeras columnas del determinante a la derecha de
+‚ste y luego sumar los productos a lo largo de las diagonales, as¡:
+
+   ³ a1  b1  c1 ³a1 b1
+D= ³ a2  b2  c2 ³a2 b2 =(a1b2c3+b1c2a3+c1a2b3)-(a3b2c1+b3c2a1+c3a2b1)
+   ³ a3  b3  c3 ³a3 b3
+
+
+La soluci¢n total es la suma de las diagonales 1, 2 y 3, menos la suma
+de la diagonales 4, 5 y 6.
+
+Advertencia: este m‚todo de expansi¢n es bueno para determinantes de
+tercer orden.
+
+
+

@@ -1,0 +1,29 @@
+
+CIRCUITOS EN CORTO
+                                                                      
+Un elemento esta en corto si sus efectos se alteran por una conexion
+directa de bajo valor resistivo en sus terminales (el flujo de carga
+siempre busca un camino que le ofrezca menor resistencia ).
+´
+
+
+
+CIRCUITO CON CORTO CIRCUITO
+
+El alambre de resistencia efectiva nula  "coloca en corto" a la
+resistencia de 2 ohm. La corriente Isc (Corriente de Corto Circuito)
+se puede determinar mediante la regla del divisor de corriente:
+
+
+I = 5 * (2 / (2 + 0) = 10 / 2 = 5A
+
+La corriente total que entra en el nodo paralelo fluye por el "corto".
+La resistencia no tiene corriente que fluya por el, por lo tanto no
+se produce caida de voltaje. Su efecto es eliminado completamente por
+el "corto".
+
+Se concluye que un "corto" es una conexion que divide parcial o
+totalmente un circuito proporcionando una ruta adicional (facil) para
+la corriente, proporcionando una ruta adicional para la corriente.
+
+

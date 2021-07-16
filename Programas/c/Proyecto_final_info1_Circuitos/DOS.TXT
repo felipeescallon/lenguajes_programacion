@@ -1,0 +1,137 @@
+
+FUENTES FIJAS
+
+En el Capitulo I se realizo la introduccion a este tema, y se recuerda
+que las fuentes fijas son sistemas en los que el flujo de carga es
+constante, invariable, y unidireccional.
+
+Fuentes Constantes
+
+Las fuente ideales se caracterizan por no tener resistencia.
+
+a.  Fuente Ideal de Voltaje
+                                                                      
+Una fuente ideal de voltaje proporciona un voltaje terminal fijo sin
+importar las variaciones del flujo de carga. Entre sus terminales,
+la fuente de voltaje no tiene conexion alguna, o sea que la
+resistencia equivalente conectada a sus terminales sera una
+resistencia de valor infinito,  entonces:
+
+		P = E^2 / R = E / Infinito = 0
+
+No suministra potencia alguna hasta tanto no se le conecte algun
+elemento entre sus terminales.˛
+
+
+
+
+
+
+          FUENTE DE VOLTAJE IDEAL
+
+Ahora bien, si entre sus terminales se conecta un corto circuito, es
+decir se conecta un alambre sin resistencia (R = 0 ohm), entonces:
+
+P = E^2 / R = E^2 / 0 = Infinito
+
+Lo cual indica que una fuente ideal de voltaje puede suministrar
+potencia infinita, lo que se considera un absurdo; por esta razon se
+llama fuente ideal.
+
+b.  Fuente Ideal de Corriente
+
+Una fuente ideal de corriente suministra una corriente fija a la carga
+sin importar las variaciones de voltaje que se presenten. Entre los
+terminales de la fuente al no existir elemento alguno, se puede
+considerar que esta conectada una resistencia de valor infinito,
+entonces :
+
+
+                P= I^2 R = I^2 (infinito) = infinito
+
+
+Este caso tambien es ideal, porque ninguna fuente puede suministrar
+potencia infinita.≈
+
+
+
+
+                      FUENTE IDEAL DE CORRIENTE
+
+Fuentes Reales
+
+Son fuentes caracterizadas por poseer resistencia. En estos casos,
+esa resistencia puede considerarse como la resistencia equivalente a
+la resistencia interna de la fuente, la cual no es medible en forma
+directa, pero que recoge el valor de las perdidas que presenta una
+fuente.
+
+
+
+
+
+
+a. Fuente Real de Voltaje◊
+
+
+
+
+
+
+                  FUENTE REAL DE VOLTAJE 
+
+Con corto circuito entre los terminales.
+
+Isc = E/R			(Isc = corriente de corto circuito)
+
+
+b. Fuente Real de Corrienteç
+
+
+
+
+
+                 FUENTE REAL DE CORRIENTE
+
+Todo equipo presenta una resistencia interna no medible.
+
+Equivalencia de Fuentes
+
+Una fuente de voltaje real es equivalente a una fuente real de
+corriente, si ambas tienen el mismo valor de resistencia.
+
+El valor de la fuente se determina mediante la aplicacion de la ley de
+Ohm.
+
+
+
+
+
+Suma de Fuentes
+
+
+a. Fuentes de Voltaje en Serie
+
+
+Varias fuentes de voltaje ideales en serie y todas con la misma
+polaridad con respecto a un punto de referencia, se pueden reducir a
+una sola fuente equivalente, cuyo valor sera la suma algebraica de
+ellas y con su respectiva polaridad.
+
+Para el caso de fuentes con distinta polaridad, se sigue la regla
+anterior, o sea que se suman algebraicamente los valores de las
+fuentes y la polaridad resultante obedecera a la polaridad de la suma
+mayor (suma de positivas y/o suma de negativas).
+
+
+
+
+b. Fuentes de Corriente en Paralelo
+
+Cuando se tienen varias fuentes ideales de corriente en paralelo,
+estas se pueden agrupar en una sola, sumandolas algebraicamente con
+sentido de la mayor suma ( + y/o - ).
+
+
+
+

@@ -1,0 +1,129 @@
+METODO DE VOLTAJES DE NODO
+
+Este m‚todo se basa en la Ley de Corrientes de Kirchhoff que dice
+que la suma de las corrientes que entran a un nodo es igual a la
+suma de las corrientes que salen del nodo: (Ientrada = ( Isalida.
+Cumple autom ticamente con LVK.
+
+El procedimiento a seguir es el siguiente:
+
+1.  Escoger un nodo de referencia (V=0; datum line) y asignar un
+    r¢tulo de voltaje con sub¡ndice a los (N-1) nodos restantes de
+    la red (recuerde que un nodo es la uni¢n de dos o mas ramas).
+2.  El n£mero de ecuaciones necesarias para una soluci¢n completa
+    es igual al n£mero de tensiones con sub¡ndice (N-1). La
+    columna 1 de cada ecuaci¢n es igual a la suma de las
+    conductancias ligadas al nodo de inter‚s multiplicando el
+    resultado por el voltaje nodal en evaluaci¢n.
+3.  Considerar los t‚rminos mutuos, que se restan siempre de la
+    primera columna. Es factible tener m s de un t‚rmino mutuo si
+    el voltaje nodal de la corriente de inter‚s tiene un elemento
+    com£n con m s de otra tensi¢n nodal. Cada t‚rmino mutuo es el
+    producto de la conductancia mutua, multiplicado por el voltaje
+    nodal enlazado a esa conductancia.
+4.  La columna de la derecha del signo de igualdad es la suma
+    algebraica de las fuentes de corriente ligadas al nodo de
+    inter‚s. Se toma positivo (+) si la fuente proporciona
+    corriente al nodo y negativo (-) si la fuente toma corriente
+    del nodo.
+5.  Se resuelven la ecuaciones simult neas resultantes para los
+    voltajes de nodo deseados y se determinan las corrientes o
+    potencias de inter‚s.
+6.  Una vez conocidos los voltajes de nodo se verifica el
+   cumplimiento de la ley de corrientes de Kirchhoff.
+
+En resumen, la regla a seguir es la siguiente:
+
+
+Se multiplica el voltaje del nodo por la suma de las conductancias
+que posee el nodo y a esto se le resta el producto de las
+conductancias comunes por el voltaje de los nodos respectivos con
+los cuales tiene conexi¢n el nodo en consideraci¢n. Este resultado
+se iguala a la suma de las fuentes de corriente que entran o salen
+del nodo"
+
+
+
+
+
+
+
+Ejemplo:
+
+Aplicar el m‚todo de los voltajes de nodo al siguiente circuito:
+
+
+
+
+~
+
+
+
+Paso 1:	Consiste en ubicar los nodos y rotularlos (observe el
+circuito).
+
+Pasos 2 a 4: Se plantean las ecuaciones de corriente para
+cada nodo, excepto el nodo tierra.
+
+Nodo Ea:
+ (Ea/6)+(Ea-Eb/3)=-2
+
+
+Nodo Eb:
+ (Eb/9)+(Eb-Ea/3)=3
+
+
+
+
+
+
+
+
+Paso 5:	Se reorganizan las ecuaciones y se solucionan:
+
+3 Ea - 2 Eb = -12 (1)
+-3 Ea + 4 Eb = 27 (2)
+
+de donde se obtiene que:
+
+ Ea=1V
+ Eb=15/2V
+
+
+Ahora se pueden determinar las corrientes para cada resistencia
+(observar circuito):
+
+ i1=Ea/R1=1/6A
+ i2=(Eb-Ec)/R2=13/6A
+ i3=Eb/R3=5/6A
+
+
+Paso 6: Se aplica la ley de corrientes de Kirchhoff para
+verificar: i_entrada=i_salida (SUMATORIA)
+
+
+Nodo Ea:
+
+ i2=i1+2A
+ 3A=i2+i3
+
+Nodo Eb:
+ 3A=i2+i3
+
+
+
+
+Caso de Nodo Falso y Supernodo
+
+Un nodo falso se presenta cuando una fuente de voltaje est  ubicada
+entre un nodo cualquiera (excepto tierra) y el nodo tierra. Un
+supernodo se presenta cuando una fuente de voltaje no est  conectada
+a tierra directamente.
+
+
+
+
+
+
+
+En este caso tambi‚n se plantean ecuaciones de restricci¢n.

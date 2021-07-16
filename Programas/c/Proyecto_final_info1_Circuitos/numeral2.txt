@@ -1,0 +1,102 @@
+SISTEMA INTERNACIONAL DE UNIDADES (SI)
+
+
+Las unidades del Sistema Internacional se basan en seis cantidades   
+definidas: Longitud, Masa, Tiempo, Corriente El‚ctrica, Temperatura
+Termodinámica, (6)Intensidad Luminosa. Se presentan estas cantidades
+junto con la unidad b sica y los s¡mbolos correspondientes.
+
+
+SISTEMA INTERNACIONAL DE UNIDADES (SI)
+
+CANTIDAD                        UNIDAD  BASICA          SIMBOLO
+Longitud                        Metro                   M
+Masa                            Kilogramo               Kg
+Tiempo                          Segundo                 S
+Corriente El‚ctrica             Ampere                  A
+Temperatura - Termodin mica     Grados Kelvin           K
+Intensidad Luminosa             Candela                 Cd
+
+Las unidades definidas se combinan para formar unidades derivadas,   
+como porejemplo: la fuerza, la energ¡a, la potencia y la carga
+el‚ctrica. Es importante tener en cuenta que la unidad de medida de
+cada t‚rmino de una ecuaci¢n se debe encontrar dentro de la estructura
+de un sistema de unidades. Si una unidad de medida no est  en el
+sistema apropiado, se debe determinar su equivalencia mediante un
+proceso de conversi¢n.
+
+
+NOTACION CIENTIFICA                                                  
+
+
+En muchos casos las unidades del SI son demasiado peque¤as o grandes
+para utilizarse de manera conveniente, motivo por el cual es de
+utilidad la Notaci¢n Cient¡fica. Se presentan los prefijos normales
+que corresponden a potencias de 10 y que se aplican a la unidad
+b sica. Generalmente los m s utilizados son aquellos correspondientes
+a potencias divisibles entre 3.
+
+PREFIJOS NORMALIZADOS PARA REPRESENTAR POTENCIAS DE 10
+
+PREFIJO	SIMBOLO	POTENCIA
+yocto   y       10^-24
+zepto   z       10^-21
+atto    a       10^-18
+femto   f       10^-15
+pico    p       10^-12
+nano    n       10^- 9
+micro   m       10^- 6
+mili    m       10^- 3
+centi   c       10^- 2
+deci    d       10^- 1                                               
+Deca    D       10
+Hecto   H       10^ 2
+Kilo    K       10^ 3
+Mega    M       10^ 6
+Giga    G       10^ 9
+Tera    T       10^12
+Peta    P       10^15
+Exa     E       10^18
+Zetta   Z       10^21
+Yotta   Y       10^24
+
+Para facilitar las operaciones matem ticas con n£meros extremadamente
+grandes o peque¤os se deben recordar las propiedades de notaci¢n
+cient¡fica matem tica aplicable a las potencias de diez:
+
+1 = 10^0                         1/10 = 0.1 = 10^-1
+10 = 10^1                        1/100 = 0.01 = 10^-2
+100 = 10^2                       1/100 = 0.001 = 10^-3
+1000 = 10^3                      1/10000 = 0.0001 = 10^-4
+
+Ejemplos :
+
+1.  1000 ohms = 1x10^3 ohms = 1 Kilo ohm(KW)
+2.  10000 cent¡metros = 100x10^2 cent¡metros = 100 metros (m)
+3.  0.0001 segundo = 0.1x10^-3 segundos = 0.1 milisegundo (ms)
+4.  0.0001 Faradios = 0.1x10^-3 Faradios = 0.1 milifaradios (mF)
+                                                                     
+A continuaci¢n se indican las propiedades matem ticas para las
+operaciones con potencias de diez:
+
+Producto :      (10^n) (10^m) = 10^n+m
+Divisi¢n :      (10^n/10^m) = 10^n-m
+Potencia :      (10^n)^m = 10^n.m
+
+Ejemplos :
+
+1.  (100) (1000) = (10^2) (10^3) = 10^2+3 = 10^5
+2.  (0.0001) (100) = (10^-4) (10^2) = 10^-4+2 = 10^-2
+3.  100 000 000/100 = 10^8/10^2 = 10^8-2 = 10^6
+4.  1 000 000/0.0001= 10^6/10^-4 = 10^6-(-4) = 10^10
+5.  (100)4 = (10^2)^4 = 10^(2)(4) = 10^8
+6.  (1000000)-2 = (10^6)^-2 = 10^6(-2) = 10^-12                      
+Cuando se trabaja con n£meros arbitrarios se pueden representar con
+potencias de base diez.
+
+Ejemplos :
+1.  6500 + 75400 = (6.5x10^3) + (75.4x10^3) = (6.5+75.4)x10^3        
+    = 81.9x10^3
+2.  564400 - 41600 = (56.44x10^4) - (4.16x10^4) = (52.28x10^4)
+3.  (350000) (0.00052) = (3.5x10^5) (52x10^-5) = 182
+

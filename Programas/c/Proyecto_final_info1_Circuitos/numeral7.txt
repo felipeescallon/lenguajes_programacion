@@ -1,0 +1,279 @@
+RESISTENCIA ELECTRICA
+
+DEFINICION
+                                                                     
+Seg£n la capacidad de conducci¢n de la corriente el‚ctrica, los
+materiales se pueden clasificar de la siguiente manera:
+
+ - Conductores: Presentan poca resistencia u oposici¢n al paso de la 
+   corriente. Es decir, son materiales que permiten un importante
+   flujo de electrones mediante la aplicaci¢n de muy poca fem.
+                                                                     
+ - Aisladores: Se oponen en alto grado al paso de la corriente.
+   Requieren de una fem elevada para producir en ellos una corriente
+   el‚ctrica importante.
+
+ - Semiconductores: Elementos con cuatro electrones de valencia y con
+   caracter¡sticas muy especiales. Estos elementos permiten regular el
+   paso de la corriente.
+                                                                     
+La resistencia el‚ctrica de un material es la medida de la capacidad
+de un conductor o de cualquier material de oponerse al paso de la
+corriente. Esta oposici¢n es consecuencia de las colisiones
+presentadas entre electrones y de electrones con  tomos del material,
+fen¢meno que se manifiesta transformando la energ¡a el‚ctrica en
+calor. Se representa con la letra R y la unidad de medida de la
+resistencia es el ohm, cuyo s¡mbolo es la letra griega omega.
+@
+               SIMBOLO Y NOTACION PARA LA RESISTENCIA
+RESISTENCIA DE UN HILO CONDUCTOR
+                                                                     
+La resistencia de cualquier material con un  rea uniforme de su corte
+transversal se determina por los siguientes cuatro factores o
+par metros:
+
+1. El tipo de material, debido a que cada material tiene una
+   resistividad espec¡fica dada solamente por su misma estructura
+   at¢mica.
+                                                                     
+2. La longitud L del material, que al aumentar dar  como resultado un
+   incremento de la resistencia para secciones similares, el mismo
+   material y la misma temperatura.
+                                                                     
+3. El  rea A de la secci¢n transversal, cuyo aumento dar  como
+   resultado una disminuci¢n de la resistencia, siempre y cuando se
+   conserven constantes las otras variables.                                                                                              *
+4. La temperatura, cuyo aumento dar  como resultado un aumento
+   proporcional de la resistencia para dos alambres id‚nticos.
+
+                                                                     
+Al hacer referencia especificamente a la resistencia de un hilo
+conductor, se aplican directamente los par metros o factores anotados
+antes. Es decir que la resistencia de un hilo conductor a una
+temperatura ambiente de 20oC, es directamente proporcional al
+coeficiente de resistividad (r) del material empleado y a la longitud
+L del hilo conductor e inversamente proporcional al  rea de la secci¢n
+transversal, como la indica la siguiente ecuaci¢n:
+
+                              R = p(l/A)
+
+donde:
+R es la resistencia eléctrica y se da en ohms 
+p la resistividad (caracter¡stica del material a 20oC)
+l es la longitud de hilo en pies (ft), y
+A es el área de la sección transversal en circular mils (CM)         
+N¢tese que el  rea del conductor se mide en circular mils, para lo
+cual se deben tener en cuenta las siguientes relaciones:
+
+                    1 mills  =  (1/1000)pulgadas
+
+                    Area(en cm) = (Dmills)^2
+
+                                                                     
+La constante de resistividad p, es diferente para cada tipo de
+conductor y su valor corresponde a la resistencia de un trozo de hilo
+conductor de un pie de longitud por una mil‚sima de pie de di metro,
+medida a 20oC. Las unidades de p son CM-W/ft.
+
+Hasta el momento, se ha analizado la relaci¢n para hallar la         
+resistencia de un hilo conductor a una temperatura ambiente. Sin
+embargo, se sabe que con el aumento de la temperatura, aumenta la
+resistencia debido al mayor movimiento molecular en el interior del
+conductor que obstaculiza el flujo de carga.
+
+En la mayor¡a de los conductores met licos, la resistencia se
+incrementa casi en forma lineal al elevarse la temperatura. En los
+materiales semiconductores, la resistencia disminuye al aumentar la
+temperatura. Para determinar la resistencia de un hilo conductor
+debido a un incremento de temperatura conocido, con base en el valor
+de su resistencia a temperatura ambiente, se utiliza la siguiente
+relaci¢n:
+                          
+                          R2 = R1(1+a(T2-T1))
+
+donde:                                                               
+R2 es la nueva resistencia,
+R1 es la resistencia a 20oC,
+a es una constante propia de cada material llamada Coeficiente de
+Temperatura que resulta del análisis de la curva de incremento de
+resistencia con relación al tiempo. Tanto la constante de            
+resistividad p como la constante a, son datos que se incluyen en
+tablas y que se han encontrado experimentalmente en laboratorios para
+cada tipo de material.
+
+
+CONSTANTES DE RESITIVIDAD Y COEFICIENTES DE TEMPERATURA              
+
+MATERIAL        RESISTIVIDAD r     COEFICIENTE DE TEMPERATURA
+                  (W CM/pie)                a (20oC)
+
+Plata           9.90                        0.00380
+Cobre           10.37                       0.00393
+Oro             14.70                       0.00340
+Aluminio        17.0                        0.00390
+Lat¢n           43.0                        0.00370
+N¡quel          47.0                        0.00470
+Hierro puro     58.0                        0.00550
+
+
+TIPOS DE RESISTENCIAS
+
+Las resistencias se clasifican en dos grandes grupos:
+
+a) Resistencias fijas.                                               
+   Son las m s comunes. Se caracterizan por que son de baja potencia,
+   son resistencias moldeadas y compuestas de carbono. 
+
+Las resistencias de este tipo pueden obtenerse con facilidad en
+valores desde 2.7ohm hasta 22 Mega ohms.
+
+b) Resistencias variables                                            
+   Las resistencias variables se presentan en muchas formas, pero se
+   clasifican b sicamente en lineales y no lineales seg£n las
+   variaciones de la resistencia con relaci¢n al contacto giratorio o
+   de movimiento.
+   
+                                                                     
+   Existen resistencias variables de tres puntos que se pueden
+   denominar re¢stato o potenci¢metro dependiendo de c¢mo se utilice:
+   Si el terminal conectado al contacto m¢vil y el otro terminal
+   estacionario son los £nicos utilizados, la resistencia variable se
+   utiliza como re¢stato y el efecto es que se tiene un elemento
+   resistivo continuo. Si se conectan al circuito los tres terminales,
+   el uso es como potenci¢metro, el cual controla, mediante su
+   posici¢n, las diferencias de potencial entre dos puntos.          
+
+   Los tama¤os de las resistencias fijas y variables var¡an de acuerdo
+   con la clasificaci¢n de potencia, aumentando de tama¤o para
+   clasificaciones de potencia, con el fin de soportar corrientes m s
+   altas y mayor potencia de disipaci¢n.                             
+
+   Existen dispositivos semiconductores como los termoresistencias,
+   cuya resistencia es sensible a la temperatura y como las celdas
+   fotoconductoras cuya resistencia final est  determinada por la
+   intensidad de la luz incidente sobre la superficie expuesta.                                    
+
+
+EL CODIGO DE COLORES
+
+                                                                     
+En la actualidad muchas de las resistencias que se venden traen
+directamente impreso su valor ohmico, as¡ como otras caracter¡sticas.
+Sin embargo, existe tambi‚n un c¢digo dise¤ado especialmente para
+determinar el valor de las resistencias. Para las resistencias
+moldeadas fijas de composici¢n se imprimen cuatro bandas de color en
+un extremo del forro exterior.
+                                                                     
+Las bandas de color se leen siempre de izquierda a derecha desde el
+extremo que tiene la banda m s cercana al terminal.
+
+Los valores de las resistencias se presentan de la siguiente manera:
+
+* Si el valor est  comprendido entre 1 y 1000ohm, su valor se escribe
+  directamente.
+                                                                     
+* Si el valor est  comprendido entre 1000 y 10000ohm, su valor se
+  escribe reemplazando el valor de 1000 por la letra K. Por ejemplo
+  una resistencia cuyo valor sea 1500ohm se puede escribir como 1.5
+  Kilo ohm.
+
+* Si el valor es mayor a 1000000omh, este ser  reemplazado por Mega
+  omh que equivale a 10^6.
+
+La primera y segunda banda representan la primera y la segunda cifra
+significativa y sus valores corresponden al primero y segundo d¡gito
+del valor de la resistencia. La tercera banda es la tercera cifra
+significativa y se denomina multiplicador debido a que dice el n£mero
+de ceros que se deben agregar a los dos d¡gitos anteriores. Esta banda
+indica la potencia de 10 que multiplicar  a los dos primeros d¡gitos
+dando as¡ el valor total de ohmios de la resistencia. Si la tercera  
+banda es color oro, la potencia de 10 ser  -1, o sea 10^-1, si el
+color es plata, la potencia ser  -2 (10^-2). La cuarta banda es la
+tolerancia establecida por el fabricante, que es otra caracter¡stica 
+importante de la resistencia que se define como el porcentaje de error
+que se puede presentar cuando se mide el valor exacto de la
+resistencia en un laboratorio, comparado con el que mide el fabricante
+(es una medida de la precisi¢n con que se hace la resistencia).
+Mientras menor sea la tolerancia mayor es la precisi¢n de la         
+resistencia, y mejor su calidad. Estas tolerancias son del orden del
+5% (color oro) al 10% (color plata), aunque se pueden encontrar
+tolerancias mayores y menores. Si se omite la cuarta banda, se supone
+que la tolerancia es de 20%. Si la cuarta banda es roja, se indica
+alta precisi¢n (tolerancia 0%).
+
+Ejemplos:                                                            
+1. Sup¢ngase que los siguientes son los colores que aparecen en una
+resistencia:
+1er color: rojo
+2do color: rojo
+3er color: naranja
+4to color: plata
+Su valor ser  entonces: 22 x 10^3 +/- 10% ohms. Tambi‚n puede
+escribirse como:
+22 Kilo oms +/- 10%
+                                                                     
+El valor de la potencia no aparece impreso en el cuerpo de las
+resistencias, este se puede determinar por el tama¤o de la
+resistencia. Los valores comerciales son de 1/4, 1/2, 1, 2, 5, 10
+vatios (w). Los valores superiores vienen impresos en la resistencia.
+                                                                     
+Existen resistencias de precisi¢n en las que se determina la propiedad
+de una resistencia en cuanto a su estabilidad de carga y se define
+como la variaci¢n en tanto por ciento del valor de la resistencia    
+despu‚s de 5000 horas de uso a 20oC y con 60% de humedad ambiental.
+Esta clase va desde 1 hasta 5, indicando con ello el porcentaje de
+variaci¢n del valor. El quinto color que aparece en las bandas
+corresponde a esta tolerancia y las otras cuatro bandas indican el
+valor de la resistencia.                                             
+
+Algunos valores comerciales de resistencias dados en ohmios son: 1,
+1.1, 1.2, 1.3, 1.5, 1.6, 1.8, 2, 2.2, 2.4, 2.7, 3, 3.3, 3.6, 3.9, 4.3,
+4.7, 5.1, 5.6, 6.2, 6.8,  7.5, 8.2, 9.1, 10.
+
+
+CONDUCTANCIA
+
+
+La conductancia es el fen¢meno contrario a la resistencia de un      
+material, es decir que permite obtener una medida de la facilidad de
+conducci¢n de la corriente. Se mide en siemens o mhos cuyo s¡mbolo es
+la letra omega invertida. La letra simb¢lica para representar la
+conductancia es la letra G y su valor es el inverso de la resistencia.
+
+                            G = 1/R
+
+donde:
+G es la conductancia en mhos y R es la resistencia.
+
+CONEXIONES EN SERIE Y EN PARALELO 
+                                    
+
+En un circuito, la resistencia como elemento tiene mucha importancia,
+ya que una sola resistencia o una resistencia unida a una fuente de
+voltaje, es una rama completa del circuito.                          
+
+Dentro de una red el‚ctrica existen dos arreglos fundamentales de la
+forma como se pueden conectar las resistencias; uno de estos arreglos
+es la conexi¢n en serie y el otro es la conexi¢n en paralelo.
+
+a) Conexi¢n Serie                                                    
+   Dos o m s resistencias est n conectadas en serie, si tienen por lo
+   menos uno de sus terminales unidos con la siguiente resistencia y
+   por ellas circula la misma cantidad de corriente. La resistencia
+   equivalente de ellas es una sola resistencia cuyo valor es la suma
+   de los valores individuales de las otras resistencias.
+
+   ‘
+
+                         R = R1+R2+R3+...+RN
+
+b) Conexi¢n Paralelo
+   Las resistencias en paralelo tienen sus dos terminales unidos. En 
+   este arreglo la corriente que fluye por ellas no es la misma, ya
+   que se ha dividido en las resistencias, pero aqu¡ el voltaje de las
+   resistencias es el mismo. La resistencia equivalente en este caso
+   es el inverso de la suma de los inversos del valor individual de
+   las resistencias en cuesti¢n.
+     
+
+              1/R = 1/R1 + 1/R2 + 1/R3 + ... + 1/RN

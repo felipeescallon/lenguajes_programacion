@@ -1,0 +1,168 @@
+
+
+
+
+                 LEY FUNDAMENTAL DE LOS CIRCUITOS
+
+
+
+Ley de Ohm
+                                                                     
+Todas las conversiones de energia de una u otra forma se pueden
+relacionar mediante la siguiente ecuacion. Considere la expresion:
+
+                    Efecto = Causa / Oposicion                (2,1)
+
+En los circuitos electricos, el efecto que se establece es el flujo
+de carga o corriente, la diferencia de potencial entre dos puntos
+es la causa de ese flujo y la oposicion al flujo es la resistencia
+encontrada.
+
+Al sustituir directamente en la ecuacion 2.1, se tiene:
+
+                Corriente = Diferencial de Potencia / Resistencia               (2,2)
+
+es decir, 
+
+                    I = E / R (Amperios)                     (2,3)
+
+donde : I es la corriente en Amperios (A)
+        E es la diferencia de potencial en voltios (V), y 
+        R es la resistencia en Ohms.
+
+Esta relacion es conocida como Ley de Ohm y establece que la
+intensidad de una corriente constante en un circuito es directamente
+proporcional a la tension o diferencia de potencia total aplicada al
+circuito e inversamente proporcional a la resistencia total del
+mismo.
+                                                                     
+Para la diferencia de potencial, el simbolo E representa todas las
+fuentes de fuerza electromotriz, tales como baterias (voltaje
+generado) y el simbolo V es la caida de potencial a traves de una
+resistencia o cualquier dispositivo de conversion de energia (voltaje
+terminal).
+
+Notese que cuando se coloca una diferencia de potencial (voltaje)
+entre los terminales de una resistencia y se hace circular a traves
+de ella una corriente I, esta cambia su valor al atravesar la
+resistencia, debido a que la resistencia ofrece un obstaculo a este
+flujo; esto significa que la corriente en un circuito depende
+primordialmente de la resistencia en el mismo.  De la relaciones para
+la Ley de Ohm (ecuaciones 2.2, 2.3), se encuentra que la resistencia
+actua como una constante que relaciona el voltaje con la corriente a
+traves del conductor. Si la resistencia es nula (corto circuito)     
+debera circular una corriente infinita (observe la ecuacion 2.3),
+aunque en la practica esto es imposible, ya que cualquier conductor
+de corriente por bueno que sea opone cierta resistencia. En forma
+analoga, si se tiene en determinada rama del circuito una resistencia
+infinita, esta se puede representar mediante un circuito abierto y,
+de esta forma, no circulara ninguna corriente.
+
+Ejemplo:
+
+1. Cual es la corriente que pasa por una resistencia de 2 ohm y tiene
+una caida de potencial de 16 V en ella.
+Datos:
+I = ?
+R = 2 ohm
+V = 16 V
+Solucion:
+
+
+
+                I = E / R = 16V / 2 ohm = 8A
+
+
+Potencia Electrica
+
+La potencia es una indicacion de la cantidad de trabajo que se puede
+hacer en una cantidad especifica de tiempo, o sea un indice de la
+realizacion de trabajo, como lo indica la ecuacion 2.5 a
+continuacion:
+
+                P = W / t = Vatios                             (2,5)
+
+donde P es la potencia que se da en Vatios,
+W es el trabajo en Julios y,
+t es el tiempo en segundos.
+
+
+Establecemos que la potencia suministrada por una fuente de energia
+esta dada por:
+
+                P=EI (Vatios)                                (2,6)
+
+
+donde E es la fem de la fuente e I es la corriente tomada de la
+fuente.
+
+Notese que una resistencia colocada en una red se opone al paso de la
+corriente que circula, pero esta corriente esta determinada por una
+fuente que es capaz de entregar cierta potencia a todos los
+componentes del circuito; esta resistencia disipa o consume parte de
+esa potencia en forma de calor que entrega al medio, es por eso que
+tambien se habla de la capacidad de disipar potencia de una
+resistencia. Este calor es generado precisamente por la oposicion que
+le hace el elemento al flujo de corriente.
+
+
+Ejemplos:
+
+1. Cual es la potencia que se disipa en un resistencia de 5 ohm, si
+la corriente que pasa por ella es de 4 A?
+
+Datos:                                  Solucion:
+P=?                                     P = I^2 R = (4A)(5) = 80 V
+R=5 ohm                                                                                                                      
+I = 4 A
+
+
+2. La resistencia de una estufa electrica de 150 voltios es de 12000
+ohm. Calcular la potencia consumida cuando esta conectada a una
+diferencia de potencial de 125 voltios.
+
+Datos:                                  Solucion:
+R = 12000 ohm                      
+P = ?                                   P = 125^2 / 12000 = 1,3                      
+E = 125 voltios
+
+
+
+Eficiencia
+
+
+La ley de la conservacion de la energia establece que: 
+
+Entrada de energia = Salida de energia + Energia disipada o
+almacenada en el interior de la caja negra.
+
+Al dividir los dos lados de la relacion entre t, se tiene:
+
+           W in / t = W out / t + W lost_storage/ t
+
+y como P = W / t (ecuacion 2.5), entonces se tiene lo siguiente:
+
+        P in = P out + P lost_storage                         (2,10)
+
+mediante la siguiente relacion:
+
+         Eficiencia = P out / P in                            (2,11)
+
+En terminos de la energia de entrada y de salida, la eficiencia, en
+porcentaje, esta dada por:
+     
+         Eficiencia (%)  = W out / W in * 100%                (2,13)
+
+Ejemplo:
+
+1. Cual es la eficiencia de un sistema en que la energia de entrada
+es de 50 julios y la de salida es de 42.5 julios?
+
+Datos:
+Eficiencia = ?
+Wi = 50 julios
+Wo = 42.5 julios
+Solucion:
+                             
+Eficiencia (%) = 42.5 / 50 * 100% = 85 %
+
