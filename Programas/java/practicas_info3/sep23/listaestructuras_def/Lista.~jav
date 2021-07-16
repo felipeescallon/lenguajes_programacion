@@ -1,0 +1,223 @@
+//Lista simplemente enlazada lineal
+
+import java.lang.*;
+import java.io.*;
+
+public class Lista//OJO CON MANEJO DE EXCEPCIONES
+{
+	public static void main(String[] args)
+	{
+	int opcion=0, value=0, eliminado=0, encontrado=0, eleccion=0;	
+	String nombrearchivo=null;
+	
+	ClaseLista l=new ClaseLista("Lista original"); 		//crea la cabecera de la lista
+		
+
+	//RECUPERAR LISTA GUARDADA CON UN ARCHIVO AUX QUE GUARDE EL NOM_ARCH QUE CONT LA LISTA
+
+	do
+	{
+		
+		System.out.print("\n\n");
+		System.out.println("----------------------------------------------");
+		System.out.println("M E N U \n");
+		System.out.println("1. 	Insertar nodo en la lista \n");
+		System.out.println("2. 	Eliminar nodo de la lista \n");//eliminar any node::ubicar ref
+		System.out.println("3. 	Buscar o refenciar nodo \n");//SI HAY VARIOS REPETIDOS EL 1O QUE ENCUENTRE
+    System.out.println("4. 	Refenciar principio de la lista \n");//SI HAY VARIOS REPETIDOS EL 1O QUE ENCUENTRE
+		System.out.println("5. 	Copiar lista \n");
+		System.out.println("6. 	Invertir lista \n");
+		System.out.println("7. 	Guardar lista \n");
+		System.out.println("8. 	Guardar lista como \n");
+		System.out.println("9. 	Imprimir lista \n");
+ 		System.out.println("10. Visualizar lista copiada \n");
+		System.out.println("11. Recuperar lista anterior \n");//RECUPERAR SLOAMENTE SI NO HAY NODOS
+		System.out.println("12. Salir");
+		System.out.println("----------------------------------------------");
+
+		opcion=Leer.datoInt();
+		System.out.println("\n");
+
+		try
+		{
+		switch(opcion)
+		{
+		case 1:		System.out.println("Insertar nodo");
+				System.out.println("Digite el contenido del nodo: ");
+				value=Leer.datoInt();
+				l.innodo_lis(value);
+				break;
+
+
+
+		case 2:		l.control();
+				System.out.println("Eliminar nodo");
+				eliminado=l.elimnodo_lis();
+				System.out.println("el valor del nodo eliminado era de: " +eliminado);
+				break;
+
+		case 3:		l.control();
+				System.out.println("Buscar o ubicar refencia");
+				System.out.println("Digite el contenido del nodo a buscar o refenciar: ");
+				value=Leer.datoInt();
+				encontrado=l.buscar_lis(value);
+				if(encontrado==0)
+					{
+					System.out.println("No existe ningun nodo con ese conetnido");
+					}
+				else	{
+					System.out.println("El nodo "+encontrado+" tiene un valor de: "+value);
+					}
+
+				break;
+
+     case 4:l.ubicar_ref_inicio();
+             break;
+
+
+
+		case 5:		l.control();//SI NO HAY LISTA NO PUEDE COPIAR
+				System.out.println("Copiar lista");
+				System.out.println("La lista original ha sido copiada!!!");
+				l.copiar_lis();
+				break;
+
+
+		case 6:		l.control();
+				System.out.println("Invertir lista");
+				System.out.println("La lista original ha sido invertida!!!");
+				l.invertir_lis();
+				break;
+
+
+		case 7:		l.control();
+				System.out.println("Guardar lista");
+				eleccion=1;
+				nombrearchivo=guardando(l,eleccion,nombrearchivo);
+				break;
+
+		case 8:		l.control();
+				System.out.println("Guardar lista como");
+				eleccion=0;
+				nombrearchivo=guardando(l,eleccion,nombrearchivo);
+				break;
+
+		case 9:		l.control();
+				System.out.println("Imprimir lista");
+				l.imprimir_lis();
+				break;
+
+	  case 10: 	l.control1();
+				System.out.println("Visualizar lista copiada");
+        l.visualizar_lisc();
+        break;
+
+
+		case 11: 	l.control2();
+				System.out.println("Recuperar lista anterior");
+
+				try
+				{
+				  System.out.println("Digite el nombre del fichero a recuperar: ");
+					nombrearchivo=Leer.dato();
+					l.mostrarFichero(nombrearchivo);
+				}
+
+				catch(IOException e)
+ 					  {
+		                  	 System.out.println("Error:"+e.getMessage());
+					  }
+
+
+
+				break;
+
+		case 12:	break;
+
+		default:	System.out.println("Opcion novalida (entero entre 1 y 8)");
+				break;
+
+		}
+		}
+
+		catch(Desborde e)
+		{
+		System.out.println(e.getMessage());
+		}
+
+		catch(Exception e)
+		{
+		}
+
+		System.out.println("\n");
+
+
+	}while(opcion!=12);
+
+	}
+
+
+public static String guardando(ClaseLista j,int voto, String nombre)//VOTO=SAVE OR SAVE AS
+
+	{
+
+	String nombreFichero=null;//IMPÒRTANTE INITIATE
+	File fichero;
+	char respuest ='s';
+
+	try
+	{
+	if(voto==0 || nombre==null)
+	{
+	do
+	{
+	respuest ='s';
+	System.out.println("Escriba el nombre del fichero: ");
+	nombreFichero=Leer.dato();
+	fichero= new File(nombreFichero);
+
+	if(fichero.exists())
+	{
+		do
+		{
+		System.out.println("El fichero ya existe ¿Desea reemplazarlo?: (s/n) ");
+		respuest=Leer.caracter();
+		Leer.limpiar();
+
+		if(respuest!='s' && respuest!='n')
+			{
+			System.out.println("Opcion no valida (Caracter s o caracter n)");
+			}
+		}while(respuest!='s' && respuest!='n');
+	}
+	}while(respuest=='n');
+
+	j.guardar_lis(fichero);
+	System.out.println("LA LISTA HA SIDO GUARDADA CON EL NOMBRE:");
+	System.out.println(nombreFichero);
+	return nombreFichero;
+
+	}
+
+	else
+	{
+	fichero= new File(nombre);
+	j.guardar_lis(fichero);
+	System.out.println("LA LISTA HA SIDO GUARDADA");
+	return nombre;
+	}
+
+	}
+
+
+	catch(IOException e)
+	{
+	System.out.println("Error: " + e.getMessage());
+	}
+
+	return nombre;
+	}
+
+}
+
+
