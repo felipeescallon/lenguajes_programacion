@@ -1,0 +1,7 @@
+Landa=8
+k=5
+
+F=(eps.^(-Landa).*((Landa.^k))/FACTORIAL(k))
+
+k=[-1:1:50]
+plot(Landa,k)

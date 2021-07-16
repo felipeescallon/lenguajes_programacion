@@ -1,0 +1,27 @@
+function [] = dominio 
+clc
+A1={1 1 1 1 0 1 1 1 1 1 1 0 1 1 1 1;}; %Amplitud
+fc=50; %frecuencia portadora
+fm=1; %frecuencia de la señal mensaje
+%Nota: fm<<fc 
+%fm mucho menor que fc
+%y la frecuencia está dada en KHz
+Ec=8; % Voltaje Pico de la Portadora
+Em=0.715; %Voltaje Pico de Excursión
+%Intervalo de tiempo
+t=0:0.001:0.4;
+x=A1.*sin(2*pi*fc*t)+A1.*cos(2*pi*fc*t);
+P=Ec*cos(2*pi*fc*t);
+E1=-(Em/2)*cos(2*pi*(fc+fm)*t);
+E2=(Em/2)*cos(2*pi*(fc-fm)*t);
+xam=Ec*cos(2*pi*fc*t)-(Em/2)*cos(2*pi*(fc+fm)*t)+(Em/2)*cos(2*pi*(fc-fm)*t);
+%Aplicación de la transformada de fourier
+Y=fft(x,512);
+H=Y.*conj(Y) / 512;
+f = 1000*(0:255)/512;
+%Graficas de: la señal AM, la trayectoria en el espacio de la
+%fase y la modulación AM doble banda lateral
+figure
+subplot(3,1,1);plot(t,xam,'r');grid;
+subplot(3,1,2);plot(Y(1:fc));
+subplot(3,1,3);plot(f,H(1:256));
