@@ -1,0 +1,136 @@
+//////////////////////////////////////////////////////////////////////////////////////////
+//																					//
+//	Creado por:																			//
+//	Gustavo Andrés Uribe Gomez															//
+//	Luis Miguel Collazos V.																//
+//	Cesar G. Chaves A.																	//
+//	Flavio Andres Martinez Erazo														//
+//	Andrés Felipe Escallon Portilla.				
+								
+	// //	Jose Wilmer Castillo Obando			
+								
+		// //	Fabian Leonidas Mosquera Palta		
+								
+		// //	Jorege David Moncayo Bravo		
+								
+			// //					
+								
+						//
+//------------------------------------------------------------------------------------------// //																					// //	FSS.cpp:																			// //	Funcion principal del programa										 				// //																					// //////////////////////////////////////////////////////////////////////////////////////////
+
+
+#include "conexion.h"
+#include "errores.h"
+#include "interfaz.h"
+#include <iostream.h>
+#include <stdlib.h> //exit(),system()
+#include <netdb.h>  //gethostent()
+
+int main(int argc, char *argv[])//pareametros del main: maneja linea decomandos 
+{ 	system("clear"); 	ERRORES err;
+	OPERACIONES op;
+	struct hostent* host;
+	struct in_addr IP;
+	char* mensaje=new char[1024];
+	int estado;
+
+	host=gethostent();
+	IP.s_addr= *(long *)host->h_addr;
+	endhostent();
+
+	Conexion* CS;
+	Servidor* S1=new Servidor();
+	S1->generarIP();
+	
+if(!strcmp(inet_ntoa(IP),S1->direccion()))
+	{
+	   	S1->iniciarROL(CLIENTESERVIDOR);
+	 	CS=new Conexion(CLIENTESERVIDOR,S1->direccion());
+	}
+	   else
+	     {
+	 	S1->iniciarROL(CLIENTE);
+	 	CS=new Conexion(CLIENTE,S1->direccion());
+	     }
+	
+        cout<<"Hasta aqui llega"<<endl;
+	S1->actualizarRed(CS);
+	delete(CS);
+	
+	//Generar la lista de los archivos a compartir (WILMER y FELIPE)
+	{
+		switch(fork())
+		{
+		case -1:{
+				 tratarExcepcion(NOHIJO);
+				 break;
+				} 
+		case 0:{	//HIJO
+				cout<<"Este es el HIJO";
+				Conexion *C1;
+				if(argc>1)
+				{
+					C1=new Conexion(CLIENTE,argv[1]);
+				}
+				   else
+				   {
+					C1=new Conexion(CLIENTE,S1->direccion());
+				   }	
+				
+				err=NOCONECT;
+				
+				if(C1->conectar()!=-1)	
+				{
+					op=manejarInterfaz(); 	
+					switch(op)
+					{
+						case TERMINAR:{
+									C1->enviar("TERMINAR");
+								}			
+						case ENVIARMENSAJE:{
+									C1->enviar("MENSAJE");
+									cin.get(mensaje,1024);
+									cin.ignore(1024);
+									C1->enviar(mensaje);
+								}			
+					}
+				}
+				delete(C1);
+				exit(0);
+				break;
+			   }
+		default:{	//PADRE
+					cout<<"Este es el PADRE";
+			 	 	Conexion *C2=new Conexion(CLIENTESERVIDOR,inet_ntoa(IP));
+				 	while(1)
+					{
+						if(!S1->modo())
+						{
+							S1->actualizarRed(C2);
+						}
+						else
+						{
+							if(estado!=-1) C2->conectar();
+						}
+						mensaje=C2->recibir();
+						if(mensaje!=0)
+						{
+							cout<<mensaje;//prueba
+							if(!strcmp(mensaje,"TERMINAR"))
+							{	
+								delete(C2);
+								delete(S1);
+								exit(0);
+							}
+							if(!strcmp(mensaje,"MENSAJE"))
+							{	
+								cout<<C2->recibir();//Por ahora
+							}
+						}	
+				 	}
+					break;	
+				}
+		}
+	}
+	return (0);
+}

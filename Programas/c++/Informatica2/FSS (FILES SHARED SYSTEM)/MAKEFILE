@@ -1,0 +1,25 @@
+#Inicio
+
+FUENTES =  FSS.cpp	conexion.cpp	errores.cpp	interfaz.cpp	archivos.cpp
+OBJETOS =  FSS.o	conexion.o	errores.o	interfaz.o	archivos.o
+ENCABEZADO = conexion.h	errores.h  interfaz.h	archivos.h
+EJECUTABLE = FSS
+
+#Banderas 
+CC = g++
+
+#Enlazado
+
+$(EJECUTABLE) :	$(OBJETOS)
+	$(CC) $(OBJETOS) -o $(EJECUTABLE)
+ 
+FSS.o : $(ENCABEZADO)
+
+conexion.o : $(ENCABEZADO)
+
+interfaz.o : $(ENCABEZADO)
+
+archivos.o: $(ENCABEZADO)
+
+#Fin
+

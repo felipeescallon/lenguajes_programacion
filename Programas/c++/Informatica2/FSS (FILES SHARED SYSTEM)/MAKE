@@ -1,0 +1,25 @@
+#Inicio
+
+FUENTES =  Tels.cpp	mainTel.cpp
+OBJETOS =  Tels.o	mainTel.o
+ENCABEZADO = Tels.h
+EJECUTABLE = SimTel
+
+#Banderas 
+CC = g++
+CFLAGS = -g
+
+#Enlazando
+
+$(EJECUTABLE) :	$(OBJETOS)
+	$(CC) -o $@ $(OBJETOS)
+
+$(OBJETOS) : $(ENCABEZADO) $(FUENTES)
+	$(CC) -c $(CFLAGS) $(FUENTES)
+
+#Eliminando archivos objetos
+
+CLEAN: rm -i *.o
+ 
+#Fin
+

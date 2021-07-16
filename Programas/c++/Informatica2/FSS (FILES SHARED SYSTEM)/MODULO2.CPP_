@@ -1,0 +1,325 @@
+/////////////////////////////////
+//BUSQUEDA DE ARCHIVOS         //
+/////////////////////////////////
+#include<string.h>
+#include<fstream.h>//para archivos
+#include<stdlib.h>//para system(" ");
+
+int buscar(char* archivo,char* objeto);
+
+class Lista
+{
+
+   char nombre;//nombre de la lista
+   //char parabuscar[11];    //int par;
+  public:
+   
+  Lista(char n);
+  ~Lista();
+
+  void leerArchivo(char* filename,int);//obtener dirreciones
+
+  void mostrarDirectorios();
+  void pregenerarLista();//organiza todo para organizar lista
+  void generarLista(char*);
+  void buscar(char* );
+  void escribirResultado(int );                        //llama internamente a escribirResultado   void escribirResultado( int);
+
+};
+/*******************************************************************************/
+
+Lista::Lista(char n)
+{
+ nombre=n;
+}
+
+
+Lista::~Lista()
+{
+ cout<<"¡¡¡Lista destruida!!!"<<endl;
+}
+
+
+void Lista::leerArchivo(char* filename, int c)
+{
+  int i=0;
+ ifstream archivo(filename);
+
+  char ch;
+
+
+
+   while(i<c){ archivo.get(ch); cout<<ch;  i++;}
+
+ archivo.close();
+
+}
+
+void Lista::mostrarDirectorios()
+{
+
+
+   //char fichero1[100];//
+   system("ls /root/mod2/textos/ > fichero1");//accesa a la ruta y crea el archivo
+
+
+ // char fichero2[100];//
+  system("ls /root/mod2/doc/ > fichero2");
+
+}
+
+/*************************************************************************************/
+
+void Lista::pregenerarLista()
+{  char comando [150];
+  char ch;
+  ifstream archivo1("opciones.fss")  ;
+  do{archivo1.get(ch);}while(ch!='\n');
+  ofstream archivo2("comando.fss")  ;
+  archivo2<<"find ";
+  archivo1.get(ch);
+  cout<<"ddd   ";
+  while(ch!='\n'){archivo1.get(ch); if(ch!='\n')cout<<ch; archivo2<<ch;}
+  archivo2<<"> lista";
+  archivo2.close();
+   archivo1.close();
+   ifstream archivo3("comando.fss");
+   archivo3.get(comando,100);
+   archivo3.close();
+   cout<<"comando :"<<comando<<endl;
+   generarLista(comando);
+}
+void Lista::generarLista(char* comando)
+{
+	
+ //char lista;
+       //  cout<<"l"   ;
+ //system("find /root/newmod2/ >lista");//
+  system(comando);//
+}
+
+
+
+void Lista::buscar(char* abuscar){
+           //guardo lo que hay que buscar
+           int i=0;//contadores
+           int q=0;
+		   char d;//para leer archivos caracter a caracter
+		
+
+
+           ofstream bus("buscar.fss");  //en buscar guardo lo que se va a buscar
+           if(!bus) {      cout<<"g";
+	          cout<<"el archivo de no puede abrirse que tal./n";
+         
+                 } 
+           bus<<abuscar<<"^";//caracter diferenciador
+           bus.close();
+
+           i=0;
+
+           ofstream aco("lista2",ios::app);//par ir al final del archivo
+           if(!aco) {                     cout<<"lista 2";
+	          cout<<"el archivo de no puede abrirse que tal./n";
+        
+                 }
+		   aco<<'!';//caracter diferenciador
+           aco.close();
+
+           ifstream rec("buscar.fss");
+           if(!rec) {            cout<<"buscar.fss";
+	          cout<<"el archivo de no puede abrirse que tal./n";
+        
+                 }
+           while(!rec.eof()){ rec.get(d); i++;}
+
+
+           rec.close(); 
+
+
+
+           cout<<endl<<"El archivo digitado fue :"<<abuscar<<endl;
+           ofstream tado("resultado.fss");
+	       tado.close(); 
+	       ifstream nem("lista");
+           ofstream res("resultados");
+           if(!res) {  cout<<"res";
+	          cout<<"el archivo de no puede abrirse que tal./n";
+        
+                 }
+	       if(!nem) {          cout<<"nem";
+	          cout<<"el archivo de no puede abrirse que tal./n";
+        
+                 }
+		    cout<<"Buscando";
+           
+	       //char dni[80];
+		   char ch;
+           int c=i-2;//tamaño de abuscar empezando desde 0
+           i=0;
+           int p=0;
+           q=0;
+           int r=0;
+           
+
+	       while (!nem.eof()){
+           nem.get(ch);
+	       p++;
+	
+        
+	            if( ch==abuscar[i] ) i++;//va comparando con lo que hay que buscar y si es igual aumenta uno al contador
+	                else if (c==i){ if(i>0)q++; res<<p-i<<" Ç "; escribirResultado(r);i=0;}
+	                    else i=0;
+              
+		   if( ch=='\n' ) r=p;//r es una referencia de linea
+			  
+		                     }
+           
+           nem.close();
+           res.close();
+           i=0;r=10000;
+           
+           do{i++ ;}while(i<r);
+           cout<<" ";
+		      i=0;
+           do{i++ ;}while(i<r);
+           cout<<".";
+		      i=0;
+           do{i++ ;}while(i<r);
+           cout<<".";
+		      i=0;
+           do{i++ ;}while(i<r);
+           cout<<".";
+		      i=0;
+           do{i++ ;}while(i<r);
+           cout<<" ";
+		      i=0;
+           do{i++ ;}while(i<r);
+           cout<<".";
+		   
+           cout<<" "<<q<<" resultados : "<<endl;
+
+
+
+		   ofstream fichero("buscar.fss",ios::app);
+           if(!fichero) {             cout<<"fi" ;
+	          cout<<"el archivo de no puede abrirse que tal./n";
+        
+                 }
+           fichero<<'\n'<<q;//guarda en buscar el # de resultados
+
+           fichero.close(); 
+	
+
+
+
+	      ifstream ado("resultado.fss");
+	      if(!ado) {
+	      cout<<"el archivo  no puede abrirse que tal./n";
+        
+                 }
+		  i=1;
+		
+         while(!ado.eof()){
+         ado.get(ch);
+		 if ((ch== '\n' || i==1) && q>i-1){cout<<endl<<" "<<i<<": ";
+										i++;
+										if (i==2)cout<<ch;
+							  }
+                             else cout<<ch;
+		                      
+                      }
+         ado.close();
+
+}
+
+
+void Lista ::escribirResultado(int r){
+    //r  es la linea de texto a transferir de lista2 a resultado.fss
+    int u=0;   
+	char t;
+
+	
+	
+	ifstream ar("lista2");//se abre lista2
+    if(!ar) {
+	      cout<<"el archivo no puede abrirse que tal./n";
+        
+                 }
+	ofstream tado("resultado.fss",ios::app);//se abre reultado.fss y se va hasta el final
+    if(r!=0)do {ar.get(t); u++;}while(u<r );
+
+    do {ar.get(t); tado<<t;}while(t!='\n' && t!='!');//escribe caracter * caracter en resultado.fss
+    tado.close();
+	ar.close(); 
+  
+					
+}
+
+/**************************************************************************************/
+
+
+int main(int argc,char *argv[])
+{
+	 int c=0;
+	Lista *objeto=new Lista('l');
+	
+	 c= buscar("opciones.fss","SERVIDOR:")-10;//obtienre en que posicion empieza servidor
+	
+	objeto->pregenerarLista();
+	
+    
+	objeto->leerArchivo("opciones.fss",c);	
+	
+	
+	
+	//objeto->mostrarDirectorios();
+	
+	
+	objeto->pregenerarLista();
+
+	system("cat lista > lista2");//REALIZA UNA COPIA DE LISTA
+                   cout<< endl<<argc <<endl;
+
+		if(argc==1){   //verifica los argumentos de entrada
+		cout<<" Digite el nombre del archivo que desee buscar "<<endl;
+		char parbuscar[12];
+		cin.get(parbuscar,11);
+		objeto->buscar(parbuscar);
+		}
+		else{
+		objeto->buscar(argv[1]);
+		}
+	delete(objeto);
+	
+	return 0;
+}
+
+
+
+
+
+
+int buscar(char* archivo,char* objeto)
+{
+	char bufer[100];
+	int caracteresLeidos=0;
+	char c;
+		
+	
+	ifstream fichero(archivo);
+	do
+	{
+		fichero.get(bufer,100);
+		caracteresLeidos+=strlen(bufer);
+		if(!strcmp(bufer,objeto))
+	 	{
+			fichero.close();
+			return(caracteresLeidos);
+		}
+		fichero.get(c);
+		caracteresLeidos++;
+	}while(!fichero.eof());
+	fichero.close();
+	return(0);
+}
