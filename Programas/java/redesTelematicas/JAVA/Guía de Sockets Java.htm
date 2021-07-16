@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0053)http://lpucv.netfirms.com/Docs/guia_sockets_java.html -->
+<HTML><HEAD><TITLE>Guía de Sockets Java</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4522.1800" name=GENERATOR></HEAD>
+<BODY>
+<CENTER>
+<TABLE height=0 cellSpacing=0 cellPadding=0 width=596 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top><A href="http://www.netfirms.com/"><IMG 
+      src="Guía de Sockets Java_archivos/webhostingbanner.gif" 
+      border=0></A>&nbsp; </TD>
+    <TD vAlign=top><A href="http://www.netfirms.com/"><IMG height=60 
+      alt="Free Web Hosting by Netfirms" 
+      src="Guía de Sockets Java_archivos/freewebhosting.gif" width=120 
+      border=0></A><BR></TD></TR>
+  <TR>
+    <TD align=middle colSpan=2><IMG height=1 
+      alt="Free Web Hosting by Netfirms" src="" width=1 border=0><BR><A 
+      href="http://www.netfirms.com/"><FONT size=2><A 
+      href="http://www.netfirms.com/">This site is hosted by <B>Netfirms</B> Web 
+      Hosting</A></FONT></A> </TD></TR></TBODY></TABLE></CENTER>
+<BLOCKQUOTE>
+  <P>UNIVERSIDAD CENTRAL DE VENEZUELA<BR>FACULTAD DE CIENCIAS<BR>ESCUELA DE 
+  COMPUTACIÓN<BR>LENGUAJES DE PROGRAMACIÓN </P>
+  <P align=center><B>GUÍA DE SOCKETS EN JAVA</B></P>
+  <P>Los Sockets son puntos finales de enlaces de comunicaciones entre procesos. 
+  Los procesos los tratan como descriptores de archivos, de forma que se pueden 
+  intercambiar datos con otros procesos transmitiendo y recibiendo a través de 
+  ese socket.</P>
+  <P>Java ofrece comunicaciones basadas en sockets que permiten a las 
+  aplicaciones manejar el trabajo en redes como si fuera E/S de archivos: un 
+  programa puede leer un socket o escribir en un socket tan fácilmente como lee 
+  de un archivo o escribe de un archivo.</P>
+  <P>El tipo de socket describe la forma en la que se transfiere información a 
+  través de ese socket.</P>
+  <UL>
+    <P>
+    <LI><B>Sockets Stream (TCP, Transport Control Protocol)</B>: Es un servicio 
+    orientado a conexión donde los datos se transfieren sin encuadrarlos en 
+    registros o bloques. Si se rompe la conexión entre los procesos, éstos serán 
+    informados.<BR>El protocolo de comunicaciones con streams es un protocolo 
+    orientado a conexión, ya que para establecer una comunicación utilizando el 
+    protocolo TCP, hay que establecer en primer lugar una conexión entre un par 
+    de sockets. Mientras uno de los sockets atiende peticiones de conexión 
+    (servidor), el otro solicita una conexión (cliente). Una vez que los dos 
+    sockets estén conectados, se pueden utilizar para transmitir datos en ambas 
+    direcciones.
+    <P></P>
+    <P></P>
+    <LI><B>Sockets Datagrama (UDP, User Datagram Protocol)</B>: Es un servicio 
+    de transporte sin conexión. Se transmiten paquetes individuales de 
+    información y no garantiza que los paquetes llegarán en alguna forma en 
+    particular. De hecho los paquetes pueden perderse, duplicarse e incluso 
+    llegar en desorden. <BR>El protocolo de comunicaciones con datagramas es un 
+    protocolo sin conexión, es decir, cada vez que se envíen datagramas es 
+    necesario enviar el descriptor del socket local y la dirección del socket 
+    que debe recibir el datagrama. Como se puede ver, hay que enviar datos 
+    adicionales cada vez que se realice una comunicación.
+    <P></P></LI></UL>
+  <P>Java ofrece sockets de flujo (<I>stream</I>) y sockets de datagrama.</P>
+  <P>Los servicios sin conexión generalmente ofrecen mayor velocidad pero menor 
+  confiabilidad que los servicios orientados a conexiones.</P>
+  <P>El protocolo TCP y el conjunto de protocolos relacionados con él hacen 
+  posible la intercomunicación de una gran variedad de sistemas de computadoras 
+  heterogéneos (es decir, sistemas de computadoras con diferentes procesadores y 
+  diferentes sistemas operativos).</P>
+  <P>Los sockets se utilizan en todas las aplicaciones relacionadas con la 
+  comunicación entre redes distribuidas, entre ellas la red Internet.</P>
+  <P><B><U>Cliente/Servidor</U></B></P>
+  <P>El término Cliente/Servidor se menciona a menudo en el contexto del trabajo 
+  en red, ya que es el modelo de ejecución que siguen la mayoría de las 
+  aplicaciones de red. Un servidor es un proceso que se está ejecutando en un 
+  nodo de la red, y su función es gestionar el acceso a un determinado recurso. 
+  Un cliente es un proceso que se ejecuta en el mismo nodo, o en uno diferente, 
+  y que realiza peticiones al servidor. Las peticiones están originadas por la 
+  necesidad de acceder al recurso que gestiona el servidor.</P>
+  <P>Dado que la comunicación que normalmente se utiliza es orientada a 
+  conexión, se describirá a continuación cómo sería el comportamiento tanto del 
+  cliente como del servidor con este tipo de servicio.</P>
+  <P><B><U>El Servidor</U></B></P>
+  <P>El servidor está continuamente esperando peticiones de servicio. Cuando se 
+  produce una petición, el servidor despierta y atiende al cliente. Cuando el 
+  servicio concluye, el servidor vuelve al estado de espera. De acuerdo con la 
+  forma de prestar el servicio, se puede considerar dos tipos de servidores:</P>
+  <UL>
+    <P>
+    <LI><B>Servidores interactivos</B>: el servidor no sólo recoge la petición 
+    de servicio, sino que él mismo se encarga de atenderla. Esta forma de 
+    trabajo presenta un inconveniente; si el servidor es lento en atender a los 
+    clientes y hay una demanda de servicio muy elevada, se van a originar unos 
+    tiempos de espera muy grandes.
+    <P></P>
+    <P></P>
+    <LI><B>Servidores concurrentes</B>: el servidor recoge cada una de las 
+    peticiones de servicio y crea otros procesos para que se encarguen de 
+    atenderlas. Este tipo de servidores sólo es aplicable en sistemas 
+    multiproceso, como UNIX. La ventaja que tiene este tipo de servicio es que 
+    el servidor puede recoger peticiones a muy alta velocidad, porque está 
+    descargado de la tarea de atención al cliente. En las aplicaciones donde los 
+    tiempos de servicio son variables, es recomendable implementar este tipo de 
+    servidores.
+    <P></P></LI></UL>
+  <P>El papel del servidor es pasivo en el establecimiento de la comunicación, 
+  ya que después de haber avisado al sistema al que pertenece que está preparado 
+  para responder a las peticiones de servicio, el servidor se pone a la espera 
+  de peticiones de conexión que provengan de clientes. Para esto dispone de un 
+  socket de escucha (socket <I>listener</I>), enlazado al puerto TCP 
+  correspondiente al servicio, sobre el que espera las peticiones de conexión. 
+  Cuando llega al sistema una petición de este tipo, se despierta al proceso 
+  servidor y se crea un nuevo socket, que se llama socket de servicio (socket 
+  <I>server</I>), el cual conecta al cliente. Entonces el servidor podrá, por 
+  una parte delegar el trabajo necesario para la realización del servicio a un 
+  nuevo proceso que utilizará entonces la conexión, y por otra parte volverá al 
+  socket de escucha.</P>
+  <P>En el caso que la comunicación sea sin conexión, la secuencia de llamadas 
+  varía un poco, puesto que no es necesario encolar las peticiones que le llegan 
+  al servidor, ni esperar a que la conexión se efectúe. El servidor, una vez 
+  conectado al puerto correspondiente, se bloquea hasta que recibe alguna 
+  petición por parte de un cliente, contestando a éste, y retomando la escucha a 
+  la espera de nuevas peticiones.</P>
+  <P><U><B>El cliente</B></U></P>
+  <P>El cliente es la entidad activa en el establecimiento de una conexión, 
+  puesto que es el que toma la iniciativa de la demanda de conexión a un 
+  servidor. Esta demanda se realiza por medio de una primitiva, solicitando el 
+  establecimiento de una conexión que será conocida por los dos extremos. 
+  Además, el cliente está informado del éxito o del fracaso del establecimiento 
+  de la conexión.</P>
+  <P>En el caso de una comunicación sin conexión, el cliente no hace uso de 
+  ninguna primitiva para establecer un circuito virtual entre él y el servidor, 
+  sino que lo único que hace es conectarse a un puerto por el cual envía 
+  peticiones de servicio a un servidor.</P>
+  <P><B><U>Java y la Red</U></B></P>
+  <P>Una vez dado una idea de algunas de las cosas que están involucradas en el 
+  entorno de red, se verá cómo Java se relaciona con estos conceptos de red.</P>
+  <P>Hay dos clases de sockets TCP en Java. Uno es para servidores, y el otro es 
+  para clientes. La clase ServerSocket&nbsp; esta diseñada para ser un 
+  "escuchador", que espera a que se conecten clientes antes de hacer nada. La 
+  clase Socket está diseñada para conectarse a sockets de servidor e iniciar 
+  intercambios bajo protocolo.</P>
+  <P>La creación de un objeto Socket establece implícitamente una conexión entre 
+  cliente y servidor. No hay métodos o constructores que expongan explícitamente 
+  los detalles del establecimiento de la conexión. Aquí hay dos constructores 
+  usados para crear sockets de cliente:</P><B><TT>Socket(String nombreHost, int 
+  puerto)</TT></B> 
+  <UL>Crea un socket que conecta el nodo local con el nodo y puerto nombrados; 
+    puede producir una excepción de host desconocido 
+    (<TT>UnknownHostException</TT>) o una excepción de E/S 
+    (<TT>IOException</TT>).
+    <P></P></UL><B><TT>Socket(InetAddress direcciónIP, int puerto)</TT></B> 
+  <UL>Crea un socket usando un objeto <TT>InetAddress</TT> preexistente y un 
+    puerto; puede producir una excepción de E/S. La clase <TT>InetAddress</TT> 
+    se usa para encapsular tanto la dirección IP numérica como el nombre de 
+    dominio de esa dirección. </UL>
+  <P>Si se programa un cliente, el socket se abre de la forma:</P>
+  <UL><PRE>Socket miCliente;
+miCliente = new Socket("maquina", numeroPuerto);
+</PRE></UL>
+  <P>Donde <I>maquina</I> es el nombre de la máquina en donde se está intentando 
+  abrir la conexión y numeroPuerto es el puerto del servidor que está corriendo 
+  sobre el cual se quiere conectar. Cuando se selecciona un número de puerto, se 
+  debe tener en cuenta que los puertos en el rango 0-1023 están reservados para 
+  el sistema y no pueden especificarse como puertos de conexión en los programas 
+  de usuario. Estos son los que utilizan los servicios estándar del sistema como 
+  email, ftp, telnet o http. Para las aplicaciones que se desarrollen, 
+  asegurarse seleccionar un puerto por encima del 1023.</P>
+  <P>Los <B>ServerSocket</B> son bastante diferentes de los <B>Socket</B> 
+  normales. Cuando se crea un <B>ServerSocket</B>, se registrará a sí mismo en 
+  el sistema declarando su interés en las conexiones con clientes. Los 
+  constructores se <B>ServerSocket</B> reflejan el número de puerto sobre el que 
+  se desea aceptar conexiones y, opcionalmente, lo larga que se desea que sea la 
+  cola de dicho puerto. La longitud de la cola le indica al sistema cuantas 
+  conexiones de clientes puede dejar pendientes antes de empezar a rechazar 
+  conexiones directamente. El valor por defecto es 50. Aquí están los 
+  constructores:</P>
+  <P><TT><B>ServerSocket(int puerto)</B></TT><BR>Crea un socket de servidor en 
+  el puerto especificado con longitud de cola 50.</P>
+  <P><TT><B>ServerSocket(int puerto, int maxCola)</B></TT><BR>Crea un socket de 
+  servidor en el puerto especificado con longitud de cola maxCola.</P>
+  <P><TT><B>ServerSocket(int puerto, int maxCola, InetAddress direccionLocal) 
+  </B></TT><BR>Crea un socket de servidor en el puerto especificado con longitud 
+  de cola máxima maxCola. En un nodo sobre múltiples servidores, direccionLocal 
+  especifica la dirección IP al que se liga este socket.</P>
+  <P><B>ServerSocket</B> tiene un método adicional llamado <TT>accept()</TT>, 
+  que es una llamada que se bloquea y espera a que un cliente inicie 
+  comunicaciones, y después devuelve un <B>Socket</B> normal que se usa entonces 
+  para la comunicación con el cliente.</P>
+  <P>Si se está programando un servidor, la forma de apertura del socket es la 
+  que se muestra a continuación:</P>
+  <UL><PRE>ServerSocket miServicio;
+Socket socketServicio;
+miServicio = new ServerSocket(numeroPuerto);
+</PRE></UL>
+  <P>A la hora de la implementación de un servidor también se necesita crear un 
+  objeto Socket desde el ServerSocket para que esté atento a las conexiones que 
+  le puedan realizar clientes potenciales y poder aceptar esas conexiones:</P><PRE><UL>
+socketServicio = miServicio.accept();
+</UL>
+</PRE>
+  <P>Bien, hasta ahora se ha visto cómo crear sockets, tanto para clientes como 
+  servidores. Es importante cerrar los canales de entrada y salida que se hayan 
+  abierto durante la ejecución de la aplicación. En la parte del cliente:</P><PRE><UL>
+miCliente.close();
+</UL>
+</PRE>
+  <P>Y en la parte del servidor:</P><PRE><UL>
+socketServicio.close();
+miServicio.close();
+</UL>
+</PRE>
+  <P><B><U>Referencias:</U></B></P>
+  <UL>
+    <LI><A 
+    href="http://www.lcc.uma.es/~eat/services/i_socket/i_socket.html">http://www.lcc.uma.es/~eat/services/i_socket/i_socket.html</A> 
+
+    <LI><A 
+    href="http://www.undersec.com/sjfproject/prog/sockets/sockets.htm">http://www.undersec.com/sjfproject/prog/sockets/sockets.htm</A> 
+
+    <LI>Deitel y Deitel . Cómo programar en Java. 
+    <LI>Herbert Schildt. Manual de referencia Java 2. </LI></UL><BR><BR>
+  <P align=right>Rosaeliana Salazar</P><BR><BR></BLOCKQUOTE></BODY></HTML>

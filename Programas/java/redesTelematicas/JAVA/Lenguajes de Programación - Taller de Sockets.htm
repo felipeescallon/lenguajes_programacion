@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://lpucv.netfirms.com/Docs/taller2.1.html -->
+<HTML><HEAD><TITLE>Lenguajes de Programación - Taller de Sockets</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4522.1800" name=GENERATOR></HEAD>
+<BODY>
+<CENTER>
+<TABLE height=0 cellSpacing=0 cellPadding=0 width=596 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top><A href="http://www.netfirms.com/"><IMG 
+      src="Lenguajes de Programación - Taller de Sockets_archivos/webhostingbanner.gif" 
+      border=0></A>&nbsp; </TD>
+    <TD vAlign=top><A href="http://www.netfirms.com/"><IMG height=60 
+      alt="Free Web Hosting by Netfirms" 
+      src="Lenguajes de Programación - Taller de Sockets_archivos/freewebhosting.gif" 
+      width=120 border=0></A><BR></TD></TR>
+  <TR>
+    <TD align=middle colSpan=2><IMG height=1 
+      alt="Free Web Hosting by Netfirms" src="" width=1 border=0><BR><A 
+      href="http://www.netfirms.com/"><FONT size=2><A 
+      href="http://www.netfirms.com/">This site is hosted by <B>Netfirms</B> Web 
+      Hosting</A></FONT></A> </TD></TR></TBODY></TABLE></CENTER>
+<BLOCKQUOTE><B>
+  <P>UNIVERSIDAD CENTRAL DE VENEZUELA<BR>FACULTAD DE CIENCIAS<BR>ESCUELA DE 
+  COMPUTACIÓN<BR>LENGUAJES DE PROGRAMACIÓN<BR></P></B><BR>
+  <P>
+  <CENTER><U><B>TALLER: SOCKETS EN JAVA</B></U> </CENTER>
+  <P></P>
+  <P>Diseñe dos programas que muestren una aplicación cliente/servidor haciendo 
+  uso de sockets de flujo. La aplicación cliente debe conectarse con el 
+  servidor, la aplicación envía datos al cliente y éste exhibe los datos 
+  recibidos.</P>
+  <P><U><B>Clases necesarias para compilar el programa:</B></U></P><PRE>import java.io.*;
+import java.net.*;
+</PRE>
+  <P><B><U>Apertura de Sockets:</B></U></P>
+  <TABLE cellSpacing=1 cellPadding=10 align=center border=1>
+    <TBODY>
+    <TR>
+      <TD align=middle><B><U>Cliente</U></B> </TD></TR>
+    <TR>
+      <TD><PRE>Socket cliente;
+try {
+  cliente = 
+     new Socket("maquina", puerto);
+}
+catch (IOException e) {
+  System.out.println(e);
+}
+</PRE></TD></TR>
+    <TR>
+      <TD align=middle><B><U>Servidor</U></B> </TD></TR>
+    <TR>
+      <TD><PRE>ServerSocket servidor;
+Socket conexion;
+try {
+  servidor = new ServerSocket(9090);
+  conexion = servidor.accept();
+  //...
+}
+catch (IOException e) {
+  System.out.println(e);
+}
+</PRE></TD></TR></TBODY></TABLE>
+  <P><B><U>Cierre de Sockets:</U></B></P>
+  <TABLE cellSpacing=1 cellPadding=10 align=center border=1>
+    <TBODY>
+    <TR>
+      <TD align=middle><B><U>Cliente</U></B> </TD>
+      <TD><B><U>Servidor</U></B> </TD></TR>
+    <TR>
+      <TD><PRE>cliente.close();</PRE></TD>
+      <TD><PRE>conexion.close();</PRE></TD></TR></TBODY></TABLE><BR><BR>
+  <P align=right>Rosaeliana Salazar</P><BR><BR></BLOCKQUOTE></BODY></HTML>

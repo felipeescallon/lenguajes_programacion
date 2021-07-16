@@ -1,0 +1,4 @@
+javac HolaEJB.java
+javac HolaEJBHome.java
+javac HolaEJBBean.java
+pause

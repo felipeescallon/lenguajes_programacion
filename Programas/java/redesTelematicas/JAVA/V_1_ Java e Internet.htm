@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0055)http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/V_1.htm -->
+<HTML><HEAD><TITLE>V.1. Java e Internet</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4522.1800" name=GENERATOR>
+<META content="C:\ARCHIVOS DE PROGRAMA\MICROSOFT OFFICE\OFFICE\html.dot" 
+name=Template></HEAD>
+<BODY vLink=#800080 link=#0000ff bgColor=#ffffcc>
+<P align=center><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/IV_3.htm"><IMG height=40 
+src="V_1_ Java e Internet_archivos/ARROWLEF.gif" width=40 border=0></A><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/Index.htm"><IMG height=45 
+src="V_1_ Java e Internet_archivos/BOOKSEAR.gif" width=45 border=0></A><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/V_2.htm"><IMG height=40 
+src="V_1_ Java e Internet_archivos/ARROWRIG.gif" width=40 border=0></A></P>
+<P align=center><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/IV_3.htm">Anterior</A> - 
+<A href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/Index.htm">Índice</A> - 
+<A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/V_2.htm">Siguiente</A></P>
+<P>
+<HR>
+
+<P></P><B><I><FONT face=Arial>
+<P>V.1<A name=_Toc424722097><A name=_Toc438840442><A name=_Toc439333302><A 
+name=_Toc439334041> JAVA E INTERNET</A></A></A></A></P></I>
+<P><A name=_Toc457818702>A. Introducción</A></P></B></FONT>
+<P align=justify>Una de las grandes potencias del lenguaje de programación Java 
+es la total portabilidad de sus programas gracias a su afamada "máquina 
+virtual". Esto adquiere una importancia aún mayor en Internet donde existen 
+tipos de computadoras muy dispares.</P>
+<P align=justify>Las siguientes bibliotecas de la API de Java contienen una 
+serie de clases que son interesantes de cara a la creación de aplicaciones que 
+trabajen en red. Las más importantes son:</P>
+<UL><I>
+  <P align=justify>
+  <LI>java.applet</I>: Da soporte a las applets.
+  <P></P><I>
+  <P align=justify></P>
+  <LI>java.net</I>: Clases para redes. Dan acceso a TCP/IP, <I>sockets</I> y 
+  URLs.
+  <P></P></LI></UL>
+<P align=justify>Conviene destacar la existencia de otras bibliotecas más 
+complejas, orientadas también a la programación en red, que aunque no serán 
+estudiadas en este tutorial, sí conviene tener presente su existencia:</P>
+<UL><I>
+  <P align=justify>
+  <LI>java.sql</I>: Paquete que contiene el JDBC, para conexión de programas 
+  Java con Bases de datos.
+  <P></P><I>
+  <P align=justify></P>
+  <LI>java.rmi</I>: Paquete RMI, para localizar objetos remotos, comunicarse con 
+  ellos e incluso enviar objetos como parámetros de un objeto a otro.
+  <P></P><I>
+  <P align=justify></P>
+  <LI>org.omg.CORBA</I>: Facilita la posibilidad de utilizar OMG CORBA, para la 
+  conexión entre objetos distribuidos, aunque estén codificados en distintos 
+  lenguajes.
+  <P></P><I>
+  <P align=justify></P>
+  <LI>org.omb.CosNaming</I> : Da servicio al IDL de Java, similar al RMI pero en 
+  CORBA.
+  <P></P></LI></UL>
+<P align=justify>Una de las características de Java que lo hacen especialmente 
+interesante para Internet es que sus programas objeto (códigos de byte) son 
+verificables para poder detectar posibles virus en sus contenidos. Estos 
+programas <I>Códigos de byte</I> no necesitan ser recompilados, y una vez 
+verificados (pues Java trabaja con nombres no con direcciones), se transforman 
+en direcciones físicas de la máquina destino.</P>
+<P align=center><IMG height=280 src="V_1_ Java e Internet_archivos/Image9.gif" 
+width=392></P><I>
+<P align=center><A name=_Toc456963591>Imagen 9: Ejecución de un código de 
+byte</A></P></I>
+<P align=justify>Esta forma de trabajar cuida la seguridad sin un grave 
+perjuicio de la eficiencia. Un programa en Java es sólo unas 20 veces más lento 
+que uno programado en C, cifra aceptable para la mayoría de las tareas, y 
+suponiendo que no se utilice un compilador JIT.</P><B><FONT face=Arial>
+<P><A name=_Toc424722114><A name=_Toc438840445><A name=_Toc439333305><A 
+name=_Toc439334044><A name=_Toc457818703>B. El paquete 
+java.net</A></P></B></FONT>
+<P align=justify></A></A></A></A>Java ofrece un conjunto de clases que permiten 
+utilizar los URLs (<I>Uniform Resource Locators</I>). Un URL es una dirección 
+electrónica que permite encontrar una información en Internet especificando:</P>
+<UL>
+  <P align=justify>
+  <LI>El nombre del protocolo que permitirá leer la información. Por ejemplo 
+  <I>HTTP</I>.
+  <P></P>
+  <P align=justify></P>
+  <LI>El nombre del servidor que proporciona la información. Por ejemplo 
+  <I>sunsite.unc.edu</I> o bien una dirección IP directamente.
+  <P></P>
+  <P align=justify></P>
+  <LI>El nombre del fichero en el servidor. Por ejemplo 
+  <I>/Javafaq/Javafaq.htm</I>.
+  <P></P></LI></UL><B><FONT face=Arial>
+<P><A name=_Toc424722098><A name=_Toc438840443><A name=_Toc439333303><A 
+name=_Toc439334042><A name=_Toc457818704>C. Futuro del Java</A></A></A></A> en 
+Internet</A></P></B></FONT>
+<P align=justify>Java es seguramente el lenguaje con más futuro en cuanto a la 
+programación para Internet.</P>
+<P align=justify>De hecho, podría evolucionar hasta el punto de que el navegador 
+no interprete las applets de Java, sino que él sea un conjunto de applets que se 
+descarguen de Internet según se vayan necesitando. Así es que en todo momento 
+podríamos estar ejecutando la última versión del navegador.</P>
+<P align=justify>Incluso siendo un poco más futuristas, podríamos plantearnos 
+conectarnos a servidores que nos cobraran por el uso de sus programas (hojas de 
+cálculo, procesadores de texto...) en función del tiempo de uso, trabajando 
+siempre con la última versión del mismo, en lugar de invertir nuestro dinero en 
+actualizaciones.</P>
+<P>
+<HR>
+
+<P></P>
+<P align=center><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/IV_3.htm">Anterior</A> - 
+<A href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/Index.htm">Índice</A> - 
+<A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/V_2.htm">Siguiente</A></P>
+<P align=center><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/IV_3.htm"><IMG height=40 
+src="V_1_ Java e Internet_archivos/ARROWLEF.gif" width=40 border=0></A><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/Index.htm"><IMG height=45 
+src="V_1_ Java e Internet_archivos/BOOKSEAR.gif" width=45 border=0></A><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/V_2.htm"><IMG height=40 
+src="V_1_ Java e Internet_archivos/ARROWRIG.gif" width=40 
+border=0></A></P></BODY></HTML>

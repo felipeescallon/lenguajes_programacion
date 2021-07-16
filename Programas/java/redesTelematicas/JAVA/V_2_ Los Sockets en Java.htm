@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0055)http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/V_2.htm -->
+<HTML><HEAD><TITLE>V.2. Los Sockets en Java</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4522.1800" name=GENERATOR>
+<META content="C:\ARCHIVOS DE PROGRAMA\MICROSOFT OFFICE\OFFICE\html.dot" 
+name=Template></HEAD>
+<BODY vLink=#800080 link=#0000ff bgColor=#ffffcc>
+<P align=center><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/V_1.htm"><IMG height=40 
+src="V_2_ Los Sockets en Java_archivos/ARROWLEF.gif" width=40 border=0></A><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/Index.htm"><IMG height=45 
+src="V_2_ Los Sockets en Java_archivos/BOOKSEAR.gif" width=45 border=0></A><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/VI_1.htm"><IMG height=40 
+src="V_2_ Los Sockets en Java_archivos/ARROWRIG.gif" width=40 border=0></A></P>
+<P align=center><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/V_1.htm">Anterior</A> - <A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/Index.htm">Índice</A> - <A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/VI_1.htm">Siguiente</A></P>
+<P>
+<HR>
+
+<P></P><B><I><FONT face=Arial>
+<P>V.2 LOS SOCKETS EN JAVA</P></I>
+<P>A. Fundamentos</P></B></FONT>
+<P align=justify>Los <I>sockets</I> son un sistema de comunicación entre 
+procesos de diferentes máquinas de una red. Más exactamente, un <I>socket</I> es 
+un punto de comunicación por el cual un proceso puede emitir o recibir 
+información.</P>
+<P align=justify>Fueron popularizados por <I>Berckley Software Distribution</I>, 
+de la universidad norteamericana de Berkley. Los <I>sockets</I> han de ser 
+capaces de utilizar el protocolo de streams TCP (Transfer Contro Protocol) y el 
+de datagramas UDP (User Datagram Protocol).</P>
+<P align=justify>Utilizan una serie de primitivas para establecer el punto de 
+comunicación, para conectarse a una máquina remota en un determinado puerto que 
+esté disponible<I>, </I>para escuchar en él, para leer o escribir y publicar 
+información en él, y finalmente para desconectarse.</P>
+<P align=justify>Con todas primitivas se puede crear un sistema de diálogo muy 
+completo.</P>
+<P align=center><A name=_Toc455111648><A name=_Toc455353292><IMG 
+src="V_2_ Los Sockets en Java_archivos/Image10.gif"></P><I>
+<P align=center>Imagen 10: Funcionamiento de una conexión socket</A></A></P></I>
+<P align=justify>Para más información véase <B>[Rifflet, 1998]</B>.</P><B><FONT 
+face=Arial>
+<P>B. Ejemplo de uso</P></B></FONT>
+<P align=justify>Para comprender el funcionamiento de los <I>sockets</I> no hay 
+nada mejor que estudiar un ejemplo. El que a continuación se presenta establece 
+un pequeño diálogo entre un programa servidor y sus clientes, que intercambiarán 
+cadenas de información.</P><B><I><FONT face=Arial size=2>
+<P><A name=_Toc457818708>a.) Programa Cliente</P></B></I></FONT>
+<P align=justify>El programa cliente se conecta a un servidor indicando el 
+nombre de la máquina y el número puerto (tipo de servicio que solicita) en el 
+que el servidor está instalado.</P>
+<P align=justify>Una vez conectado, lee una cadena del servidor y la escribe en 
+la pantalla:</P><PRE><FONT face="Courier New" size=3><P>import java.io.*;</P>
+<P>import java.net.*;</P>
+<P>class Cliente {</P>
+<P>  static final String HOST = "localhost";</P>
+<P>  static final int PUERTO=5000;</P>
+<P>  public Cliente( ) {</P>
+<P>    try{</P>
+<P>      Socket skCliente = new Socket( HOST , Puerto );</P>
+<P>      InputStream aux = skCliente.getInputStream();</P>
+<P>      DataInputStream flujo = new DataInputStream( aux );</P>
+<P>      System.out.println( flujo.readUTF() );</P>
+<P>      skCliente.close();</P>
+<P>    } catch( Exception e ) {</P>
+<P>      System.out.println( e.getMessage() );</P>
+<P>    }</P>
+<P>  }</P>
+<P>  public static void main( String[] arg ) {</P>
+<P>    new Cliente();</P>
+<P>  }</P>
+<P>}</P>
+</FONT></PRE>
+<P align=justify>En primer lugar se crea el <I>socket</I> denominado 
+<I>skCliente</I>, al que se le especifican el nombre de <I>host</I> 
+(<I>HOST</I>) y el número de puerto (<I>PORT</I>) en este ejemplo 
+constantes.</P>
+<P align=justify>Luego se asocia el flujo de datos de dicho <I>socket</I> 
+(obtenido mediante <I>getInputStream)</I>), que es asociado a un flujo 
+(<I>flujo</I>) <I>DataInputStream</I> de lectura secuencial. De dicho flujo 
+capturamos una cadena ( <I>readUTF() </I>), y la imprimimos por pantalla 
+(<I>System.out</I>).</P>
+<P align=justify>El <I>socket</I> se cierra, una vez finalizadas las 
+operaciones, mediante el método <I>close()</I>.</P>
+<P align=justify>Debe observarse que se realiza una gestión de excepción para 
+capturar los posibles fallos tanto de los flujos de datos como del 
+<I>socket</I>.</P><B><I><FONT face=Arial size=2>
+<P>b.) Programa Servidor</A></P></B></I></FONT>
+<P align=justify>El programa servidor se instala en un puerto determinado, a la 
+espera de conexiones, a las que tratará mediante un segundo <I>socket</I>.</P>
+<P align=justify>Cada vez que se presenta un cliente, le saluda con una frase 
+"Hola cliente N".</P>
+<P align=justify>Este servidor sólo atenderá hasta tres clientes, y después 
+finalizará su ejecución, pero es habitual utilizar bucles infinitos ( 
+<I>while(true)</I> ) en los servidores, para que atiendan llamadas 
+continuamente.</P>
+<P align=justify>Tras atender cuatro clientes, el servidor deja de ofrecer su 
+servicio:</P><PRE><FONT face="Courier New" size=3><P>import java.io.* ;</P>
+<P>import java.net.* ;</P>
+<P>class Servidor {</P>
+<P>  static final int PUERTO=5000;</P>
+<P>  public Servidor( ) {</P>
+<P>    try {</P>
+<P>      ServerSocket skServidor = new ServerSocket( PUERTO );</P>
+<P>      System.out.println("Escucho el puerto " + PUERTO );</P>
+<P>      for ( int numCli = 0; numCli &lt; 3; numCli++; ) {</P>
+<P>        Socket skCliente = skServidor.accept(); // Crea objeto</P>
+<P>        System.out.println("Sirvo al cliente " + numCli);</P>
+<P>        OutputStream aux = skCliente.getOutputStream();</P>
+<P>        DataOutputStream flujo= new DataOutputStream( aux );</P>
+<P>        flujo.writeUTF( "Hola cliente " + numCli );</P>
+<P>        skCliente.close();</P>
+<P>      } </P>
+<P>      System.out.println("Demasiados clientes por hoy");</P>
+<P>    } catch( Exception e ) {</P>
+<P>      System.out.println( e.getMessage() );</P>
+<P>    }</P>
+<P>  }</P>
+<P>  public static void main( String[] arg ) {</P>
+<P>    new Servidor();</P>
+<P>  }</P>
+<P>}</P>
+</FONT></PRE>
+<P align=justify>Utiliza un objeto de la clase <I>ServerSocket 
+</I>(<I>skServidor</I>), que sirve para esperar las conexiones en un puerto 
+determinado (<I>PUERTO</I>), y un objeto de la clase <I>Socket</I> 
+(<I>skCliente) </I>que sirve para gestionar una conexión con cada cliente.</P>
+<P align=justify>Mediante un bucle <I>for</I> y la variable <I>numCli</I> se 
+restringe el número de clientes a tres, con lo que cada vez que en el puerto de 
+este servidor aparezca un cliente, se atiende y se incrementa el contador.</P>
+<P align=justify>Para atender a los clientes se utiliza la primitiva 
+<I>accept()</I> de la clase <I>ServerSocket</I>, que es una rutina que crea un 
+nuevo <I>Socket</I> (<I>skCliente</I>) para atender a un cliente que se ha 
+conectado a ese servidor.</P>
+<P align=justify>Se asocia al <I>socket</I> creado (<I>skCliente</I>) un flujo 
+(<I>flujo) </I>de salida <I>DataOutputStream</I> de escritura secuencial, en el 
+que se escribe el mensaje a enviar al cliente.</P>
+<P align=justify>El tratamiento de las excepciones es muy reducido en nuestro 
+ejemplo, tan solo se captura e imprime el mensaje que incluye la excepción 
+mediante <I>getMessage()</I>.</P><B><I><FONT face=Arial size=2>
+<P>c.) Ejecución</P></B></I></FONT>
+<P align=justify>Aunque la ejecución de los <I>sockets</I> está diseñada para 
+trabajar con ordenadores en red, en sistemas operativos multitarea (por ejemplo 
+Windows y UNIX) se puede probar el correcto funcionamiento de un programa de 
+<I>sockets</I> en una misma máquina.</P>
+<P align=justify>Para ellos se ha de colocar el servidor en una ventana, 
+obteniendo lo siguiente:</P><FONT face="Courier New">
+<P>&gt;java Servidor</P>
+<P>Escucho el puerto 5000</P></FONT>
+<P align=justify>En otra ventana se lanza varias veces el programa cliente, 
+obteniendo:</P><FONT face="Courier New">
+<P>&gt;java Cliente</P>
+<P>Hola cliente 1</P>
+<P>&gt;java cliente</P>
+<P>Hola cliente 2</P>
+<P>&gt;java cliente</P>
+<P>Hola cliente 3</P>
+<P>&gt;java cliente</P>
+<P>connection refused: no further information</P></FONT>
+<P align=justify>Mientras tanto en la ventana del servidor se ha 
+impreso:</P><FONT face="Courier New">
+<P>Sirvo al cliente 1</P>
+<P>Sirvo al cliente 2</P>
+<P>Sirvo al cliente 3</P>
+<P>Demasiados clientes por hoy</P></FONT>
+<P align=justify>Cuando se lanza el cuarto de cliente, el servidor ya ha cortado 
+la conexión, con lo que se lanza una excepción.</P>
+<P align=justify>Obsérvese que tanto el cliente como el servidor pueden leer o 
+escribir del <I>socket</I>. Los mecanismos de comunicación pueden ser refinados 
+cambiando la implementación de los <I>sockets</I>, mediante la utilización de 
+las clases abstractas que el paquete <I>java.net</I> provee.</P>
+<P>
+<HR>
+
+<P></P>
+<P align=center><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/V_1.htm">Anterior</A> - <A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/Index.htm">Índice</A> - <A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/VI_1.htm">Siguiente</A></P>
+<P align=center><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/V_1.htm"><IMG height=40 
+src="V_2_ Los Sockets en Java_archivos/ARROWLEF.gif" width=40 border=0></A><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/Index.htm"><IMG height=45 
+src="V_2_ Los Sockets en Java_archivos/BOOKSEAR.gif" width=45 border=0></A><A 
+href="http://pisuerga.inf.ubu.es/lsi/Invest/Java/Tuto/VI_1.htm"><IMG height=40 
+src="V_2_ Los Sockets en Java_archivos/ARROWRIG.gif" width=40 
+border=0></A></P></BODY></HTML>

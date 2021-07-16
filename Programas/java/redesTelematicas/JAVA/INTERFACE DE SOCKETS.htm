@@ -1,0 +1,1067 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://members.tripod.com/vteforte/sockets.htm -->
+<HTML><HEAD><TITLE>INTERFACE DE SOCKETS :</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4522.1800" name=GENERATOR><!--Begin JavaScript roadmap code.  If editing downloaded HTML source, delete
+ this portion.-->
+<SCRIPT language=JavaScript>
+<!--
+
+function TripodShowPopup()
+{
+   var bName=navigator.appName;
+   var bVer=parseInt(navigator.appVersion);
+   var now = new Date();
+   var popupURL = "/adm/popup/roadmap.shtml?"+"member_name=vteforte&path=sockets.htm&client_ip=200.30.71.174&ts=1055279760&ad_type=POPUP&category=ent&search_string=%22SOCKETS+DE+FLUJO%22&id=69fcb33fb9c751293bfc1ca79ae7a2f3";
+   var popupName = "TripodPopup";
+
+   if (bName=="Netscape" && bVer<=3)
+   {
+      var popupWin = window.open("", popupName,'toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=755,height=200');
+  	  popupWin.focus();
+   }
+   else
+   {
+      var popupWin = window.open("", popupName,'toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=745,height=185');
+      popupWin.focus();
+   }
+   popupWin.location = popupURL;
+}
+
+if(window.parent==window)
+{
+   TripodShowPopup();
+}
+
+// -->
+</SCRIPT>
+
+<SCRIPT language=JavaScript1.2>
+<!--
+
+function changeOpenFunction()
+{
+   var original_window_open = window.open;
+   function new_open_function(url, name, features, replace)
+   {
+      if(name != "TripodPopup")
+         return original_window_open(url, name, features, replace);
+   }
+   window.open = new_open_function;
+}
+var bName = navigator.appName;
+
+if(bName != "Netscape")
+   changeOpenFunction();
+
+// -->
+</SCRIPT>
+<!--insite and popunder-->
+<SCRIPT language=javascript type=text/javascript>
+function showUnder(scale) {
+	var expdate = new Date ();
+	var surveyCookieName = "TRIPODPOPUNDER";
+ 	var percentOfferedSurvey = 100;
+ 	var surveyLocation = "/adm/popunder/tripod_popunder.html?"+"member_name=vteforte&path=sockets.htm&client_ip=200.30.71.174&ts=1055279760&ad_type=POPUP&category=ent&search_string=%22SOCKETS+DE+FLUJO%22&id=69fcb33fb9c751293bfc1ca79ae7a2f3";
+ 	var popupNewWindow = true;
+
+  	expdate.setTime (expdate.getTime() + (12 * 60 * 60 * 1000));
+	var stored_value = GetCookie(surveyCookieName);
+	if (stored_value == null){
+		SetCookie(surveyCookieName, "under", expdate, "/", ".tripod.com");
+		trUnder = window.open(surveyLocation,'under','height=300,width=720,toolbar=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no');
+		trUnder.blur();
+  	}
+}
+
+function showInsite(){
+	var expdate = new Date ();
+	var surveyCookieName = "TRIPODINSITE";
+ 	var percentOfferedSurvey = 100;
+ 	var surveyLocation = "http://www.lycos.com/redir.asp?r=tp";
+ 	var popupNewWindow = true;
+
+  	expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000));
+	var stored_value = GetCookie(surveyCookieName);
+	if (stored_value == null){
+		SetCookie(surveyCookieName, "insite", expdate, "/", ".tripod.com");
+		trInsite = window.open(surveyLocation,'insite','height=340,width=790,toolbar=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
+		trInsite.blur();
+  	}
+}
+
+
+function SetCookie (name,value,expires,path,domain,secure){
+	document.cookie = name + "=" + escape (value) +
+		((expires) ? "; expires=" + expires.toGMTString() : "") +
+		((path) ? "; path=" + path : "") +
+		((domain) ? "; domain=" + domain : "") +
+		((secure) ? "; secure" : "");
+}
+
+function getCookieVal (offset){
+	var endstr = document.cookie.indexOf (";", offset);
+	if (endstr == -1)
+		endstr = document.cookie.length;
+	return unescape(document.cookie.substring(offset, endstr));
+  }
+
+function GetCookie (name){
+	var arg = name + "=";
+	var alen = arg.length;
+	var clen = document.cookie.length;
+	if( (document.cookie == null) || (document.cookie.length == null)){
+		return null;
+	}
+	var i = 0;
+	while (i < clen){
+		var j = i + alen;
+		if (document.cookie.substring(i, j) == arg)
+			return getCookieVal (j);
+		i = document.cookie.indexOf(" ", i) + 1;
+		if (i == 0) break;
+	}
+	return null;
+}
+
+showUnder();
+
+</SCRIPT>
+</HEAD>
+<BODY vLink=#800080 link=#0000ff 
+background="INTERFACE DE SOCKETS_archivos/paper.gif"><FONT face=Arial 
+size=2></FONT><B><FONT face=Arial size=6>
+<P align=justify>6.</FONT><FONT face=Arial> </FONT><U><FONT face=Arial 
+size=5>INTERFACE DE SOCKETS :</P></B></U></FONT><FONT face=Arial size=2>
+<P align=justify>La Interface de sockets es una API para redes TCP/IP que se 
+compone de funciones o rutinas. Originalmente se construyó a principios de los 
+80 para el sistema operativo UNIX , aunque hoy en dia también la utilizan otros 
+sistemas operativos como Microsoft Windows, Mac, OS2, etc...</P>
+<P align=justify>Las llamadas al sistema de E/S en UNIX se basan en el proceso 
+de open-read-write-close (abrir-leer-escribir-cerrar), y esto se utiliza tanto 
+con archivos como con dispositivos hardware. En este tipo de comunicación se 
+basó el diseño de la interface de sockets, con lo que para comunicarse con una 
+red TCP/IP, se abre primero una conexión con la red , se leen y escriben datos a 
+traves de ella y una vez terminados los procesos se cierra la conexión. </P>
+<P align=justify>&nbsp;</P><B>
+<P align=center>Diseño basado en el modelo cliente-servidor</P></B></FONT>
+<P align=center><IMG height=265 src="INTERFACE DE SOCKETS_archivos/Image10.gif" 
+width=568></P><I><FONT face=Arial size=1>
+<P align=center>Ejemplo de esquema de conexión entre un servidor WWW y un 
+cliente WWW a través de sockets.</P>
+<P align=center>&nbsp;</P></FONT><B><FONT face=Arial size=2>
+<P align=center>&nbsp;</P></I></FONT><FONT face=Arial>
+<P align=justify>6.1. <U>SOCKETS : UN INTERFAZ GENÉRICO 
+:</P></B></U></FONT><FONT face=Arial size=2>
+<P align=justify>Un socket es una representación abstracta del extremo 
+(endpoint) en un proceso de comunicación. Es un punto de acceso (SAP) que una 
+aplicación puede crear para acceder a los servicios de comunicación que ofrecen 
+las pilas de protocolos.</P>
+<P align=justify>Para que se dé la comunicación en una red , el programa 
+requiere un socket en cada extremo del proceso de comunicación.</P>
+<P align=justify>&nbsp;</P></FONT>
+<P align=center><IMG height=300 src="INTERFACE DE SOCKETS_archivos/Image11.gif" 
+width=566></P><I><FONT face=Arial size=1>
+<P align=center>Esquema de interacción de la Interface de Sockets con las 
+aplicaciones y los protocolos de red.</P>
+<P align=center>&nbsp;</P></I></FONT><FONT face=Arial size=2>
+<P align=justify>Entre sus características principales del Interfaz de Sockets 
+destacamos :</P>
+<UL>
+  <P align=justify>
+  <LI>Interfaz estándar.
+  <P></P>
+  <P align=justify></P>
+  <LI>Portabilidad de aplicaciones , debido a que se trabaja con las mismas 
+  primitivas con los mismos parámetros y los tipos y estructuras de datos son 
+  idénticos. (con algunas excepciones).
+  <P></P>
+  <P align=justify></P>
+  <LI>Diferentes pilas de protocolos.
+  <P></P>
+  <P align=justify></P>
+  <LI>Define una librería de primitivas.
+  <P></P></LI></UL>
+<P align=justify>&nbsp;</P>
+<P align=justify>Para crear un socket , se utiliza la función socket , que 
+devuelve un identificador de socket. Se deben especificar tres parametros : 
+</P><B>
+<P align=center>socket = socket(protocol_familiy, socket_type, protocol)</P></B>
+<P align=justify>&nbsp;</P>
+<P align=justify>1. <B><U>Familia de Protocolos (Protocol Family)</U> :</B> 
+Identifica a una familia de protocolos relacionados , como TCP/IP. Se utilizan 
+constantes para definir a las familias de protocolos como : PF_INET (familia de 
+protocolos Internet).</P>
+<P align=justify>2. <B><U>Tipo de Socket (Socket_type) :</B></U> Si el programa 
+utilizará el socket para transmitir flujo de bytes o datagramas. SOCK_DGRAM para 
+datagramas y SOCK_STREAM para flujo de bytes. La interface de sockets también 
+define un tercer tipo de comunicación llamada socket básico (raw socket) 
+SOCK_RAW , que permite a una aplicación utilizar los mismos protocolos de nivel 
+inferior que la red utiliza comunmente.</P>
+<P align=justify>3. <B><U>Protocolo a utilizar :</B></U> Permite especificar que 
+protocolo utilizará el socket. IPPROTO_TCP , IPPROTO_UDP</P>
+<P align=center>Ej : socket_handle = socket(PF_INET, SOCK_STREAM, 
+IPPROTO_TCP);</P>
+<P align=justify>Cuando se llama a la función socket, la implementación del 
+socket lo crea y devuelve un identificador de socket que identifica a un 
+registro en la tabla de descripción. El registro muestra la estructura de datos 
+del socket.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P></FONT>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=4 width=274 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top bgColor=#ffffff>
+      <P align=justify><B><FONT face=Arial size=2>Estructura de Datos del 
+      Socket</B></FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top><FONT face=Arial size=2>
+      <P align=justify>Familia de Protocolos</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top><FONT face=Arial size=2>
+      <P align=justify>Tipo de Servicio</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top><FONT face=Arial size=2>
+      <P align=justify>Dirección IP Local</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top><FONT face=Arial size=2>
+      <P align=justify>Dirección IP Remota</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top><FONT face=Arial size=2>
+      <P align=justify>Puerto de Protocolo Local</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top><FONT face=Arial size=2>
+      <P align=justify>Puerto de Protocolo 
+Remoto</FONT></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P><FONT face=Arial size=2>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>Cada vez que la aplicación llama a la función socket, la 
+implementación de este reserva memoria para una nueva estructura de datos y 
+almacena la dirección de la familia, el tipo de socket y el protocolo.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>Entonces una conexión de red entre dos procesos se compone de 
+cinco elementos :</P>
+<P align=justify></P>
+<P align=justify>1. Un puerto de protocolo local que especifica donde recibe 
+mensajes un proceso. </P>
+<P align=justify>2. La dirección del host local, la cual identifica al anfitrión 
+que recibirá los paquetes de datos. </P>
+<P align=justify>3. Un puerto de protocolo remoto que identifica al proceso 
+destino.</P>
+<P align=justify>4. La dirección del anfitrión remoto, que identifica al 
+anfitrión destino.</P>
+<P align=justify>5. Un protocolo, que define como los procesos transfieren la 
+información a través de la red.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>Cuando un proceso desea establecer una comunicación con otro, 
+el proceso emisor transmite la información al socket y la API de sockets maneja 
+la interface con la pila de protocolos TCP/IP.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P></FONT><B><FONT face=Arial>
+<P align=justify>6.1.1 <U>CONFIGURACION DEL SOCKET :</P></B></U></FONT><FONT 
+face=Arial size=2>
+<P align=justify>Una vez creado el socket , utilizando la función <I>socket</I>, 
+se pueden utilizar las funciones de configuración dependiendo del uso que se le 
+vaya a dar al socket :</P>
+<P align=justify>&nbsp;</P>
+<UL>
+  <P align=justify>
+  <LI>Si se trata de un <B>cliente orientado a conexión</B> , se deberá llamar a 
+  la función <B><I>connect</B></I> que se encargará de almacenar toda la 
+  información local y remota en la estructura de datos del socket.
+  <P></P></LI></UL>
+<P align=justify>&nbsp;</P>
+<UL>
+  <P align=justify>
+  <LI>Si se trata de un <B>cliente sin conexión</B> las funciones llamadas son :
+  <P></P></LI></UL>
+<P align=justify>Maquina Local : <B><I>bind </B></I>Maquina remota : 
+<B><I>send</P>
+<P align=justify>&nbsp;</P>
+<UL></B></I>
+  <P align=justify>
+  <LI>En el caso de un <B>servidor orientado a conexión</B> : 
+  <P></P></LI></UL>
+<P align=justify>Maquina Local : <B><I>bind</B></I> Maquina Remota : 
+<B><I>listen</B></I> y <B><I>accept</P></B></I>
+<P align=justify>&nbsp;</P>
+<UL>
+  <P align=justify>
+  <LI>En el caso de un <B>servidor sin conexión</B> : 
+  <P></P></LI></UL>
+<P align=justify>Maquina Local : <B><I>bind</B></I> Maquina Remota : 
+<B><I>recvfrom</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P></I></FONT><FONT face=Arial>
+<P align=justify>6.1.2 <U>CONEXIÓN DE UN SOCKET :</P></B></U></FONT><FONT 
+face=Arial size=2>
+<P align=justify>Un programa cliente orientado a conexión utiliza la función 
+<I>connect</I> para configurar un socket, y requiere como parámetros , el 
+identificador de socket, que es el valor del descriptor del socket que devolvió 
+la función socket. Como segundo parametro, utiliza la dirección del socket 
+remoto, es decir la dirección IP del host remoto y el puerto de protocolo. El 
+tercer parámetro se refiere a la longitud de la dirección, el tamaño en bytes de 
+la dirección del socket remoto.</P>
+<P align=justify>&nbsp;</P><B>
+<P align=center>result = connect(socket_handle, remote_socket_address, 
+address_length);</P></B>
+<P align=center>&nbsp;</P>
+<P align=justify>En la mayoria de los casos un programa cliente orientado a 
+conexión no especifica puerto de protocolo local, ya que puede recibir datos en 
+cualquier puerto de protocolo. Es decir, no es necesario almacenar las 
+direcciones IP locales, la implementación del socket lo hace automaticamente y 
+selecciona por si misma un puerto de protocolo local.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>En el caso de clientes no orientados a conexión o servidores en 
+general tienen que atender a un puerto de protocolo las solicitudes que les 
+pueden llegar. </P>
+<P align=justify>La función de asignación de nombres, <I>bind</I>, en la API de 
+sockets permite a un programa asociar una dirección local con un socket :</P>
+<P align=justify>&nbsp;</P><B>
+<P align=center>Result = bind(socket_handle, local_socket_address, 
+address_lenght);</P></B>
+<P align=justify>&nbsp;</P>
+<P align=justify>De esta manera se le comunica a la implementación del socket , 
+que puerto de protocolo utilizar para la entrega de datos.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P></FONT><B><FONT face=Arial>
+<P align=justify>6.1.3 <U>TRANSMISION DE DATOS :</P></B></U></FONT><FONT 
+face=Arial size=2>
+<P align=justify>Se proporcionan cinco funciones para transmitir datos a través 
+de un socket y se dividen en dos grupos. Existen tres funciones que requieren 
+una dirección de destino como parámetro, las restantes que son las utilizadas en 
+los procesos orientados a conexión, no lo precisan.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P></FONT>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=4 width=548 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="17%" bgColor=#ffffff>
+      <P align=justify><B><FONT face=Arial size=2>FUNCION</B></FONT></P></TD>
+    <TD vAlign=top width="83%" bgColor=#ffffff><B><FONT face=Arial size=2>
+      <P align=justify>DESCRIPCIÓN</B></FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="17%"><FONT face=Arial size=2>
+      <P align=justify>send</FONT></P></TD>
+    <TD vAlign=top width="83%"><FONT face=Arial size=2>
+      <P align=justify>Transmite datos a través de un socket de 
+      conexión.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="17%"><FONT face=Arial size=2>
+      <P align=justify>write</FONT></P></TD>
+    <TD vAlign=top width="83%"><FONT face=Arial size=2>
+      <P align=justify>Transmite datos a través de un socket de conexión 
+      utilizando un buffer de datos simple.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="17%"><FONT face=Arial size=2>
+      <P align=justify>writev</FONT></P></TD>
+    <TD vAlign=top width="83%"><FONT face=Arial size=2>
+      <P align=justify>Transmite datos a través de un socket de conexión 
+      utilizando bloques de memoria no contiguos.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="17%"><FONT face=Arial size=2>
+      <P align=justify>sendto</FONT></P></TD>
+    <TD vAlign=top width="83%"><FONT face=Arial size=2>
+      <P align=justify>Transmite datos a través de un socket sin conexión 
+      utilizando un buffer de mensajes simple.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="17%"><FONT face=Arial size=2>
+      <P align=justify>sendmsg</FONT></P></TD>
+    <TD vAlign=top width="83%"><FONT face=Arial size=2>
+      <P align=justify>Transmite datos a través de un socket sin conexión, 
+      utilizando una estructura de mensajes flexible como buffer de 
+      mensajes</FONT></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P><FONT face=Arial size=2>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>Las funciones del API de sockets que hacen transmisiones de 
+datos orientadas a conexión no requieren que el programa especifique una 
+dirección destino como parametro. Las funciones send, write y writev sólo 
+trabajan con sockets conectados, y tiene la siguiente estructura :</P>
+<P align=justify>&nbsp;</P><B>
+<P align=center>Result= write(socket_handle, message_buffer, 
+buffer_length);</P></B>
+<P align=justify>&nbsp;</P>
+<P align=justify>El primer parametro es el identificador de socket, el segundo 
+es el búfer de mensajes, que apunta al búfer de datos que contiene la 
+información a transmitir. El tercer parametro es el tamaño del búfer de 
+datos.</P>
+<P align=justify>Por otro lado la función <I>writev</I> no requiere que los 
+datos ocupen bloques de memoria contiguos como si lo hace la función write. Así 
+writev permite que se especifique una tabla de direcciones que contenga los 
+datos.</P>
+<P align=justify>&nbsp;</P><B>
+<P align=center>Result= writev(socket_handle, io_vector, vector_length);</P></B>
+<P align=justify>&nbsp;</P>
+<P align=justify>También requiere como primer parametro , un identificador de 
+socket , el segundo parametro especifica la dirección de una tabla que contiene 
+una secuencia de apuntadores. Cuando la función writev transmita los datos, 
+enviará la información contenida en cada localidad de memoria especificada por 
+el array de apuntadores, transmitiéndolos en el mismo orden en que aparecen en 
+el array.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>La función <I>send</I> es otra función del interface de sockets 
+para utilizar con sockets orientados a conexión :</P>
+<P align=justify>&nbsp;</P><B>
+<P>Result=send(socket(socket_handle, 
+message_buffer,buffer_length,special_flags);</P></B>
+<P align=justify>&nbsp;</P>
+<P align=justify>Con <I>send</I> se pueden especificar banderas opcionales para 
+controlar la transmisión, como la gestión de datos urgentes (fuera de 
+banda).</P>
+<P align=justify>Las tres funciones write, writev y send , devuelven un valor 
+entero, que es el numero de bytes transmitidos por el socket. En caso de que 
+exista un error devuelven : -1 .</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>Para enviar datos a través de un socket sin conexión se dispone 
+de las funciones , <I>sendto</I> y <I>sendmsg<B> </B></I>:</P>
+<P align=justify>&nbsp;</P><B>
+<P 
+align=center>Result=sendto(socket_handle,message_buffer,buffer_length,special_flags, 
+socket_address_structure, address_structure_length);</P></B>
+<P align=justify>&nbsp;</P>
+<P align=justify>Requiere 6 parametros, entre los nuevos que aparecen ahora, la 
+dirección de destino (socket_address_structure, y la longitud de la misma en 
+bytes (address_structure_length).</P>
+<P align=justify>La función <I>sendmsg</I> nos permite utilizar para la 
+transmisión una estructura de mensaje, en lugar de un simple buffer de datos. 
+Requiere como parametros un identificador de socket, un puntero a la estructura 
+del mensaje (message_structure) y banderas especiales (special_flags).</P>
+<P align=justify>&nbsp;</P><B>
+<P align=center>Result= sendmsg(socket_handle, message_structure, 
+special_flags);</P>
+<P align=center>&nbsp;</P>
+<P align=center>&nbsp;</P></FONT><FONT face=Arial>
+<P align=justify>6.1.4 <U>RECEPCIÓN DE DATOS POR UN SOCKET 
+:</P></B></U></FONT><FONT face=Arial size=2>
+<P align=justify>La Interface de Sockets , incluye cinco funciones para la 
+recepción de datos, que se corresponden con las anteriores vistas en la 
+transmisión de datos :</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P></FONT>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=4 width=510 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="47%" bgColor=#ffffff>
+      <P align=justify><FONT face=Arial size=2>Funciones de 
+      Transmisión</FONT></P></TD>
+    <TD vAlign=top width="53%" bgColor=#ffffff><FONT face=Arial size=2>
+      <P align=justify>Funciones de Recepción</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="47%"><FONT face=Arial size=2>
+      <P align=justify>send</FONT></P></TD>
+    <TD vAlign=top width="53%"><FONT face=Arial size=2>
+      <P align=justify>recv</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="47%"><FONT face=Arial size=2>
+      <P align=justify>write</FONT></P></TD>
+    <TD vAlign=top width="53%"><FONT face=Arial size=2>
+      <P align=justify>read</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="47%"><FONT face=Arial size=2>
+      <P align=justify>writev</FONT></P></TD>
+    <TD vAlign=top width="53%"><FONT face=Arial size=2>
+      <P align=justify>readv</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="47%"><FONT face=Arial size=2>
+      <P align=justify>sendto</FONT></P></TD>
+    <TD vAlign=top width="53%"><FONT face=Arial size=2>
+      <P align=justify>recvfrom</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="47%"><FONT face=Arial size=2>
+      <P align=justify>sendmsg</FONT></P></TD>
+    <TD vAlign=top width="53%"><FONT face=Arial size=2>
+      <P align=justify>recvmsg</FONT></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P><FONT face=Arial size=2>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>A parte de estas correspondencias , hay que tener en cuenta que 
+no es indispensable utilizarlas unas con otras , ya que una vez se han enviado 
+datos , para recibirlos se puede realizar con cualquiera de las funciones 
+correspondientes al tipo de servicio , orientado o no a conexión.</P>
+<P align=justify>&nbsp;</P></FONT><B><FONT face=Arial>
+<P align=justify>&nbsp;</P>
+<P align=justify>6.1.5 <U>DESCRIPCIÓN DEL PROCESO :</P></FONT><FONT face=Arial 
+size=2>
+<P align=justify>&nbsp;</P></B></U></FONT>
+<P align=center><IMG height=694 src="INTERFACE DE SOCKETS_archivos/Image12.gif" 
+width=557><B><FONT face=Arial size=2> </P>
+<P align=center>&nbsp;</P></B></FONT><I><FONT face=Arial size=1>
+<P align=center>La parte izquierda muestra las llamadas a funciones del servidor 
+, mientras que la derecha</P>
+<P align=center>muestra las llamadas a funciones del 
+cliente.</P></I></FONT><FONT face=Arial size=2>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>El programa servidor solicita a la implementación del socket 
+que le asigne una estructura de datos para el socket y que le devuelva un 
+descriptor de sockets para utilizarlo en las siguientes llamadas a funciones de 
+la interfaz de sockets. </P>
+<P align=justify>&nbsp;</P>
+<P align=justify>Después el servidor une el socket a un puerto de protocolo 
+local. La función <B><I>listen</B></I> indica al socket que atienda las 
+conexiones entrantes y que confirme las solicitudes de conexión y se encarga de 
+poner al socket en modo de atención pasiva.</P>
+<P align=justify>&nbsp;</P><B>
+<P align=center>Result = listen(socket_handle, queue_length);</P></B>
+<P align=justify>&nbsp;</P>
+<P align=justify>Donde el segundo parametro <I>queue_length</I> , nos permite 
+especificar el número máximo de solicitudes que pueden acumularse en la cola. 
+Después de configurar una cola de datos entrantes, el programa servidor llamará 
+a la función <B><I>accept</B></I> , cesa su actividad y espera una solicitud de 
+conexión de un programa cliente.</P>
+<P align=justify>&nbsp;</P><B>
+<P align=center>Result = accept (socket_handle, socket_address, 
+address_length);</P></B>
+<P align=justify>&nbsp;</P>
+<P align=justify>El programa cliente también crea un socket , pero no necesita 
+ocuparse de que dirección local usará el protocolo ya que utiliza un protocolo 
+orientado a conexión, por lo tanto no llama a la función <I>bind</I>. Lo que 
+hace es iniciar la conversación en red llamando a la función <I>connect.</P></I>
+<P align=justify>&nbsp;</P>
+<P align=justify>Después de que el cliente y el servidor establecen la conexión 
+, pueden ocurrir comunicaciones adicionales a través de las funciones 
+<I>write</I> y <I>read</I>.</P>
+<P align=justify>&nbsp;</P></FONT><B><FONT face=Arial>
+<P align=justify>6.2 <U>LA API WINDOWS SOCKETS :</P></B></U></FONT><FONT 
+face=Arial size=2>
+<P align=justify>El software llamado Windows Sockets o Winsock es una API 
+(Application Program Interface) , Interface de programas de aplicación para 
+redes TCP/IP, y especifica la familia de sistemas operativos de Microsoft 
+Windows en todas sus versiones.</P>
+<P align=justify>Windows Sockets implementa la interface de sockets como una 
+biblioteca de enlace dinamico, una DLL (Dynamic Lynk Library), que no es más que 
+un módulo ejecutable que el sistema puede cargar en cualquier momento.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>La API Winsock proporciona una biblioteca de funciones que se 
+divide en tres grupos :</P>
+<P align=justify>1. Funciones de los Berkeley Sockets.</P>
+<P align=justify>2. Funciones de Bases de Datos que permiten obtener información 
+relacionada con el DNS, servicios de comunicaciones y protocolos.</P>
+<P align=justify>3. Las extensiones específicas de Windows a las rutinas de los 
+Sockets de Berkeley.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>Distinguimos entre las funciones de <B>bloqueo</B> , que son 
+aquellas que evitan que se llame a cualquier otra función hasta que esta termine 
+sus propias operaciones de red. Y las de <B>no bloqueo</B> que terminan de 
+inmediato o emiten un mensaje de error.</P><B><U>
+<P align=justify>&nbsp;</P></U></FONT><FONT face=Arial>
+<P align=justify>6.2.1 <U>FUNCIONES SOCKET :</P></B></U></FONT>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=4 width=521 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="22%" bgColor=#ffffff>
+      <P align=justify><FONT face=Arial>Función</FONT></P></TD>
+    <TD vAlign=top width="78%" bgColor=#ffffff><FONT face=Arial>
+      <P align=justify>Descripción</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="22%"><FONT face=Arial size=2>
+      <P align=justify>accept</FONT></P></TD>
+    <TD vAlign=top width="78%"><FONT face=Arial size=2>
+      <P align=justify>Confirma una conexión de entrada. Crea un socket nuevo y 
+      lo conecta al host remoto que pidió la conexión. Devuelve el socket 
+      original a su estado de atender.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="22%"><FONT face=Arial size=2>
+      <P align=justify>closesocket</FONT></P></TD>
+    <TD vAlign=top width="78%"><FONT face=Arial size=2>
+      <P align=justify>Cierra un extremo de una conexión por 
+    sockets.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="22%"><FONT face=Arial size=2>
+      <P align=justify>connect</FONT></P></TD>
+    <TD vAlign=top width="78%"><FONT face=Arial size=2>
+      <P align=justify>Inicia una conexión en el socket 
+    especificado.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="22%"><FONT face=Arial size=2>
+      <P align=justify>recv</FONT></P></TD>
+    <TD vAlign=top width="78%"><FONT face=Arial size=2>
+      <P align=justify>Recibe información de un socket 
+  conectado.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="22%"><FONT face=Arial size=2>
+      <P align=justify>recvfrom</FONT></P></TD>
+    <TD vAlign=top width="78%"><FONT face=Arial size=2>
+      <P align=justify>Recibe información de un socket conectado o de uno no 
+      conectado.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="22%"><FONT face=Arial size=2>
+      <P align=justify>select</FONT></P></TD>
+    <TD vAlign=top width="78%"><FONT face=Arial size=2>
+      <P align=justify>Ejecuta multiplexaje sincrono de E/S al monitorear el 
+      estado de múltiples sockets.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="22%"><FONT face=Arial size=2>
+      <P align=justify>send</FONT></P></TD>
+    <TD vAlign=top width="78%"><FONT face=Arial size=2>
+      <P align=justify>Envia información a un socket conectado.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="22%"><FONT face=Arial size=2>
+      <P align=justify>sendto</FONT></P></TD>
+    <TD vAlign=top width="78%"><FONT face=Arial size=2>
+      <P align=justify>Envia información a un socket conectado o a uno no 
+      conectado.</FONT></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P><FONT face=Arial size=2>
+<P align=justify>&nbsp;</P>
+<P align=justify>Las funciones vistas en la tabla anterior , se pueden 
+clasificar como de bloqueo porque requieren comunicación con el anfitrión 
+remoto. Mientras que las que aparecen en la tabla siguiente sólo utilizan 
+información almacenada de manera local, o bien sólo trabajan con el extremo de 
+una conexión del socket de su computadora.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P></FONT>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=4 width=521 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="25%" bgColor=#ffffff>
+      <P align=justify><FONT face=Arial>Función</FONT></P></TD>
+    <TD vAlign=top width="75%" bgColor=#ffffff><FONT face=Arial>
+      <P align=justify>Descripción</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="25%"><FONT face=Arial size=2>
+      <P align=justify>bind</FONT></P></TD>
+    <TD vAlign=top width="75%"><FONT face=Arial size=2>
+      <P align=justify>Asigna un nombre local a un socket sin 
+    nombre.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="25%"><FONT face=Arial size=2>
+      <P align=justify>getpeername</FONT></P></TD>
+    <TD vAlign=top width="75%"><FONT face=Arial size=2>
+      <P align=justify>Obtiene el nombre del par conectado al socket 
+      especificado.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="25%"><FONT face=Arial size=2>
+      <P align=justify>getsockname</FONT></P></TD>
+    <TD vAlign=top width="75%"><FONT face=Arial size=2>
+      <P align=justify>Obtiene el nombre local para el socket 
+      especificado.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="25%"><FONT face=Arial size=2>
+      <P align=justify>getsockopt</FONT></P></TD>
+    <TD vAlign=top width="75%"><FONT face=Arial size=2>
+      <P align=justify>Obtiene opciones asociadas con el socket 
+      especificado.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="25%"><FONT face=Arial size=2>
+      <P align=justify>htonl</FONT></P></TD>
+    <TD vAlign=top width="75%"><FONT face=Arial size=2>
+      <P align=justify>Convierte un número de 32 bits de ordenamiento de byte de 
+      anfitrión a ordenamiento de byte de red.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="25%"><FONT face=Arial size=2>
+      <P align=justify>htons</FONT></P></TD>
+    <TD vAlign=top width="75%"><FONT face=Arial size=2>
+      <P align=justify>Convierte un número de 16 bits de ordenamiento de byte de 
+      anfitrión a ordenamiento de byte de red.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="25%"><FONT face=Arial size=2>
+      <P align=justify>inet_addr</FONT></P></TD>
+    <TD vAlign=top width="75%"><FONT face=Arial size=2>
+      <P align=justify>Convierte una cadena de caracateres que representa una 
+      dirección IP en notación decimal al valor binario de 32 
+  bits.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="25%"><FONT face=Arial size=2>
+      <P align=justify>inet_ntoa</FONT></P></TD>
+    <TD vAlign=top width="75%"><FONT face=Arial size=2>
+      <P align=justify>Convierte una dirección IP a notación 
+    decimal.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="25%"><FONT face=Arial size=2>
+      <P align=justify>ioctlsocket</FONT></P></TD>
+    <TD vAlign=top width="75%"><FONT face=Arial size=2>
+      <P align=justify>Controla varios parametros relacionados con la forma de 
+      operar del socket y el manejo de la E/S de red.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="25%"><FONT face=Arial size=2>
+      <P align=justify>listen</FONT></P></TD>
+    <TD vAlign=top width="75%"><FONT face=Arial size=2>
+      <P align=justify>Indica a un socket específico que atienda las conexiones 
+      entrantes.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="25%"><FONT face=Arial size=2>
+      <P align=justify>ntohl</FONT></P></TD>
+    <TD vAlign=top width="75%"><FONT face=Arial size=2>
+      <P align=justify>Convierte un número de 32 bits de ordenamiento de byte de 
+      red a ordenamiento de byte de anfitrión.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="25%"><FONT face=Arial size=2>
+      <P align=justify>ntohs</FONT></P></TD>
+    <TD vAlign=top width="75%"><FONT face=Arial size=2>
+      <P align=justify>Convierte un número de 16 bits de ordenamiento de byte de 
+      red a ordenamiento de byte de anfitrión.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="25%"><FONT face=Arial size=2>
+      <P align=justify>setsockopt</FONT></P></TD>
+    <TD vAlign=top width="75%"><FONT face=Arial size=2>
+      <P align=justify>Almacena opciones asociadas con el socket 
+      especificado.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="25%"><FONT face=Arial size=2>
+      <P align=justify>shutdown</FONT></P></TD>
+    <TD vAlign=top width="75%"><FONT face=Arial size=2>
+      <P align=justify>Cierra parte de una conexión full 
+duplex.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="25%"><FONT face=Arial size=2>
+      <P align=justify>socket</FONT></P></TD>
+    <TD vAlign=top width="75%"><FONT face=Arial size=2>
+      <P align=justify>Crea un extremo para la comunicación y devuelve un 
+      identificador de socket.</FONT></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P><FONT face=Arial size=2>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P></FONT><B><FONT face=Arial>
+<P align=justify>6.2.2 <U>FUNCIONES DE BASE DE DATOS :</P></B></U></FONT><FONT 
+face=Arial size=2>
+<P align=justify>Las funciones de base de datos de Winsock , permiten obtener 
+información sobre nombres de dominio, servicios de comunicación y protocolos 
+.</P></FONT>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=4 width=521 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="27%" bgColor=#ffffff>
+      <P align=justify><FONT face=Arial>Función</FONT></P></TD>
+    <TD vAlign=top width="73%" bgColor=#ffffff><FONT face=Arial>
+      <P align=justify>Descripción</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>gethostbyaddr</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Obtiene nombre de dominio y dirección IP correspondiente 
+      a una dirección de red.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>gethostbyname</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Obtiene nombre de dominio y dirección IP correspondiente 
+      a un nombre de anfitrión.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>gethostname</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Obtiene el nombre de dominio del anfitrión 
+      local.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>getprotobyname</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Obtiene un protocolo por nombre y devuelve el nombre 
+      oficial y el número definido para representar al 
+  protocolo.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>getprotobynumber</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Obtiene el nombre y número de protocolo representado por 
+      un número específico.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>getservbyname</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Obtiene un nombre de servicio y el puerto de protocolo 
+      correspondiente al nombre del servicio.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>getservbyport</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Obtiene el nombre del servicio y el puerto 
+      correspondiente a un puerto de protocolo 
+  especifico.</FONT></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P><FONT face=Arial size=2>
+<P align=justify>&nbsp;</P>
+<DIR>
+<P align=justify>Algunas de las funciones de bases de datos de Winsock devuelven 
+estructuras de datos volátiles, ya que sólo guardan los resultados hasta la 
+próxima llamada a otra función Winsock, por lo tanto estos resultados debe 
+guardarse en un lugar diferente de la memoria. Para ello tenemos las versiones 
+asincronas de estas funciones que nos permiten aprovechar el despliegue de 
+mensajes dentro de Windows.</P>
+<P align=justify></P></DIR></FONT>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=4 width=538 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="35%" bgColor=#ffffff>
+      <P align=justify><FONT face=Arial>Función</FONT></P></TD>
+    <TD vAlign=top width="65%" bgColor=#ffffff><FONT face=Arial>
+      <P align=justify>Descripción</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="35%"><FONT face=Arial size=2>
+      <P align=justify>WSAAsyncSelect</FONT></P></TD>
+    <TD vAlign=top width="65%"><FONT face=Arial size=2>
+      <P align=justify>Ofrece una versión asincrona de la función 
+      Select.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="35%"><FONT face=Arial size=2>
+      <P align=justify>WSACancelAsyncRequest</FONT></P></TD>
+    <TD vAlign=top width="65%"><FONT face=Arial size=2>
+      <P align=justify>Cancela una instancia de la función 
+      WSAAsyncGetXByY</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="35%"><FONT face=Arial size=2>
+      <P align=justify>WSACancelBlockingCall</FONT></P></TD>
+    <TD vAlign=top width="65%"><FONT face=Arial size=2>
+      <P align=justify>Cancela una llamada de bloqueo de la API</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="35%"><FONT face=Arial size=2>
+      <P align=justify>WSACleanup</FONT></P></TD>
+    <TD vAlign=top width="65%"><FONT face=Arial size=2>
+      <P align=justify>Termina sesión desde los DLL subyacentes de 
+      Winsock</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="35%"><FONT face=Arial size=2>
+      <P align=justify>WSAGetLastError</FONT></P></TD>
+    <TD vAlign=top width="65%"><FONT face=Arial size=2>
+      <P align=justify>Obtiene detalles sobre el último error de la API 
+      Winsock.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="35%"><FONT face=Arial size=2>
+      <P align=justify>WSAIsBlocking</FONT></P></TD>
+    <TD vAlign=top width="65%"><FONT face=Arial size=2>
+      <P align=justify>Determina si el DLL de Winsock subyacente está 
+      bloqueado.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="35%"><FONT face=Arial size=2>
+      <P align=justify>WSASetLastError</FONT></P></TD>
+    <TD vAlign=top width="65%"><FONT face=Arial size=2>
+      <P align=justify>Establece el regreso de error para WSAGetLastError 
+      subsecuente.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="35%"><FONT face=Arial size=2>
+      <P align=justify>WSAStartup</FONT></P></TD>
+    <TD vAlign=top width="65%"><FONT face=Arial size=2>
+      <P align=justify>Inicia el DLL de Winsock subyacente.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="35%"><FONT face=Arial size=2>
+      <P align=justify>WSAUnhookBlockingHook</FONT></P></TD>
+    <TD vAlign=top width="65%"><FONT face=Arial size=2>
+      <P align=justify>Restaura la función original de 
+  bloqueo.</FONT></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P><FONT face=Arial size=2>
+<P align=justify>&nbsp;</P></FONT><B><FONT face=Arial>
+<P align=justify>6.2.3 <U>PROGRAMACIÓN CON WINDOWS SOCKETS 
+:</P></B></U></FONT><FONT face=Arial size=2>
+<P align=justify>Los programas de red basados en la API Windows Sockets deben 
+incluir un encabezado de archivo llamado <B>winsock.h </B>:</P>
+<P align=justify>&nbsp;</P>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR><B>
+<P align=justify>#include&lt;winsock.h&gt;</P></B>
+<P align=justify>&nbsp;</P></DIR></DIR></DIR></DIR></DIR></DIR></DIR></DIR>
+<P align=justify>La API de Windows Sockets requiere dos funciones especificas de 
+windows, que son: </P>
+<P align=justify>&nbsp;</P>
+<P align=justify>.<B>WSAStartup</B> : Se debe llamar a esta función antes de 
+llamar a cualquier otra de Winsock. Nos permite especificar que versión de la 
+API Windows Sockets va a necesitar nuestro programa. Se establece una 
+negociación entre la aplicación y Winsock.dll .</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>.<B>WSACleanup </B>: Se debe colocar por cada llamada que se 
+haga a WSAStartup. Cuando se llama a la funcion WSACleanup por última vez, 
+winsock desconecta cualquiera de los sockets de flujo de bytes existentes. 
+Aunque respeta la información pendiente.</P>
+<P align=justify>&nbsp;</P><B><U>
+<P align=justify>El descriptor de Socket :</B></U> Winsock define SOCKET como un 
+tipo de datos sin signo y emplea la constante INVALID_SOCKET para identificar a 
+los no válidos.</P>
+<P align=justify>Un socket válido está en el rango desde 0......INVALID SOCKET-1 
+. </P>
+<P align=justify>Para el caso de que ocurra un error de socket , winsock nos 
+proporciona la constante SOCKET_ERROR , que define como –1, y para identificar 
+la condición concreta del error nuestra aplicación deberá llamar a la función 
+WSAGetLastError, que se encarga de obtener el último error que ocurrió en la 
+red.</P><B><U>
+<P align=justify>La función Select :</B></U> Esta función deja que un solo 
+proceso monitoree o determine el estado de multiples sockets. Un conjunto es una 
+lista específica de sockets que Winsock monitorea para revisar los cambios de 
+estado. Para manipular estos conjuntos Winsock se vale de las siguientes macros 
+:</P></FONT>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=4 width=493 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="27%" bgColor=#ffffff>
+      <P align=justify><FONT face=Arial>MACRO</FONT></P></TD>
+    <TD vAlign=top width="73%" bgColor=#ffffff><FONT face=Arial>
+      <P align=justify>FUNCION</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>FD_CLR</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Borra un identificador de socket de la 
+    lista.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>FD_ISSET</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Devuelve un valor diferente de cero (TRUE) si el 
+      identificador de socket está establecido y cero (FALSE) si no lo 
+      está.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>FD_SET</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Agrega un identificador de socket a una 
+    lista.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>FD_ZERO</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Inicializa un conjunto de 
+  identificadores.</FONT></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P><FONT face=Arial size=2>
+<P align=justify>&nbsp;</P>
+<P align=justify>Winsock proporciona una versión asíncrona de SELECT , 
+WSAAsyncSelect para las operaciones de socket de no bloqueo en Winsock.</P>
+<P align=justify>Nuestra aplicación puede llamar a la función WSAAsyncSelect 
+para cambiar la operación del socket de bloqueo a no bloqueo. Teniendo en cuenta 
+que WSAAsyncSelect sólo acepta un identificador de socket a la vez como 
+parámetro.</P>
+<P align=justify>&nbsp;</P><B>
+<P align=center>WSAAsyncSelect (SOCKET s, HWND hWnd, unsigned int wMsg, long 
+lEvent);</P></B>
+<P align=justify>&nbsp;</P>
+<P align=justify>El parametro <I>lEvent</I> es una mascara de bits que 
+especifica que combinación de eventos de la red se desean revisar. Sus valores 
+pueden ser :</P></FONT>
+<P align=center>
+<CENTER>
+<TABLE cellSpacing=1 cellPadding=4 width=483 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="27%" bgColor=#ffffff>
+      <P align=justify><FONT face=Arial>Constante</FONT></P></TD>
+    <TD vAlign=top width="73%" bgColor=#ffffff><FONT face=Arial>
+      <P align=justify>Significado</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>FD_READ</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Solicita notificación de que está listo para 
+      leer.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>FD_WRITE</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Solicita notificación de que está listo para 
+      escribir.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>FD_OOB</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Solicita un aviso de la llegada de información fuera de 
+      banda.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>FD_ACCEPT</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Solicita un aviso de las conexiones 
+    entrantes.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>FD_CONNECT</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Solicita un aviso de las conexiones 
+    terminadas.</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="27%"><FONT face=Arial size=2>
+      <P align=justify>FD_CLOSE</FONT></P></TD>
+    <TD vAlign=top width="73%"><FONT face=Arial size=2>
+      <P align=justify>Solicita un aviso de la terminación de 
+    socket.</FONT></P></TD></TR></TBODY></TABLE></CENTER>
+<P></P><FONT face=Arial size=2>
+<P align=justify>&nbsp;</P>
+<P align=justify>El segundo parametro <I>hWnd</I> especifica el identificador de 
+la ventana que recibirá el mensaje. (parametro wMsg)</P>
+<P align=justify>El tercer parametro <I>wMsg</I> , define el mensaje que se 
+quiere que envie Windows cuando el evento especificado ocurra en la red.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>Cuando se llama a la función WSAAsyncSelect, Winsock designa al 
+socket que se especifica como de no bloqueo. Por ejemplo si se quiere realizar 
+una operación usando la función <I>recv</I><B> </B>, evitando operaciones de 
+bloqueo. Se llamará a la función WSAAsyncSelect, que se encargará a su vez de 
+decirle a Windows que notifique a la aplicación en cuestión cuando el socket 
+está listo para leer. Cuando el socket recibe la información, Windows enviará el 
+identificador de mensaje correspondiente a la ventana que especifique la función 
+WSAAsyncSelect . Cuando el procedimiento de manejo del mensaje para esa ventana 
+reciba el mensaje, la aplicación podrá ejecutar un código que llame a la función 
+<I>recv</I>.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>&nbsp;</P><B><U>
+<P align=justify>. Hook de Bloqueo :</B></U> Winsock nunca permite que una 
+operación de bloqueo ocurra dentro de Windows. Cuando un programa llama a una 
+función que causaría una operación de este tipo, Winsock entra en un ciclo y 
+llama de forma repetitiva a un identificador de bloqueo o rutina hook, cuyo 
+proposito es interceptar las llamadas a funciones que causan una operación de 
+bloqueo.</P>
+<P align=justify>El identificador de bloqueo estandar de Winsock incluye un 
+código análogo a las siguientes instrucciones :</P>
+<P align=justify>If (PeekMessage(&amp;msg, NULL, 0, 0, PM_REMOVE))</P>
+<P align=justify>{</P>
+<P align=justify>TranslateMessage(&amp;msg);</P>
+<P align=justify>DispatchMessage(&amp;msg);</P>
+<P align=justify>}</P>
+<P align=justify>La función <I>PeekMessage </I>revisa la cola de mensajes de la 
+aplicación, en caso de que existan mensajes, lo coloca en una estructura MSG y 
+devuelve un valor que no sea cero. </P>
+<P align=justify>De todas formas el hook de bloqueo no resuelve el problema en 
+su totalidad , ya que cuando se ejecuta es posible que aparezca un mensaje de 
+Windows para la tarea en curso, que puede causar que la aplicación llame a otra 
+función de Winsock. Con lo cual se tiene que siempre que una operación de 
+bloqueo de Winsock esté en progreso, no se podrá llamar desde la aplicación a 
+otras funciones de Winsock.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>Winsock proporciona dos funciones para detectar y manejar 
+operaciones de bloqueo, ninguna de las funciones requiere parámetros :</P>
+<P align=justify>. <B>WSAIsBlocking</B> : Se llama a esta función para 
+determinar si está en progreso una operación de bloqueo. Devolverá TRUE si es 
+así y FALSE , en caso contrario.</P>
+<P align=justify>. <B>WSACancelBlockingCall</B> : Se llamará a esta función para 
+cancelar la operación de bloqueo que esté en curso. La llamada a la función que 
+inició la operación de bloqueo coge el valor de error WSAEINTR.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>La API de Winsock incluye dos funciones avanzadas para manejar 
+este tipo de operaciones :</P>
+<P align=justify>. <B>WSASetBlockingHook</B> : Nos permite definir nuestra 
+propia rutina de bloqueo.</P>
+<P align=justify>. <B>WSAUnhookBlockingHook</B> : Se encarga de restaurar el 
+hook de bloqueo predeterminado.</P>
+<P align=justify>&nbsp;</P>
+<P align=justify>Para los sistemas operativos Windows95 y WindowsNT , el bloqueo 
+ocurre en base a cada tarea. Winsock no incluye un hook de bloqueo para las 
+versiones multitarea de Windows, cuando sucede una operación de bloqueo todas 
+las demás actividades en la tarea se detienen hasta que esta concluye. De todas 
+formas Winsock permite utilizar en tales versiones de Windows la función 
+WSASetBlockingHook para implementar nuestro propio hook de bloqueo.</P>
+<P align=justify>&nbsp;</P></FONT></BODY></HTML>

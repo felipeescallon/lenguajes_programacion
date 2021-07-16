@@ -1,0 +1,551 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0070)http://ants.dif.um.es/~humberto/asignaturas/v30/curso/redes/redes.html -->
+<HTML><HEAD><TITLE>Comunicaciones en JAVA</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4522.1800" name=GENERATOR></HEAD>
+<BODY>
+<H1 align=left><FONT face="Times New Roman">Tema V: Comunicaciones en 
+JAVA</FONT></H1>
+<P><FONT face="Times New Roman">Las clases básicas del sistema de JAVA nos 
+permiten realizar todo tipo de comunicaciones TCP/IP. Para hacer independiente 
+el uso de las mismas de la implementación que haga el sistema operativo, se 
+utiliza el modelo ampliamente difundido de sockets. Además, JAVA incorpora 
+mecanismos para trabajar con protocolos recientes tales como URLs de HTTP, 
+etc.</FONT> 
+<OL>
+  <LI><A 
+  href="http://ants.dif.um.es/~humberto/asignaturas/v30/curso/redes/redes.html#1"><FONT 
+  face="Times New Roman">Comunicaciones TCP/IP</FONT></A> 
+  <LI><A 
+  href="http://ants.dif.um.es/~humberto/asignaturas/v30/curso/redes/redes.html#2"><FONT 
+  face="Times New Roman">Trabajando con URLs en JAVA</FONT></A> 
+  <LI><A 
+  href="http://ants.dif.um.es/~humberto/asignaturas/v30/curso/redes/redes.html#3"><FONT 
+  face="Times New Roman">Trabajando con sockets en JAVA</FONT></A> 
+  <LI><A 
+  href="http://ants.dif.um.es/~humberto/asignaturas/v30/curso/redes/redes.html#4"><FONT 
+  face="Times New Roman">Implementación de servidores: servicio de 
+  ECO</FONT></A> </LI></OL>
+<HR>
+
+<H3><A name=1></A><FONT face="Times New Roman">1. Comunicaciones 
+TCP/IP<BR></FONT></H3>
+<P><FONT face="Times New Roman">A nivel general, en TCP/IP, podemos encontrar 
+cinco niveles de comunicaciones: <EM>físico</EM>, <EM>enlace</EM>, <EM>red</EM>, 
+<EM>transporte</EM> y <EM>aplicación</EM> (los demás no están soportados por el 
+modelo TCP/IP). Al escribir programas Java no nos preocuparemos de los niveles 
+inferiores, y generalmente la programación se realizará a nivel de 
+<EM>aplicación</EM>. </FONT></P>
+<P align=center><FONT face="Times New Roman"><BR><IMG height=198 
+alt="Redes1.gif (1603 bytes)" src="Comunicaciones en JAVA_archivos/Redes1.gif" 
+width=172><BR></FONT></P>
+<P><FONT face="Times New Roman">Las clases del paquete java.net nos proporcionan 
+capacidades de programación en red de forma independiente al sistema operativo 
+basandose principalmente en los <EM>sockets</EM> como primitiva de comunicación. 
+Cuando dos aplicaciones se comunican, primero establecen una conexión, y a 
+través de la misma envían y reciben información. Los sockets son puntos finales 
+de enlace de comunicaciones entre procesos. Los procesos los tratan como 
+descriptores de ficheros, de forma que se pueden intercambiar datos con otros 
+procesos transmitiendo y recibiendo a través de sockets. </FONT></P>
+<P align=center><FONT face="Times New Roman"><BR><IMG height=106 
+alt="Redes2.gif (4686 bytes)" src="Comunicaciones en JAVA_archivos/Redes2.gif" 
+width=541></FONT></P>
+<P><FONT face="Times New Roman"><U>Sockets Stream</U> (<EM>TCP</EM>, Transport 
+Control Protocol) <BR><BR>Son un servicio orientado a conexión donde los datos 
+se transfieren sin encuadrarlos en registros o bloques. Si se rompe la conexión 
+entre los procesos, éstos serán informados. El protocolo de comunicaciones con 
+streams es un protocolo orientado a conexión, ya que para establecer una 
+comunicación utilizando el protocolo TCP, hay que establecer en primer lugar una 
+conexión entre un par de sockets. Mientras uno de los sockets atiende peticiones 
+de conexión (servidor), el otro solicita una conexión (cliente). Una vez que los 
+dos sockets estén conectados, se pueden utilizar para transmitir datos en ambas 
+direcciones. Por ejemplo, se tienen los siguientes protocolos TCP:</FONT> 
+<UL>
+  <LI><FONT face="Times New Roman">Telnet</FONT> 
+  <LI><FONT face="Times New Roman">HTTP</FONT> 
+  <LI><FONT face="Times New Roman">SMTP</FONT> 
+  <LI><FONT face="Times New Roman">Rlogin</FONT> 
+  <LI><FONT face="Times New Roman">FTP</FONT> </LI></UL>
+<P><FONT face="Times New Roman"><BR><U>Sockets Datagrama</U> (<EM>UDP</EM>, User 
+Datagram Protocol) <BR><BR>Son un servicio de transporte sin conexión. Son más 
+eficientes que TCP, pero no está garantizada la fiabilidad. Los datos se envían 
+y reciben en paquetes, cuya entrega no está garantizada. Los paquetes pueden ser 
+duplicados, perdidos o llegar en un orden diferente al que se envió. El 
+protocolo de comunicaciones con datagramas es un protocolo sin conexión, es 
+decir, cada vez que se envíen datagramas es necesario enviar el descriptor del 
+socket local y la dirección del socket que debe recibir el datagrama. Como se 
+puede ver, hay que enviar datos adicionales cada vez que se realice una 
+comunicación. Por ejemplo se tienen los siguientes protocolos UDP:</FONT> 
+<UL>
+  <LI><FONT face="Times New Roman">Ping</FONT> 
+  <LI><FONT face="Times New Roman">NTP</FONT> 
+  <LI><FONT face="Times New Roman">SNMP</FONT> 
+  <LI><FONT face="Times New Roman">Multicast</FONT> 
+  <LI><FONT face="Times New Roman">Streams Audio</FONT> 
+  <LI><FONT face="Times New Roman">Streams Vídeo</FONT> </LI></UL>
+<P><FONT face="Times New Roman"><BR><U>Sockets Raw <BR></U><BR>Son sockets que 
+dan acceso directo a la capa de software de red subyacente o a protocolos de más 
+bajo nivel. Se utilizan sobre todo para la depuración del código de los 
+protocolos. Por ejemplo se tiene:</FONT> 
+<UL>
+  <LI><FONT face="Times New Roman">ICMP</FONT> </LI></UL>
+<P align=center><FONT face="Times New Roman"><BR><IMG height=283 
+alt="Redes6.gif (2562 bytes)" src="Comunicaciones en JAVA_archivos/Redes6.gif" 
+width=436></FONT></P>
+<HR>
+
+<H3><A name=2></A><FONT face="Times New Roman">2. Trabajando con URLs en 
+JAVA<BR></FONT></H3>
+<P><FONT face="Times New Roman">Una <EM>URL</EM> (Uniform Resource Locator) es 
+una referencia o dirección útil para localizar un recurso en Internet. Por 
+ejemplo tenemos: <A href="http://java.sun.com/">http://java.sun.com/</A>. Cada 
+URL está formada por dos componentes importantes : el identificador de protocolo 
+y el nombre del recurso. En este ejemplo el identificador de protocolo es 
+<EM>http</EM> (Hyper Text Transfer Protocol), que es el usado por los 
+navegadores. Otros protocolos contemplados son <EM>ftp</EM> (File Transfer 
+Protocol), <EM>gopher</EM> (Gopher), <EM>file</EM> (ficheros locales) y 
+<EM>news</EM> (News Protocol). El nombre del recurso corresponde a la dirección 
+completa del mismo, y en este caso es java.sun.com. El formato del nombre del 
+recurso depende del protocolo utilizado pero en la mayoría existen los 
+siguientes componentes: nombre del servidor, nombre del fichero, número de 
+puerto, y referencia (localización dentro de un fichero), si bien son más 
+utilizados para el protocolo HTTP. Así, en este caso tenemos nombre de host: 
+java.sun.com, nombre del fichero: /, número de puerto: 80 y referencia: vacía. 
+<BR></FONT></P>
+<P><FONT face="Times New Roman">Para trabajar en JAVA con URLs, simplemente 
+hacemos uso de la clase URL, teniendo en cuenta de capturar o lanzar la 
+excepción <EM>MalformedURLException</EM>. Sobre URLs tenemos los siguientes 
+métodos:</FONT> 
+<UL>
+  <LI><FONT face="Times New Roman"><EM>getProtocol ()</EM>: devuelve el 
+  protocolo de la URL</FONT> 
+  <LI><FONT face="Times New Roman"><EM>getHost ()</EM>: devuelve el host de la 
+  URL</FONT> 
+  <LI><FONT face="Times New Roman"><EM>getPort ()</EM>: devuelve el puerto de la 
+  URL</FONT> 
+  <LI><FONT face="Times New Roman"><EM>getFile ()</EM>: devuelve el fichero de 
+  la URL</FONT> 
+  <LI><FONT face="Times New Roman"><EM>getRef ()</EM>: devuelve la referencia de 
+  la URL</FONT> </LI></UL>
+<P><FONT face="Times New Roman">Un ejemple de creación, uso y conexión a una URL 
+es el siguiente:</FONT></P>
+<DIV align=center>
+<CENTER>
+<TABLE width="71%" border=1>
+  <TBODY>
+  <TR>
+    <TD width="100%"><FONT face="Times New Roman">&nbsp; import 
+      java.net.*;<BR>&nbsp; import java.io.*;<BR><BR>&nbsp;&nbsp; class LeeURL 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      public static void main(String [] args) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      try 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      URL um = new 
+      URL("http://www.um.es/");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      DataInputStream dis = new DataInputStream 
+      (um.openStream());<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      String 
+      inputLine;<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      while ((inputLine = dis.readLine ()) != null) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.out.println 
+      (inputLine);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      dis.close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      } catch (MalformedURLException me) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.out.println ("MalformedURLException: " + 
+      me);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      } catch (IOException ioe) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.out.println ("IOException: " + 
+      ioe);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+  </FONT></TD></TR></TBODY></TABLE></CENTER></DIV>
+<P><FONT face="Times New Roman">Si queremos comunicarnos con la URL, se ha de 
+usar la clase <EM>URLConnection</EM> que permite establecer una conexión con una 
+URL especificada, ya sea para leer o escribir sobre ella. Por ejemplo se tiene: 
+</FONT></P>
+<DIV align=center>
+<CENTER>
+<TABLE width="83%" border=1>
+  <TBODY>
+  <TR>
+    <TD width="100%"><FONT 
+      face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      import 
+      java.io.*;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      import 
+      java.net.*;<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      public class InvierteCadenaURL&nbsp; 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      public static void main (String[] args) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      try 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      if (args.length != 1) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.err.println ("Uso: &nbsp;InvierteCadena 
+      cadena_a_invertir");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.exit 
+      (1);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      String stringToReverse = 
+      URLEncoder.encode(args[0]);<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      URL url = new URL 
+      ("http://java.sun.com/cgi-bin/backwards");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      URLConnection connection = 
+      url.openConnection();<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      PrintStream outStream = new PrintStream (connection.getOutputStream()); 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      outStream.println ("string=" + 
+      stringToReverse);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      outStream.close 
+      ();<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      DataInputStream inStream = new DataInputStream 
+      (connection.getInputStream());&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      String 
+      inputLine;<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      while ((inputLine = inStream.readLine()) != null) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.out.println(inputLine);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      inStream.close 
+      ();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      } catch (MalformedURLException me) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.err.println ("MalformedURLException: " + 
+      me);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      } catch (IOException ioe) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.err.println ("IOException: " + 
+      ioe);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }</FONT></TD></TR></TBODY></TABLE></CENTER></DIV>
+<HR>
+
+<H3><A name=3></A><FONT face="Times New Roman">3. Trabajando con Sockets en 
+JAVA</FONT></H3>
+<P><FONT face="Times New Roman"><BR>Como se vió anteriormente, un 
+<EM>socket</EM> es un punto de comunicación bidireccional entre programas 
+funcionando en lugares distintos en la red. </FONT></P>
+<P align=center><FONT face="Times New Roman"><BR><IMG height=106 
+alt="Redes2.gif (4686 bytes)" src="Comunicaciones en JAVA_archivos/Redes2.gif" 
+width=541><BR></FONT></P>
+<P><FONT face="Times New Roman">En general, en las arquitecturas 
+<EM>cliente-servidor</EM> existe un servidor que proporciona un servicio y unos 
+clientes que lo utilizan. Analogamente existirán sockets servidores y sockets de 
+cliente representados por las clases de JAVA <EM>SocketServer</EM> y 
+<EM>Socket</EM>, situadas en el paquete java.net. </FONT></P>
+<P align=center><FONT face="Times New Roman"><BR><IMG height=143 
+alt="Redes3.gif (5379 bytes)" src="Comunicaciones en JAVA_archivos/Redes3.gif" 
+width=323></FONT></P>
+<P><FONT face="Times New Roman"><BR>La comunicación bidireccional se implementa 
+en Java utilizando los flujos de entrada y salida (InputStream y OutputStream) 
+por lo que se consigue manejar de manera uniforme el acceso a ficheros y a 
+conexiones remotas. Así, para cada socket podremos acceder a los flujos de 
+entrada con <EM>getInputStream ()</EM> y a los de salida con <EM>getOutputStream 
+()</EM>. </FONT></P>
+<P align=center><FONT face="Times New Roman"><BR><IMG height=78 
+alt="Redes4.gif (3908 bytes)" src="Comunicaciones en JAVA_archivos/Redes4.gif" 
+width=506></FONT></P>
+<P align=center><FONT face="Times New Roman"><BR><IMG height=271 
+alt="Redes5.gif (8039 bytes)" src="Comunicaciones en JAVA_archivos/Redes5.gif" 
+width=420></FONT></P>
+<P align=left><FONT face="Times New Roman">Para abrir un socket cliente sobre un 
+determinado servidor, utilizaremos el siguiente código:</FONT></P>
+<DIV align=center>
+<CENTER>
+<TABLE width="58%" border=1>
+  <TBODY>
+  <TR>
+    <TD width="100%"><FONT 
+      face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Socket 
+      miCliente;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      try 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      miCliente = new Socket ("servidor", 
+      numeroPuerto);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      } catch (IOException e) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.out.println 
+      (e);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }</FONT></TD></TR></TBODY></TABLE></CENTER></DIV>
+<P><FONT face="Times New Roman">Para abrir un socket servidor, al que puedan 
+acceder los cliente, utilizaremos el siguiente código:</FONT></P>
+<DIV align=center>
+<CENTER>
+<TABLE width="58%" border=1>
+  <TBODY>
+  <TR>
+    <TD width="100%"><FONT 
+      face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Socket 
+      miServicio;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      try 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      miServicio = new ServerSocket 
+      (numeroPuerto);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      } catch (IOException e) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.out.println 
+      (e);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Socket socketServicio = 
+      null;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      try 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      socketServicio = miServicio.accept 
+      ();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      } catch (IOException e) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.out.println 
+      (e);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }</FONT></TD></TR></TBODY></TABLE></CENTER></DIV>
+<P>Para crear un stream de entrada sobre un socket previamente abierto, 
+utilizaremos el siguiente código:</P>
+<DIV align=center>
+<CENTER>
+<TABLE width="70%" border=1>
+  <TBODY>
+  <TR>
+    <TD width="100%"><FONT 
+      face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      DataInputStream 
+      entrada;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      try 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      entrada = new DataInputStream (miCliente.getInputStream ()); 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      } catch (IOException e) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.out.println 
+      (e);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }</FONT></TD></TR></TBODY></TABLE></CENTER></DIV>
+<P>Para crear un stream de salida sobre un socket previamente abierto, 
+utilizaremos el siguiente código:</P>
+<DIV align=center>
+<CENTER>
+<TABLE width="71%" border=1>
+  <TBODY>
+  <TR>
+    <TD width="100%"><FONT 
+      face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      DataOutputStream 
+      salida;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      try 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      salida = new DataOutputStream (miCliente.getOutputStream ());&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      } catch (IOException e) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.out.println 
+      (e);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }</FONT></TD></TR></TBODY></TABLE></CENTER></DIV>
+<HR>
+
+<H3><A name=4></A>4. Implementación de servidores: servicio de ECO</H3>
+<P>El <EM>servicio de eco</EM> consiste en un servidor que acepta conexiones, y 
+todo lo que recibe por su entrada lo replica por su salida. Así, un cliente le 
+envía datos y recibe los mismos. Es el ejemplo más sencillo de programa 
+cliente-servidor. Así, el programa cliente sería el siguiente:</P>
+<DIV align=center>
+<CENTER>
+<TABLE width="69%" border=1>
+  <TBODY>
+  <TR>
+    <TD align=middle width="100%"><U><STRONG>Servicio de ECO: 
+      cliente</STRONG></U></TD></TR>
+  <TR>
+    <TD width="100%"><FONT face="Times New Roman">import java.net.*;<BR>import 
+      java.io.*;<BR><BR>class ClienteECO {<BR>&nbsp;&nbsp;&nbsp; public static 
+      void main( String args[] ) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Socket 
+      miCliente;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      DataInputStream 
+      entrada;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataOutputStream 
+      salida;<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try 
+      {&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      miCliente = new Socket ("localhost", 
+      9999);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;entrada = new DataInputStream(miCliente.getInputStream() 
+      );<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;salida 
+      = new DataOutputStream( miCliente.getOutputStream() ); 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;salida.writeBytes(Hola 
+      \n"); 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      // Envío 
+      datos<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.out.println(entrada.readLine());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      // Recibo el 
+      eco<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      entrada.close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;salida.close();&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      } catch( IOException e ) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println( 
+      e );<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <BR>}&nbsp;&nbsp;&nbsp; 
+      </FONT></TD></TR></TBODY></TABLE></CENTER></DIV>
+<P>El servidor de ECO se puede implementar de varias formas. La primera y más 
+simple es como un servidor en un sólo thread. De esta forma, cuando llega una 
+petición de conexión el servidor la atiende, y no acepta ninguna nueva hasta que 
+esta se termina. El programa servidor sería:</P>
+<DIV align=center>
+<CENTER>
+<TABLE width="69%" border=1>
+  <TBODY>
+  <TR>
+    <TD align=middle width="100%"><U><STRONG>Servicio de ECO: servidor 
+      mono-thread</STRONG></U></TD></TR>
+  <TR>
+    <TD width="100%"><FONT face="Times New Roman">import java.net.*;<BR>import 
+      java.io.*;<BR><BR>class ServidorEco {<BR>&nbsp;&nbsp;&nbsp; public static 
+      void main( String args[] ) {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      ServerSocket s = null;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Socket cliente = null;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Establecemos el 
+      servicio&nbsp; en el puerto 
+      9999<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // No podemos elegir un 
+      puerto por debajo del 1023 si no 
+      somos<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // usuarios con los 
+      máximos privilegios (root)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      try 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s 
+      = new ServerSocket( 9999 );<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      } catch( IOException e ) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.out.println( e 
+      );<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Creamos el objeto 
+      desde el cual atenderemos y 
+      aceptaremos<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // las 
+      conexiones de los clientes y abrimos los canales de&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // comunicación de entrada 
+      y salida<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (true) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp; cliente = 
+      s.accept();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp; manejaPeticion(cliente); 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } catch( 
+      IOException e ) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp; System.out.println( e 
+      );<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR><BR>&nbsp;&nbsp;&nbsp; public static 
+      void manejaPeticion (Socket s) throws IOException<BR>&nbsp;&nbsp;&nbsp; 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataInputStream 
+      sIn;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PrintStream 
+      sOut;<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sIn = new 
+      DataInputStream (s.getInputStream() 
+      );<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sOut = new PrintStream 
+      (s.getOutputStream()); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String&nbsp; texto = sIn.readLine 
+      (); 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      // Recibo datos<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sOut.println 
+      (texto); 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      // Replico datos<BR>&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      sIn.close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      sOut.close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s.close();&nbsp; 
+      <BR>&nbsp; }<BR>}</FONT></TD></TR></TBODY></TABLE></CENTER></DIV>
+<P>Si el servidor se implementa como un sólo thread, si varios clientes envían 
+una petición de forma simultánea, sólo se atenderá la primera que se reciba. Una 
+forma de evitar que un cliente acapare el servidor es implementarlo con 
+múltiples threads, uno para cada petición aceptada, mas uno para el proceso de 
+aceptar conexiones. El programa servidor sería:</P>
+<DIV align=center>
+<CENTER>
+<TABLE width="69%" border=1>
+  <TBODY>
+  <TR>
+    <TD align=middle width="100%"><U><STRONG>Servicio de ECO: servidor 
+      multi-thread</STRONG></U></TD></TR>
+  <TR>
+    <TD width="100%"><FONT face="Times New Roman">import java.net.*;<BR>import 
+      java.io.*;<BR><BR>class ServidorEcoThread {<BR>&nbsp;&nbsp;&nbsp; public 
+      static void main( String args[] ) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ServerSocket s = 
+      null;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Socket cliente = 
+      null;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; // Establecemos el 
+      servicio&nbsp; en el puerto 
+      9999<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // No podemos elegir un 
+      puerto por debajo del 1023 si no 
+      somos<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // usuarios con los 
+      máximos privilegios (root)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      try 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s 
+      = new ServerSocket( 9999 );<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      } catch( IOException e ) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      System.out.println( e );<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Creamos el objeto 
+      desde el cual atenderemos y 
+      aceptaremos<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // las 
+      conexiones de los clientes y abrimos los canales de&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // comunicación de entrada 
+      y salida<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (true) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp; cliente = 
+      s.accept();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp; new GestorPeticion(cliente).start(); 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } catch( 
+      IOException e ) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp; System.out.println( e 
+      );<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>}<BR><BR>class GestorPeticion extends 
+      Thread {&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Socket 
+      s;<BR>&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public 
+      GestorPeticion (Socket s ) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.s = 
+      s;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void run() 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataInputStream 
+      sIn;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PrintStream 
+      sOut;<BR><BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; try 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      sIn = new DataInputStream(s.getInputStream() 
+      );<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      sOut = new PrintStream(s.getOutputStream()); 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      String&nbsp; texto = sIn.readLine(); 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      // Recibo 
+      datos<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      sOut.println( texto ); 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      // Replico datos<BR>&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      sIn.close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      sOut.close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      s.close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } catch( 
+      IOException e ) 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; System.out.println( e 
+      );<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR>&nbsp;&nbsp;&nbsp; }<BR>}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    </FONT></TD></TR></TBODY></TABLE></CENTER></DIV>
+<HR>
+
+<P><SMALL><SMALL>Ultima actualización 16 Octubre 
+1.998</SMALL></SMALL></P></BODY></HTML>
